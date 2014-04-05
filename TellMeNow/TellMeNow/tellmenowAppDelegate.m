@@ -31,12 +31,14 @@
 - (void)socketIODidDisconnect:(SocketIO *)socket disconnectedWithError:(NSError *)error
 {
     NSLog(@"Disconnected: %@", error);
+    self.connErrorAlertView = [[UIAlertView alloc] initWithTitle:@"Connection Error" message:@"The connection has been disconnected." delegate:self cancelButtonTitle:nil otherButtonTitles:@"Try Again", nil];
+    [self.connErrorAlertView show];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    //if (alertView == self.connErrorAlertView && buttonIndex == 0)
-        //[self.socket connectToHost:@"tellmenow.herokuapp.com" onPort:80];
+    if (alertView == self.connErrorAlertView && buttonIndex == 0)
+        [self.socket connectToHost:@"tellmenow.herokuapp.com" onPort:80];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

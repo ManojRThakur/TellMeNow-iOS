@@ -56,8 +56,8 @@
 {
     if ([indexPath indexAtPosition:0] == 2) {
         SocketIO *socket = [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] socket];
-        [socket sendEvent:@"/question/post" withData:[NSDictionary dictionaryWithObjectsAndKeys: self.place._id, @"place_id", self.questionTextView.text, @"question",  nil] andAcknowledge:^(id arg) {
-            if ([arg objectForKey:@"error"]) {
+        [socket sendEvent:@"/question/post" withData:[NSDictionary dictionaryWithObjectsAndKeys: self.place._id, @"place", self.questionTextView.text, @"text",  nil] andAcknowledge:^(id arg) {
+            if ([arg objectForKey:@"error"] != [NSNull null]) {
                 NSLog(@"%@", arg);
                 UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Could not post your question." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [errorAlert show];
