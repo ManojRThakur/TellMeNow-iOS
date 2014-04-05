@@ -7,10 +7,8 @@
 //
 
 #import "MainTabBarController.h"
-
-@interface MainTabBarController ()
-
-@end
+#import <FacebookSDK/FacebookSDK.h>
+#import "LoginViewController.h"
 
 @implementation MainTabBarController
 
@@ -27,6 +25,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    if (![[FBSession activeSession] accessTokenData]) {
+        [self performSegueWithIdentifier:@"showLoginViewSegue" sender:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning

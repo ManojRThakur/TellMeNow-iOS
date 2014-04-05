@@ -7,8 +7,6 @@
 //
 
 #import "LoginViewController.h"
-#import <FacebookSDK/FacebookSDK.h>
-#import "tellmenowAppDelegate.h"
 
 @implementation LoginViewController
 
@@ -16,11 +14,14 @@
 {
     [super viewDidLoad];
     
-    FBLoginView *loginView = [[FBLoginView alloc] initWithReadPermissions:@[@"basic_info", @"user_checkins"]];
-    // Align the button in the center horizontally
-    loginView.frame = CGRectOffset(loginView.frame, (self.view.center.x - (loginView.frame.size.width / 2)), (self.view.bounds.size.height - loginView.frame.size.height - 50));
-    [self.view addSubview:loginView];
+    [self.loginView setReadPermissions:@[@"basic_info", @"user_checkins"]];
+    [self.loginView setDelegate:self];
 }
 
+- (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView
+{
+    [self dismissViewControllerAnimated:true completion:^(){}];
+    
+}
 
 @end
