@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C9B92894-DF42-41C1-BF56-2FCF96D97628</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TellMeNow</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>30E4D7C9-AFB8-44AC-8EAB-0CA006A504DA</key>
+		<string>https://github.com/ManojRThakur/TellMeNow-iOS</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>TellMeNow/TellMeNow.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>30E4D7C9-AFB8-44AC-8EAB-0CA006A504DA</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ManojRThakur/TellMeNow-iOS</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>30E4D7C9-AFB8-44AC-8EAB-0CA006A504DA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>30E4D7C9-AFB8-44AC-8EAB-0CA006A504DA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>TellMeNow-iOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>

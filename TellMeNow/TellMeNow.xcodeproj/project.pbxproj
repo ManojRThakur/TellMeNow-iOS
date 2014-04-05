@@ -21,6 +21,7 @@
 		4BBC338418EF8B92009E2DFE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC336618EF8B91009E2DFE /* UIKit.framework */; };
 		4BBC338C18EF8B92009E2DFE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BBC338A18EF8B92009E2DFE /* InfoPlist.strings */; };
 		4BBC338E18EF8B92009E2DFE /* TellMeNowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBC338D18EF8B92009E2DFE /* TellMeNowTests.m */; };
+		4BBC339818EF9169009E2DFE /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC339718EF9169009E2DFE /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		4BBC338918EF8B92009E2DFE /* TellMeNowTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TellMeNowTests-Info.plist"; sourceTree = "<group>"; };
 		4BBC338B18EF8B92009E2DFE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4BBC338D18EF8B92009E2DFE /* TellMeNowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TellMeNowTests.m; sourceTree = "<group>"; };
+		4BBC339718EF9169009E2DFE /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BBC336518EF8B91009E2DFE /* CoreGraphics.framework in Frameworks */,
+				4BBC339818EF9169009E2DFE /* FacebookSDK.framework in Frameworks */,
 				4BBC336718EF8B91009E2DFE /* UIKit.framework in Frameworks */,
 				4BBC336318EF8B91009E2DFE /* Foundation.framework in Frameworks */,
 			);
@@ -101,6 +104,7 @@
 		4BBC336118EF8B91009E2DFE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4BBC339718EF9169009E2DFE /* FacebookSDK.framework */,
 				4BBC336218EF8B91009E2DFE /* Foundation.framework */,
 				4BBC336418EF8B91009E2DFE /* CoreGraphics.framework */,
 				4BBC336618EF8B91009E2DFE /* UIKit.framework */,
@@ -377,6 +381,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/raghav297/Hackathon/TellMeNow-iOS/FacebookSDK",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TellMeNow/TellMeNow-Prefix.pch";
 				INFOPLIST_FILE = "TellMeNow/TellMeNow-Info.plist";
@@ -390,6 +398,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/raghav297/Hackathon/TellMeNow-iOS/FacebookSDK",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TellMeNow/TellMeNow-Prefix.pch";
 				INFOPLIST_FILE = "TellMeNow/TellMeNow-Info.plist";
