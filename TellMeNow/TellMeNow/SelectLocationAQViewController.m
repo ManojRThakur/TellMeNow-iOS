@@ -25,6 +25,15 @@
     [self.searchPlaceResults addObjectsFromArray:@[@"Facebook", @"Yahoo", @"Google", @"Microsoft", @"Ebay", @"Amazon", @"Dropbox", @"Uber", @"Heroku", @"Twitter", @"Apple", @"Box", @"Youtube", @"Snapchat", @"Cisco", @"LinkedIn", @"Hulu", @"Netflix"]];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    if ([self.searchDisplayController.searchResultsTableView indexPathForSelectedRow])
+        [self.searchDisplayController.searchResultsTableView deselectRowAtIndexPath:[self.searchDisplayController.searchResultsTableView indexPathForSelectedRow] animated:animated];
+    if ([self.suggestedPlacesTableView indexPathForSelectedRow])
+        [self.suggestedPlacesTableView deselectRowAtIndexPath:[self.suggestedPlacesTableView indexPathForSelectedRow] animated:animated];
+    
+}
+
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
     [self getResultArray];
@@ -81,7 +90,7 @@
 {
     if ([segue.identifier isEqual: @"pushAddQuestionSegue"]) {
         AddQuestionAQTableViewController *destinationVC = segue.destinationViewController;
-        destinationVC.title = self.selectedLocation;
+        [destinationVC setLocation:self.selectedLocation];
     }
 }
 

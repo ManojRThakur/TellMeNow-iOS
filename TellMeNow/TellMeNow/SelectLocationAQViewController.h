@@ -13,5 +13,6 @@
 @property (strong, nonatomic) NSMutableArray *suggestedPlaces;
 @property (strong, nonatomic) NSMutableArray *searchPlaceResults;
 @property (strong, nonatomic) NSString *selectedLocation;
+@property (weak, nonatomic) IBOutlet UITableView *suggestedPlacesTableView;
 
 @end

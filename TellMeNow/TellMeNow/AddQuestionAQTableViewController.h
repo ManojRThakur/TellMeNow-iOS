@@ -10,4 +10,6 @@
 
 @interface AddQuestionAQTableViewController : UITableViewController
 
+@property (weak, nonatomic) IBOutlet UITableViewCell *locationTableViewCell;
+@property (strong, nonatomic) NSString *location;
 @end
