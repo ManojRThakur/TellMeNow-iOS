@@ -14,9 +14,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [FBLoginView class];
-    NSLog(@"Blah");
-    
     // Override point for customization after application launch.
+    SocketIO *socket = [[SocketIO alloc] initWithDelegate:self];
+    [socket connectToHost:@"tellmenow.herokuapp.com" onPort:80];
+    
     return YES;
 }
 

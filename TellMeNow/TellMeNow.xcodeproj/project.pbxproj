@@ -23,6 +23,7 @@
 		4BBC338E18EF8B92009E2DFE /* TellMeNowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBC338D18EF8B92009E2DFE /* TellMeNowTests.m */; };
 		4BBC339818EF9169009E2DFE /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC339718EF9169009E2DFE /* FacebookSDK.framework */; };
 		AC10C50718EFD27F006F48BC /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC10C50618EFD27F006F48BC /* MainTabBarController.m */; };
+		AC10C50D18EFEA9C006F48BC /* socket.IO-objc in Resources */ = {isa = PBXBuildFile; fileRef = AC10C50C18EFEA9C006F48BC /* socket.IO-objc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		4BBC339718EF9169009E2DFE /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		AC10C50518EFD27F006F48BC /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		AC10C50618EFD27F006F48BC /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		AC10C50C18EFEA9C006F48BC /* socket.IO-objc */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "socket.IO-objc"; path = "../../socket.IO-objc"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				4BBC336818EF8B91009E2DFE /* TellMeNow */,
 				4BBC338718EF8B92009E2DFE /* TellMeNowTests */,
 				4BBC336118EF8B91009E2DFE /* Frameworks */,
+				AC10C50E18EFEAAE006F48BC /* Dependencies */,
 				4BBC336018EF8B91009E2DFE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -159,6 +162,15 @@
 				4BBC338A18EF8B92009E2DFE /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AC10C50E18EFEAAE006F48BC /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				AC10C50C18EFEA9C006F48BC /* socket.IO-objc */,
+			);
+			name = Dependencies;
+			path = TellMeNow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +250,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC10C50D18EFEA9C006F48BC /* socket.IO-objc in Resources */,
 				4BBC337B18EF8B91009E2DFE /* Images.xcassets in Resources */,
 				4BBC336D18EF8B91009E2DFE /* InfoPlist.strings in Resources */,
 				4BBC337618EF8B91009E2DFE /* Main.storyboard in Resources */,
@@ -395,6 +408,7 @@
 				GCC_PREFIX_HEADER = "TellMeNow/TellMeNow-Prefix.pch";
 				INFOPLIST_FILE = "TellMeNow/TellMeNow-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "../socket.IO-objc";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -412,6 +426,7 @@
 				GCC_PREFIX_HEADER = "TellMeNow/TellMeNow-Prefix.pch";
 				INFOPLIST_FILE = "TellMeNow/TellMeNow-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "../socket.IO-objc";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

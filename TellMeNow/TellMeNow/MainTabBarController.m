@@ -31,6 +31,8 @@
 {
     if (![[FBSession activeSession] accessTokenData]) {
         [self performSegueWithIdentifier:@"showLoginViewSegue" sender:self];
+    } else {
+
     }
 }
 
