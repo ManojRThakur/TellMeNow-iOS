@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Question.h"
 
 @interface NotificationsTableViewController : UITableViewController
-@property (strong, nonatomic) NSString *selectedQuestion;
+@property (strong, nonatomic) Question *selectedQuestion;
 @end

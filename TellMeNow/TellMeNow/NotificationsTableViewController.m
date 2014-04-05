@@ -24,6 +24,12 @@
     
 }
 
+-(Notification *)notification
+{
+    if (!_notification) _notification = [[Notification alloc] init];
+    return _notification;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -31,13 +37,17 @@
     NSString *question = @"Is it cold there?";
     NSString *user = @"gotemb";
     NSString *place = @"Santa Monica";
-    if (place) {
+    
+    [self.selectedQuestion questionTextValue:(NSString *)question usernameValue:(NSString *)user timeValue:(NSString *)time placeValue:(NSString *)place];
+    
+    BOOL placeFlag = true, userFlag = true;
+    if (placeFlag) {
         [self.notification timeStampValue:time questionTextValue:question answererValue:user];
         NSString *answerNotif = self.notification.getAnswerNotification;
         [self.listOfNotifications addObject:answerNotif];
     }
     
-    if (user) {
+    if (userFlag) {
         [self.notification timeStampValue:time questionTextValue:question locationValue:place];
         NSString *locationNotif = self.notification.getLocationNotification;
         [self.listOfNotifications addObject:locationNotif];
@@ -54,7 +64,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *simpleTableIdentifier = @"SimpleTableCell";
+    static NSString *simpleTableIdentifier = @"NotifCell";
  
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
  
@@ -73,7 +83,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self setSelectedQuestion:[[[tableView cellForRowAtIndexPath:indexPath] textLabel] text]];
     [self performSegueWithIdentifier:@"QuestionAnswers" sender:self];
 }
 
