@@ -1,5 +1,5 @@
 //
-//  tellmenowViewController.h
+//  askQuestionViewController.h
 //  TellMeNow
 //
 //  Created by Raghav on 4/4/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface loginViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface askQuestionViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end
