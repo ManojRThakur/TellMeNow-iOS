@@ -112,8 +112,6 @@
 		4BBC336818EF8B91009E2DFE /* TellMeNow */ = {
 			isa = PBXGroup;
 			children = (
-				4BBC337118EF8B91009E2DFE /* tellmenowAppDelegate.h */,
-				4BBC337218EF8B91009E2DFE /* tellmenowAppDelegate.m */,
 				4BBC337418EF8B91009E2DFE /* Main.storyboard */,
 				4BBC337718EF8B91009E2DFE /* tellmenowViewController.h */,
 				4BBC337818EF8B91009E2DFE /* tellmenowViewController.m */,
@@ -126,6 +124,8 @@
 		4BBC336918EF8B91009E2DFE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4BBC337118EF8B91009E2DFE /* tellmenowAppDelegate.h */,
+				4BBC337218EF8B91009E2DFE /* tellmenowAppDelegate.m */,
 				4BBC336A18EF8B91009E2DFE /* TellMeNow-Info.plist */,
 				4BBC336B18EF8B91009E2DFE /* InfoPlist.strings */,
 				4BBC336E18EF8B91009E2DFE /* main.m */,
