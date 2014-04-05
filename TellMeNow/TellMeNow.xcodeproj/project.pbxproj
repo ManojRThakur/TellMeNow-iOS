@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B237E2D18F04F9F003E2805 /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B237E2C18F04F9F003E2805 /* Notification.m */; };
+		4B237E3318F059DF003E2805 /* NotificationsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B237E3218F059DF003E2805 /* NotificationsTableViewController.m */; };
+		4B27E4AC18F071F100B7849E /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B27E4AB18F071F100B7849E /* Answer.m */; };
+		4B27E4AF18F07D4C00B7849E /* AnswerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B27E4AE18F07D4C00B7849E /* AnswerTableViewCell.m */; };
+		4B27E4B218F0805200B7849E /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B27E4B118F0805200B7849E /* Question.m */; };
+		4B27E4B518F0862C00B7849E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B27E4B418F0862C00B7849E /* ProfileViewController.m */; };
 		4BBC336318EF8B91009E2DFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC336218EF8B91009E2DFE /* Foundation.framework */; };
 		4BBC336518EF8B91009E2DFE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC336418EF8B91009E2DFE /* CoreGraphics.framework */; };
 		4BBC336718EF8B91009E2DFE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC336618EF8B91009E2DFE /* UIKit.framework */; };
@@ -22,6 +28,7 @@
 		4BBC338E18EF8B92009E2DFE /* TellMeNowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBC338D18EF8B92009E2DFE /* TellMeNowTests.m */; };
 		4BBC339818EF9169009E2DFE /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC339718EF9169009E2DFE /* FacebookSDK.framework */; };
 		4BBC339B18EFCE3D009E2DFE /* SelectLocationAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBC339A18EFCE3D009E2DFE /* SelectLocationAQViewController.m */; };
+		4BD90E1C18F06EEC00DC43BA /* QuestionAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD90E1B18F06EEC00DC43BA /* QuestionAnswerViewController.m */; };
 		AC0E8A3B18F02E3E00841054 /* PlaceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0E8A3A18F02E3E00841054 /* PlaceModel.m */; };
 		AC0E8A3D18F053F500841054 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC0E8A3C18F053F500841054 /* CoreLocation.framework */; };
 		AC10C50718EFD27F006F48BC /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC10C50618EFD27F006F48BC /* MainTabBarController.m */; };
@@ -50,6 +57,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B237E2B18F04F9F003E2805 /* Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notification.h; sourceTree = "<group>"; };
+		4B237E2C18F04F9F003E2805 /* Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notification.m; sourceTree = "<group>"; };
+		4B237E3118F059DF003E2805 /* NotificationsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsTableViewController.h; sourceTree = "<group>"; };
+		4B237E3218F059DF003E2805 /* NotificationsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationsTableViewController.m; sourceTree = "<group>"; };
+		4B27E4AA18F071F100B7849E /* Answer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Answer.h; sourceTree = "<group>"; };
+		4B27E4AB18F071F100B7849E /* Answer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Answer.m; sourceTree = "<group>"; };
+		4B27E4AD18F07D4C00B7849E /* AnswerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerTableViewCell.h; sourceTree = "<group>"; };
+		4B27E4AE18F07D4C00B7849E /* AnswerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerTableViewCell.m; sourceTree = "<group>"; };
+		4B27E4B018F0805200B7849E /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		4B27E4B118F0805200B7849E /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		4B27E4B318F0862C00B7849E /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		4B27E4B418F0862C00B7849E /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		4B44F06618EFF88900005EA8 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		4BBC335F18EF8B91009E2DFE /* TellMeNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TellMeNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BBC336218EF8B91009E2DFE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -72,6 +91,8 @@
 		4BBC339718EF9169009E2DFE /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		4BBC339918EFCE3D009E2DFE /* SelectLocationAQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationAQViewController.h; sourceTree = "<group>"; };
 		4BBC339A18EFCE3D009E2DFE /* SelectLocationAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationAQViewController.m; sourceTree = "<group>"; };
+		4BD90E1A18F06EEC00DC43BA /* QuestionAnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionAnswerViewController.h; sourceTree = "<group>"; };
+		4BD90E1B18F06EEC00DC43BA /* QuestionAnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionAnswerViewController.m; sourceTree = "<group>"; };
 		AC0E8A3918F02E3E00841054 /* PlaceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceModel.h; sourceTree = "<group>"; };
 		AC0E8A3A18F02E3E00841054 /* PlaceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceModel.m; sourceTree = "<group>"; };
 		AC0E8A3C18F053F500841054 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -170,10 +191,16 @@
 		4BBC336818EF8B91009E2DFE /* TellMeNow */ = {
 			isa = PBXGroup;
 			children = (
+				4B237E3118F059DF003E2805 /* NotificationsTableViewController.h */,
+				4B237E3218F059DF003E2805 /* NotificationsTableViewController.m */,
+				4BD90E1A18F06EEC00DC43BA /* QuestionAnswerViewController.h */,
+				4BD90E1B18F06EEC00DC43BA /* QuestionAnswerViewController.m */,
 				AC0E8A3818F02E0E00841054 /* Models */,
 				AC10C50518EFD27F006F48BC /* MainTabBarController.h */,
 				AC10C50618EFD27F006F48BC /* MainTabBarController.m */,
 				4BBC337418EF8B91009E2DFE /* Main.storyboard */,
+				4B27E4B318F0862C00B7849E /* ProfileViewController.h */,
+				4B27E4B418F0862C00B7849E /* ProfileViewController.m */,
 				4BBC337718EF8B91009E2DFE /* LoginViewController.h */,
 				4B44F06618EFF88900005EA8 /* LoginViewController.m */,
 				4BBC339918EFCE3D009E2DFE /* SelectLocationAQViewController.h */,
@@ -182,6 +209,8 @@
 				ACB4BF8118F01C4700845426 /* AddQuestionAQTableViewController.m */,
 				4BBC337A18EF8B91009E2DFE /* Images.xcassets */,
 				4BBC336918EF8B91009E2DFE /* Supporting Files */,
+				4B27E4AD18F07D4C00B7849E /* AnswerTableViewCell.h */,
+				4B27E4AE18F07D4C00B7849E /* AnswerTableViewCell.m */,
 			);
 			path = TellMeNow;
 			sourceTree = "<group>";
@@ -220,8 +249,14 @@
 		AC0E8A3818F02E0E00841054 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4B27E4B018F0805200B7849E /* Question.h */,
+				4B27E4B118F0805200B7849E /* Question.m */,
+				4B237E2B18F04F9F003E2805 /* Notification.h */,
+				4B237E2C18F04F9F003E2805 /* Notification.m */,
 				AC0E8A3918F02E3E00841054 /* PlaceModel.h */,
 				AC0E8A3A18F02E3E00841054 /* PlaceModel.m */,
+				4B27E4AA18F071F100B7849E /* Answer.h */,
+				4B27E4AB18F071F100B7849E /* Answer.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -370,14 +405,21 @@
 				ACB4BF7918EFF42900845426 /* SRWebSocket.m in Sources */,
 				ACB4BF7718EFF42900845426 /* base64.c in Sources */,
 				4BBC339B18EFCE3D009E2DFE /* SelectLocationAQViewController.m in Sources */,
+				4B27E4B518F0862C00B7849E /* ProfileViewController.m in Sources */,
 				4BBC337318EF8B91009E2DFE /* tellmenowAppDelegate.m in Sources */,
 				AC0E8A3B18F02E3E00841054 /* PlaceModel.m in Sources */,
+				4B27E4AF18F07D4C00B7849E /* AnswerTableViewCell.m in Sources */,
+				4B237E3318F059DF003E2805 /* NotificationsTableViewController.m in Sources */,
+				4B27E4AC18F071F100B7849E /* Answer.m in Sources */,
+				4BD90E1C18F06EEC00DC43BA /* QuestionAnswerViewController.m in Sources */,
 				4BBC336F18EF8B91009E2DFE /* main.m in Sources */,
 				ACB4BF5B18EFF2BD00845426 /* SocketIOPacket.m in Sources */,
 				AC10C50718EFD27F006F48BC /* MainTabBarController.m in Sources */,
 				ACB4BF5C18EFF2BD00845426 /* SocketIOTransportWebsocket.m in Sources */,
 				ACB4BF5918EFF2BD00845426 /* SocketIO.m in Sources */,
 				ACB4BF7818EFF42900845426 /* NSData+SRB64Additions.m in Sources */,
+				4B237E2D18F04F9F003E2805 /* Notification.m in Sources */,
+				4B27E4B218F0805200B7849E /* Question.m in Sources */,
 				ACB4BF5A18EFF2BD00845426 /* SocketIOJSONSerialization.m in Sources */,
 				ACB4BF5D18EFF2BD00845426 /* SocketIOTransportXHR.m in Sources */,
 			);
