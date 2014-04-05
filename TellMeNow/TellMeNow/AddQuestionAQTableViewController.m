@@ -7,10 +7,8 @@
 //
 
 #import "AddQuestionAQTableViewController.h"
-
-@interface AddQuestionAQTableViewController ()
-
-@end
+#import "SocketIO.h"
+#import "tellmenowAppDelegate.h"
 
 @implementation AddQuestionAQTableViewController
 
@@ -26,7 +24,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.locationTableViewCell.textLabel setText:self.location];
+    [self.locationTableViewCell.textLabel setText:self.place.name];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -39,6 +37,35 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    
+}
+
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([indexPath indexAtPosition:0] == 2)
+        return YES;
+    else
+        return NO;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([indexPath indexAtPosition:0] == 2) {
+        SocketIO *socket = [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] socket];
+        [socket sendEvent:@"/question/post" withData:[NSDictionary dictionaryWithObjectsAndKeys: self.place._id, @"place_id", self.questionTextView.text, @"question",  nil] andAcknowledge:^(id arg) {
+            if ([arg objectForKey:@"error"]) {
+                NSLog(@"%@", arg);
+                UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Could not post your question." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [errorAlert show];
+            }
+            else
+                [self.navigationController popToRootViewControllerAnimated:YES];
+        }];
+    }
 }
 
 /*

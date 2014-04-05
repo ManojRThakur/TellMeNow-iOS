@@ -120,7 +120,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self setSelectedLocation:[[[tableView cellForRowAtIndexPath:indexPath] textLabel] text]];
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+        [self setSelectedPlace:[self.searchPlaceResults objectAtIndex:indexPath.row]];
+    else
+        [self setSelectedPlace:[self.suggestedPlaces objectAtIndex:indexPath.row]];
     [self performSegueWithIdentifier:@"pushAddQuestionSegue" sender:self];
 }
 
@@ -131,7 +134,7 @@
 {
     if ([segue.identifier isEqual: @"pushAddQuestionSegue"]) {
         AddQuestionAQTableViewController *destinationVC = segue.destinationViewController;
-        [destinationVC setLocation:self.selectedLocation];
+        [destinationVC setPlace:self.selectedPlace];
     }
 }
 
