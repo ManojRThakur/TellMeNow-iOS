@@ -14,7 +14,7 @@
 		4BBC336F18EF8B91009E2DFE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBC336E18EF8B91009E2DFE /* main.m */; };
 		4BBC337318EF8B91009E2DFE /* tellmenowAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBC337218EF8B91009E2DFE /* tellmenowAppDelegate.m */; };
 		4BBC337618EF8B91009E2DFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BBC337418EF8B91009E2DFE /* Main.storyboard */; };
-		4BBC337918EF8B91009E2DFE /* tellmenowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBC337818EF8B91009E2DFE /* tellmenowViewController.m */; };
+		4BBC337918EF8B91009E2DFE /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBC337818EF8B91009E2DFE /* loginViewController.m */; };
 		4BBC337B18EF8B91009E2DFE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BBC337A18EF8B91009E2DFE /* Images.xcassets */; };
 		4BBC338218EF8B92009E2DFE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC338118EF8B92009E2DFE /* XCTest.framework */; };
 		4BBC338318EF8B92009E2DFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC336218EF8B91009E2DFE /* Foundation.framework */; };
@@ -46,8 +46,8 @@
 		4BBC337118EF8B91009E2DFE /* tellmenowAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tellmenowAppDelegate.h; sourceTree = "<group>"; };
 		4BBC337218EF8B91009E2DFE /* tellmenowAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tellmenowAppDelegate.m; sourceTree = "<group>"; };
 		4BBC337518EF8B91009E2DFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4BBC337718EF8B91009E2DFE /* tellmenowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tellmenowViewController.h; sourceTree = "<group>"; };
-		4BBC337818EF8B91009E2DFE /* tellmenowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tellmenowViewController.m; sourceTree = "<group>"; };
+		4BBC337718EF8B91009E2DFE /* loginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
+		4BBC337818EF8B91009E2DFE /* loginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
 		4BBC337A18EF8B91009E2DFE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4BBC338018EF8B92009E2DFE /* TellMeNowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TellMeNowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BBC338118EF8B92009E2DFE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -117,8 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				4BBC337418EF8B91009E2DFE /* Main.storyboard */,
-				4BBC337718EF8B91009E2DFE /* tellmenowViewController.h */,
-				4BBC337818EF8B91009E2DFE /* tellmenowViewController.m */,
+				4BBC337718EF8B91009E2DFE /* loginViewController.h */,
+				4BBC337818EF8B91009E2DFE /* loginViewController.m */,
 				4BBC337A18EF8B91009E2DFE /* Images.xcassets */,
 				4BBC336918EF8B91009E2DFE /* Supporting Files */,
 			);
@@ -256,7 +256,7 @@
 			files = (
 				4BBC337318EF8B91009E2DFE /* tellmenowAppDelegate.m in Sources */,
 				4BBC336F18EF8B91009E2DFE /* main.m in Sources */,
-				4BBC337918EF8B91009E2DFE /* tellmenowViewController.m in Sources */,
+				4BBC337918EF8B91009E2DFE /* loginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

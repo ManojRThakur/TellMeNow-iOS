@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface tellmenowViewController : UIViewController
+@interface loginViewController : UIViewController
 
 @end

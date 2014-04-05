@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 House Boelter. All rights reserved.
 //
 
-#import "tellmenowViewController.h"
+#import "loginViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 
-@interface tellmenowViewController ()
+@interface loginViewController ()
 
 @end
 
-@implementation tellmenowViewController
+@implementation loginViewController
 
 - (void)viewDidLoad
 {
