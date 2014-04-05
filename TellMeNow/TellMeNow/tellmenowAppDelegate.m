@@ -21,6 +21,12 @@
     return YES;
 }
 
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    return wasHandled;
+}
+
 - (void)socketIO:(SocketIO *)socket onError:(NSError *)error
 {
     NSLog(@"Error: %@", error);

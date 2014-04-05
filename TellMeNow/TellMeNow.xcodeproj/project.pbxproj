@@ -31,6 +31,8 @@
 		4BD90E1C18F06EEC00DC43BA /* QuestionAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD90E1B18F06EEC00DC43BA /* QuestionAnswerViewController.m */; };
 		AC0E8A3B18F02E3E00841054 /* PlaceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0E8A3A18F02E3E00841054 /* PlaceModel.m */; };
 		AC0E8A3D18F053F500841054 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC0E8A3C18F053F500841054 /* CoreLocation.framework */; };
+		AC0E8A4018F08ECD00841054 /* QuestionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0E8A3F18F08ECD00841054 /* QuestionTableViewCell.m */; };
+		AC0E8A4118F0948100841054 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B44F06618EFF88900005EA8 /* LoginViewController.m */; };
 		AC10C50718EFD27F006F48BC /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC10C50618EFD27F006F48BC /* MainTabBarController.m */; };
 		ACB4BF5918EFF2BD00845426 /* SocketIO.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB4BF4F18EFF2BD00845426 /* SocketIO.m */; };
 		ACB4BF5A18EFF2BD00845426 /* SocketIOJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB4BF5118EFF2BD00845426 /* SocketIOJSONSerialization.m */; };
@@ -96,6 +98,8 @@
 		AC0E8A3918F02E3E00841054 /* PlaceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceModel.h; sourceTree = "<group>"; };
 		AC0E8A3A18F02E3E00841054 /* PlaceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceModel.m; sourceTree = "<group>"; };
 		AC0E8A3C18F053F500841054 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		AC0E8A3E18F08ECD00841054 /* QuestionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionTableViewCell.h; sourceTree = "<group>"; };
+		AC0E8A3F18F08ECD00841054 /* QuestionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionTableViewCell.m; sourceTree = "<group>"; };
 		AC10C50518EFD27F006F48BC /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		AC10C50618EFD27F006F48BC /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		ACB4BF4E18EFF2BD00845426 /* SocketIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SocketIO.h; path = "../../socket.IO-objc/SocketIO.h"; sourceTree = "<group>"; };
@@ -211,6 +215,8 @@
 				4BBC336918EF8B91009E2DFE /* Supporting Files */,
 				4B27E4AD18F07D4C00B7849E /* AnswerTableViewCell.h */,
 				4B27E4AE18F07D4C00B7849E /* AnswerTableViewCell.m */,
+				AC0E8A3E18F08ECD00841054 /* QuestionTableViewCell.h */,
+				AC0E8A3F18F08ECD00841054 /* QuestionTableViewCell.m */,
 			);
 			path = TellMeNow;
 			sourceTree = "<group>";
@@ -401,9 +407,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC0E8A4118F0948100841054 /* LoginViewController.m in Sources */,
 				ACB4BF8218F01C4700845426 /* AddQuestionAQTableViewController.m in Sources */,
 				ACB4BF7918EFF42900845426 /* SRWebSocket.m in Sources */,
 				ACB4BF7718EFF42900845426 /* base64.c in Sources */,
+				AC0E8A4018F08ECD00841054 /* QuestionTableViewCell.m in Sources */,
 				4BBC339B18EFCE3D009E2DFE /* SelectLocationAQViewController.m in Sources */,
 				4B27E4B518F0862C00B7849E /* ProfileViewController.m in Sources */,
 				4BBC337318EF8B91009E2DFE /* tellmenowAppDelegate.m in Sources */,

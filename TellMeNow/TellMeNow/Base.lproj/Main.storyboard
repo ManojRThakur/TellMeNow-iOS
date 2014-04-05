@@ -58,13 +58,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F5G-lc-we1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="437" y="-172"/>
+            <point key="canvasLocation" x="383" y="-208"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Notifications-->
         <scene sceneID="Zrf-6o-8rp">
             <objects>
                 <navigationController definesPresentationContext="YES" id="7Uv-5M-Q1W" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ELT-rD-dm0"/>
+                    <tabBarItem key="tabBarItem" title="Notifications" id="ELT-rD-dm0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Uoq-yW-uXN">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -118,7 +118,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QuestionText" rowHeight="131" id="uaz-yj-Hyr">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="QuestionText" rowHeight="131" id="uaz-yj-Hyr" customClass="QuestionTableViewCell">
                                 <rect key="frame" x="0.0" y="119" width="320" height="131"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uaz-yj-Hyr" id="XMT-gY-ojD">
@@ -132,22 +132,25 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xAf-MJ-af4">
-                                            <rect key="frame" x="20" y="88" width="129" height="33"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcs-Vu-k3a">
+                                            <rect key="frame" x="20" y="89" width="42" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        </textView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BlS-LE-3Os">
-                                            <rect key="frame" x="171" y="88" width="129" height="33"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDI-wY-zrS">
+                                            <rect key="frame" x="258" y="89" width="42" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        </textView>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="questionTextView" destination="mTc-nM-nmD" id="RBa-si-dPo"/>
+                                    <outlet property="timestampLabel" destination="rDI-wY-zrS" id="4hk-v8-LHW"/>
+                                    <outlet property="usernameLabel" destination="bcs-Vu-k3a" id="rKl-Ba-ema"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnswerCell" rowHeight="134" id="Rx1-M3-JcD" customClass="AnswerTableViewCell">
                                 <rect key="frame" x="0.0" y="250" width="320" height="134"/>
@@ -163,29 +166,24 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5dK-l7-QKT">
-                                            <rect key="frame" x="20" y="98" width="129" height="33"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-W6-JI0">
+                                            <rect key="frame" x="20" y="92" width="42" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        </textView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d1y-Fy-GIL">
-                                            <rect key="frame" x="171" y="98" width="129" height="33"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZY-qA-0yH">
+                                            <rect key="frame" x="258" y="92" width="42" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        </textView>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="AnswerTextView" destination="aTc-h2-cOi" id="eTg-SQ-yW0"/>
-                                    <outlet property="TimestampLabel" destination="d1y-Fy-GIL" id="u7b-7R-ZVQ"/>
-                                    <outlet property="UsernameLabel" destination="5dK-l7-QKT" id="v9o-j9-f87"/>
-                                    <outlet property="answerTextView" destination="aTc-h2-cOi" id="jvw-rW-12C"/>
-                                    <outlet property="timestampLabel" destination="d1y-Fy-GIL" id="wCg-qE-5zn"/>
-                                    <outlet property="usernameLabel" destination="5dK-l7-QKT" id="qqV-fr-wqe"/>
+                                    <outlet property="answerTextView" destination="aTc-h2-cOi" id="OGn-bn-0c2"/>
+                                    <outlet property="timestampLabel" destination="lZY-qA-0yH" id="55k-JQ-1Ng"/>
+                                    <outlet property="usernameLabel" destination="Hom-W6-JI0" id="FCj-b9-KN3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -196,15 +194,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="DcL-gR-sWi"/>
-                    <connections>
-                        <outlet property="QuestionTextLabel" destination="mTc-nM-nmD" id="txR-6f-iWa"/>
-                        <outlet property="answerDate" destination="d1y-Fy-GIL" id="HA8-c9-ugf"/>
-                        <outlet property="answerUsername" destination="5dK-l7-QKT" id="dlh-rf-GGp"/>
-                        <outlet property="questionDate" destination="BlS-LE-3Os" id="hFe-zN-JkD"/>
-                        <outlet property="questionTextLabel" destination="mTc-nM-nmD" id="K4V-9a-7hp"/>
-                        <outlet property="questionUsername" destination="xAf-MJ-af4" id="BF5-ID-dYT"/>
-                        <outletCollection property="answerTextLabel" destination="aTc-h2-cOi" id="Wdz-89-Vvd"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U2x-Nc-1Qu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

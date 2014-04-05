@@ -64,6 +64,7 @@
             }
             else
                 [self.navigationController popToRootViewControllerAnimated:YES];
+                //[self performSegueWithIdentifier:@"showQASegue" sender:self];
         }];
     }
 }

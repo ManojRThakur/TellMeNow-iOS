@@ -11,4 +11,5 @@
 
 @interface QuestionAnswerViewController : UITableViewController
 @property (strong, nonatomic) Question *question;
+@property (strong, nonatomic) NSMutableArray *answers;
 @end
