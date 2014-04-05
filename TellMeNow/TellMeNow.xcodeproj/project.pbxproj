@@ -382,8 +382,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
+					../FacebookSDK,
 					"$(inherited)",
-					"/Users/raghav297/Hackathon/TellMeNow-iOS/FacebookSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TellMeNow/TellMeNow-Prefix.pch";
@@ -399,8 +399,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
+					../FacebookSDK,
 					"$(inherited)",
-					"/Users/raghav297/Hackathon/TellMeNow-iOS/FacebookSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TellMeNow/TellMeNow-Prefix.pch";
@@ -469,6 +469,7 @@
 				4BBC339318EF8B92009E2DFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4BBC339418EF8B92009E2DFE /* Build configuration list for PBXNativeTarget "TellMeNowTests" */ = {
 			isa = XCConfigurationList;
@@ -477,6 +478,7 @@
 				4BBC339618EF8B92009E2DFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
