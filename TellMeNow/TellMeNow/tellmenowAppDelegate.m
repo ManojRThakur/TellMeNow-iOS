@@ -16,16 +16,21 @@
     [FBLoginView class];
     // Override point for customization after application launch.
     self.socket = [[SocketIO alloc] initWithDelegate:self];
-    [self.socket connectToHost:@"tellmenow.herokuapp.com" onPort:80];
+    [self.socket connectToHost:@"10.60.0.18" onPort:3000];
     
     return YES;
 }
 
 - (void)socketIO:(SocketIO *)socket onError:(NSError *)error
 {
-    NSLog(@"%@", error);
+    NSLog(@"Error: %@", error);
     self.connErrorAlertView = [[UIAlertView alloc] initWithTitle:@"Connection Error" message:@"A connection could not be established with the server." delegate:self cancelButtonTitle:nil otherButtonTitles:@"Try Again", nil];
     [self.connErrorAlertView show];
+}
+
+- (void)socketIODidDisconnect:(SocketIO *)socket disconnectedWithError:(NSError *)error
+{
+    NSLog(@"Disconnected: %@", error);
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

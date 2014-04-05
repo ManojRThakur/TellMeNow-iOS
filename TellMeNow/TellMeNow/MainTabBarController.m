@@ -9,6 +9,8 @@
 #import "MainTabBarController.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import "LoginViewController.h"
+#import "SocketIO.h"
+#import "tellmenowAppDelegate.h"
 
 @implementation MainTabBarController
 
@@ -32,7 +34,8 @@
     if (![[FBSession activeSession] accessTokenData]) {
         [self performSegueWithIdentifier:@"showLoginViewSegue" sender:self];
     } else {
-
+        SocketIO *socket = [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] socket];
+        [socket sendEvent:@"/user/login" withData:[NSDictionary dictionaryWithObjectsAndKeys:[[[FBSession activeSession] accessTokenData] accessToken], @"token", nil]];
     }
 }
 
