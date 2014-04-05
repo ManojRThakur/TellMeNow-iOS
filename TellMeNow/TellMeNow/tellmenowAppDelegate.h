@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <FacebookSDK/FacebookSDK.h>
 #import "SocketIO.h"
  
-@interface tellmenowAppDelegate : UIResponder <UIApplicationDelegate, SocketIODelegate>
+@interface tellmenowAppDelegate : UIResponder <UIApplicationDelegate, SocketIODelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) FBSession *session;
+@property (strong, nonatomic) SocketIO *socket;
+@property (strong, nonatomic) UIAlertView *connErrorAlertView;
 
 @end

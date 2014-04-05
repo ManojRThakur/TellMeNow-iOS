@@ -15,20 +15,23 @@
 {
     [FBLoginView class];
     // Override point for customization after application launch.
-    SocketIO *socket = [[SocketIO alloc] initWithDelegate:self];
-    [socket connectToHost:@"tellmenow.herokuapp.com" onPort:80];
+    self.socket = [[SocketIO alloc] initWithDelegate:self];
+    [self.socket connectToHost:@"tellmenow.herokuapp.com" onPort:80];
     
     return YES;
 }
 
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation {
-    // attempt to extract a token from the url
-    return [FBAppCall handleOpenURL:url
-                  sourceApplication:sourceApplication
-                        withSession:self.session];
+- (void)socketIO:(SocketIO *)socket onError:(NSError *)error
+{
+    NSLog(@"%@", error);
+    self.connErrorAlertView = [[UIAlertView alloc] initWithTitle:@"Connection Error" message:@"A connection could not be established with the server." delegate:self cancelButtonTitle:nil otherButtonTitles:@"Try Again", nil];
+    [self.connErrorAlertView show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    //if (alertView == self.connErrorAlertView && buttonIndex == 0)
+        //[self.socket connectToHost:@"tellmenow.herokuapp.com" onPort:80];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

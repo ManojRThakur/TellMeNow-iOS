@@ -79,24 +79,83 @@
             </objects>
             <point key="canvasLocation" x="-137" y="-198"/>
         </scene>
-        <!--View Controller - Item-->
-        <scene sceneID="xgO-CW-jqk">
+        <!--Navigation Controller - Item 0-->
+        <scene sceneID="SAt-ui-jPQ">
             <objects>
-                <viewController id="7IU-fj-bI5" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="dN1-9s-l6C" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 0" id="SQg-6D-A0z"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d0J-uV-23y">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="uAe-uT-xyL" kind="relationship" relationship="rootViewController" id="pk9-f1-fjR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="65s-Gx-Tey" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="279" y="1044"/>
+        </scene>
+        <!--Ask Question View Controller - Choose Location-->
+        <scene sceneID="7UF-y5-8A9">
+            <objects>
+                <viewController id="uAe-uT-xyL" customClass="askQuestionViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="h2m-QU-bnb"/>
-                        <viewControllerLayoutGuide type="bottom" id="W6g-4R-jSH"/>
+                        <viewControllerLayoutGuide type="top" id="vLd-uw-jAd"/>
+                        <viewControllerLayoutGuide type="bottom" id="jrI-xf-Emt"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Y1j-xa-zUu">
+                    <view key="view" contentMode="scaleToFill" id="R0E-ox-bR2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="6fN-z3-xrh">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="BBt-sT-tZA"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="uAe-uT-xyL" id="fGa-yv-Ua7"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vZE-ZI-SBj">
+                                <rect key="frame" x="0.0" y="108" width="320" height="411"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="uAe-uT-xyL" id="KU1-Qf-nxC"/>
+                                    <outlet property="delegate" destination="uAe-uT-xyL" id="0jT-b0-iVV"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6fN-z3-xrh" firstAttribute="leading" secondItem="R0E-ox-bR2" secondAttribute="leading" id="PVQ-8M-iW3"/>
+                            <constraint firstItem="6fN-z3-xrh" firstAttribute="top" secondItem="vLd-uw-jAd" secondAttribute="bottom" id="UGO-WR-hzl"/>
+                            <constraint firstItem="vZE-ZI-SBj" firstAttribute="top" secondItem="6fN-z3-xrh" secondAttribute="bottom" id="XqZ-Nf-6SM"/>
+                            <constraint firstAttribute="trailing" secondItem="vZE-ZI-SBj" secondAttribute="trailing" id="ZwZ-c4-bQR"/>
+                            <constraint firstAttribute="trailing" secondItem="6fN-z3-xrh" secondAttribute="trailing" id="n5x-qg-idO"/>
+                            <constraint firstItem="vZE-ZI-SBj" firstAttribute="leading" secondItem="R0E-ox-bR2" secondAttribute="leading" id="rhF-eu-O0E"/>
+                            <constraint firstItem="jrI-xf-Emt" firstAttribute="top" secondItem="vZE-ZI-SBj" secondAttribute="bottom" id="vYt-TN-1SF"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="9P9-Pq-Xnc"/>
+                    <navigationItem key="navigationItem" title="Choose Location" id="ehA-yO-9yN"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="JYf-Z0-cGF" id="z6P-La-1JZ"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bH8-6a-Op3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dbI-4k-ccu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="JYf-Z0-cGF">
+                    <connections>
+                        <outlet property="delegate" destination="uAe-uT-xyL" id="5Xq-49-rmu"/>
+                        <outlet property="searchBar" destination="6fN-z3-xrh" id="Plm-UW-eJh"/>
+                        <outlet property="searchContentsController" destination="uAe-uT-xyL" id="bqX-JW-SE4"/>
+                        <outlet property="searchResultsDataSource" destination="uAe-uT-xyL" id="Aac-pf-iZU"/>
+                        <outlet property="searchResultsDelegate" destination="uAe-uT-xyL" id="yxT-Ig-2ZX"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="383" y="1185"/>
+            <point key="canvasLocation" x="881" y="1143"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="FWU-GQ-sgr">
@@ -112,14 +171,14 @@
                         <segue destination="vXZ-lx-hvc" kind="modal" identifier="showLoginViewSegue" animates="NO" id="vgj-Ja-TV1"/>
                         <segue destination="nvY-aZ-qTB" kind="relationship" relationship="viewControllers" id="tJN-s1-qZO"/>
                         <segue destination="h8n-NS-H8W" kind="relationship" relationship="viewControllers" id="ukv-fu-EAc"/>
-                        <segue destination="7IU-fj-bI5" kind="relationship" relationship="viewControllers" id="4sH-e8-T1N"/>
+                        <segue destination="dN1-9s-l6C" kind="relationship" relationship="viewControllers" id="LZM-mv-H2R"/>
                         <segue destination="E6B-oi-dLf" kind="relationship" relationship="viewControllers" id="7sW-tF-6Pc"/>
                         <segue destination="56E-e0-U4m" kind="relationship" relationship="viewControllers" id="qnn-Y7-eNr"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lu6-Ho-AcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="383" y="129"/>
+            <point key="canvasLocation" x="363" y="83"/>
         </scene>
         <!--View Controller - Item 2-->
         <scene sceneID="qtJ-kz-qXJ">

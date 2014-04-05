@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B44F06718EFF88900005EA8 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B44F06618EFF88900005EA8 /* LoginViewController.m */; };
 		4BBC336318EF8B91009E2DFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC336218EF8B91009E2DFE /* Foundation.framework */; };
 		4BBC336518EF8B91009E2DFE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC336418EF8B91009E2DFE /* CoreGraphics.framework */; };
 		4BBC336718EF8B91009E2DFE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC336618EF8B91009E2DFE /* UIKit.framework */; };
@@ -14,7 +15,6 @@
 		4BBC336F18EF8B91009E2DFE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBC336E18EF8B91009E2DFE /* main.m */; };
 		4BBC337318EF8B91009E2DFE /* tellmenowAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBC337218EF8B91009E2DFE /* tellmenowAppDelegate.m */; };
 		4BBC337618EF8B91009E2DFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BBC337418EF8B91009E2DFE /* Main.storyboard */; };
-		4BBC337918EF8B91009E2DFE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBC337818EF8B91009E2DFE /* LoginViewController.m */; };
 		4BBC337B18EF8B91009E2DFE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BBC337A18EF8B91009E2DFE /* Images.xcassets */; };
 		4BBC338218EF8B92009E2DFE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC338118EF8B92009E2DFE /* XCTest.framework */; };
 		4BBC338318EF8B92009E2DFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC336218EF8B91009E2DFE /* Foundation.framework */; };
@@ -22,6 +22,7 @@
 		4BBC338C18EF8B92009E2DFE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4BBC338A18EF8B92009E2DFE /* InfoPlist.strings */; };
 		4BBC338E18EF8B92009E2DFE /* TellMeNowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBC338D18EF8B92009E2DFE /* TellMeNowTests.m */; };
 		4BBC339818EF9169009E2DFE /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC339718EF9169009E2DFE /* FacebookSDK.framework */; };
+		4BBC339B18EFCE3D009E2DFE /* askQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBC339A18EFCE3D009E2DFE /* askQuestionViewController.m */; };
 		AC10C50718EFD27F006F48BC /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC10C50618EFD27F006F48BC /* MainTabBarController.m */; };
 		ACB4BF5918EFF2BD00845426 /* SocketIO.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB4BF4F18EFF2BD00845426 /* SocketIO.m */; };
 		ACB4BF5A18EFF2BD00845426 /* SocketIOJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB4BF5118EFF2BD00845426 /* SocketIOJSONSerialization.m */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B44F06618EFF88900005EA8 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		4BBC335F18EF8B91009E2DFE /* TellMeNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TellMeNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BBC336218EF8B91009E2DFE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4BBC336418EF8B91009E2DFE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -59,7 +61,6 @@
 		4BBC337218EF8B91009E2DFE /* tellmenowAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tellmenowAppDelegate.m; sourceTree = "<group>"; };
 		4BBC337518EF8B91009E2DFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4BBC337718EF8B91009E2DFE /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		4BBC337818EF8B91009E2DFE /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		4BBC337A18EF8B91009E2DFE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4BBC338018EF8B92009E2DFE /* TellMeNowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TellMeNowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BBC338118EF8B92009E2DFE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -67,6 +68,8 @@
 		4BBC338B18EF8B92009E2DFE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4BBC338D18EF8B92009E2DFE /* TellMeNowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TellMeNowTests.m; sourceTree = "<group>"; };
 		4BBC339718EF9169009E2DFE /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		4BBC339918EFCE3D009E2DFE /* askQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = askQuestionViewController.h; sourceTree = "<group>"; };
+		4BBC339A18EFCE3D009E2DFE /* askQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = askQuestionViewController.m; sourceTree = "<group>"; };
 		AC10C50518EFD27F006F48BC /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		AC10C50618EFD27F006F48BC /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		ACB4BF4E18EFF2BD00845426 /* SocketIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SocketIO.h; path = "../../socket.IO-objc/SocketIO.h"; sourceTree = "<group>"; };
@@ -161,8 +164,10 @@
 				AC10C50518EFD27F006F48BC /* MainTabBarController.h */,
 				AC10C50618EFD27F006F48BC /* MainTabBarController.m */,
 				4BBC337418EF8B91009E2DFE /* Main.storyboard */,
+				4BBC339918EFCE3D009E2DFE /* askQuestionViewController.h */,
+				4BBC339A18EFCE3D009E2DFE /* askQuestionViewController.m */,
 				4BBC337718EF8B91009E2DFE /* LoginViewController.h */,
-				4BBC337818EF8B91009E2DFE /* LoginViewController.m */,
+				4B44F06618EFF88900005EA8 /* LoginViewController.m */,
 				4BBC337A18EF8B91009E2DFE /* Images.xcassets */,
 				4BBC336918EF8B91009E2DFE /* Supporting Files */,
 			);
@@ -342,6 +347,7 @@
 			files = (
 				ACB4BF7918EFF42900845426 /* SRWebSocket.m in Sources */,
 				ACB4BF7718EFF42900845426 /* base64.c in Sources */,
+				4BBC339B18EFCE3D009E2DFE /* askQuestionViewController.m in Sources */,
 				4BBC337318EF8B91009E2DFE /* tellmenowAppDelegate.m in Sources */,
 				4BBC336F18EF8B91009E2DFE /* main.m in Sources */,
 				ACB4BF5B18EFF2BD00845426 /* SocketIOPacket.m in Sources */,
