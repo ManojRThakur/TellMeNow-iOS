@@ -23,6 +23,7 @@
 		4BBC339818EF9169009E2DFE /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC339718EF9169009E2DFE /* FacebookSDK.framework */; };
 		4BBC339B18EFCE3D009E2DFE /* SelectLocationAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBC339A18EFCE3D009E2DFE /* SelectLocationAQViewController.m */; };
 		AC0E8A3B18F02E3E00841054 /* PlaceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0E8A3A18F02E3E00841054 /* PlaceModel.m */; };
+		AC0E8A3D18F053F500841054 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC0E8A3C18F053F500841054 /* CoreLocation.framework */; };
 		AC10C50718EFD27F006F48BC /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC10C50618EFD27F006F48BC /* MainTabBarController.m */; };
 		ACB4BF5918EFF2BD00845426 /* SocketIO.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB4BF4F18EFF2BD00845426 /* SocketIO.m */; };
 		ACB4BF5A18EFF2BD00845426 /* SocketIOJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB4BF5118EFF2BD00845426 /* SocketIOJSONSerialization.m */; };
@@ -73,6 +74,7 @@
 		4BBC339A18EFCE3D009E2DFE /* SelectLocationAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationAQViewController.m; sourceTree = "<group>"; };
 		AC0E8A3918F02E3E00841054 /* PlaceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceModel.h; sourceTree = "<group>"; };
 		AC0E8A3A18F02E3E00841054 /* PlaceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceModel.m; sourceTree = "<group>"; };
+		AC0E8A3C18F053F500841054 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		AC10C50518EFD27F006F48BC /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		AC10C50618EFD27F006F48BC /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		ACB4BF4E18EFF2BD00845426 /* SocketIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SocketIO.h; path = "../../socket.IO-objc/SocketIO.h"; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC0E8A3D18F053F500841054 /* CoreLocation.framework in Frameworks */,
 				ACB4BF7F18EFF52200845426 /* Security.framework in Frameworks */,
 				ACB4BF7D18EFF50F00845426 /* CFNetwork.framework in Frameworks */,
 				ACB4BF7B18EFF50100845426 /* libicucore.dylib in Frameworks */,
@@ -151,6 +154,7 @@
 		4BBC336118EF8B91009E2DFE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AC0E8A3C18F053F500841054 /* CoreLocation.framework */,
 				ACB4BF7E18EFF52200845426 /* Security.framework */,
 				ACB4BF7C18EFF50F00845426 /* CFNetwork.framework */,
 				ACB4BF7A18EFF50100845426 /* libicucore.dylib */,

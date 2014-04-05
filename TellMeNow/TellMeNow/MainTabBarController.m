@@ -35,7 +35,10 @@
         [self performSegueWithIdentifier:@"showLoginViewSegue" sender:self];
     } else {
         SocketIO *socket = [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] socket];
-        [socket sendEvent:@"/user/login" withData:[NSDictionary dictionaryWithObjectsAndKeys:[[[FBSession activeSession] accessTokenData] accessToken], @"token", nil]];
+        [socket sendEvent:@"/user/login" withData:[NSDictionary dictionaryWithObjectsAndKeys:[[[FBSession activeSession] accessTokenData] accessToken], @"token", nil] andAcknowledge:^(id arg) {
+            if ([arg objectForKey:@"error"])
+                NSLog(@"%@", arg);
+        }];
     }
 }
 
