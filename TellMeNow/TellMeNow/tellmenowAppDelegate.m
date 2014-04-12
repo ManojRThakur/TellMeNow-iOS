@@ -16,9 +16,22 @@
     [FBLoginView class];
     // Override point for customization after application launch.
     self.socket = [[SocketIO alloc] initWithDelegate:self];
-    [self.socket connectToHost:@"10.60.0.18" onPort:3000];
+    [self.socket connectToHost:@"131.179.210.165" onPort:3000];
     
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    
+    // Call FBAppCall's handleOpenURL:sourceApplication to handle Facebook app responses
+    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    
+    // You can add your app-specific url handling code here if needed
+    
+    return wasHandled;
 }
 
 - (void)socketIO:(SocketIO *)socket onError:(NSError *)error
@@ -38,7 +51,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (alertView == self.connErrorAlertView && buttonIndex == 0)
-        [self.socket connectToHost:@"tellmenow.herokuapp.com" onPort:80];
+        [self.socket connectToHost:@"131.179.210.165" onPort:3000];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

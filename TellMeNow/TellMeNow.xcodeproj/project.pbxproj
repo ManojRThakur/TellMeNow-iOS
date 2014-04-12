@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B14DA1C18F97337004E95E2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B44F06618EFF88900005EA8 /* LoginViewController.m */; };
 		4BBC336318EF8B91009E2DFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC336218EF8B91009E2DFE /* Foundation.framework */; };
 		4BBC336518EF8B91009E2DFE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC336418EF8B91009E2DFE /* CoreGraphics.framework */; };
 		4BBC336718EF8B91009E2DFE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC336618EF8B91009E2DFE /* UIKit.framework */; };
@@ -366,6 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B14DA1C18F97337004E95E2 /* LoginViewController.m in Sources */,
 				ACB4BF8218F01C4700845426 /* AddQuestionAQTableViewController.m in Sources */,
 				ACB4BF7918EFF42900845426 /* SRWebSocket.m in Sources */,
 				ACB4BF7718EFF42900845426 /* base64.c in Sources */,
