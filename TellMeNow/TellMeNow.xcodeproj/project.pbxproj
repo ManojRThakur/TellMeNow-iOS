@@ -29,6 +29,8 @@
 		4BBC339818EF9169009E2DFE /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC339718EF9169009E2DFE /* FacebookSDK.framework */; };
 		4BBC339B18EFCE3D009E2DFE /* SelectLocationAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBC339A18EFCE3D009E2DFE /* SelectLocationAQViewController.m */; };
 		4BD90E1C18F06EEC00DC43BA /* QuestionAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD90E1B18F06EEC00DC43BA /* QuestionAnswerViewController.m */; };
+		4BE6ABB118F9C670000ECAD8 /* FeedQuestionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6ABB018F9C670000ECAD8 /* FeedQuestionTableViewCell.m */; };
+		4BE6ABB418F9CED3000ECAD8 /* FeedQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6ABB318F9CED3000ECAD8 /* FeedQuestionViewController.m */; };
 		AC0E8A3B18F02E3E00841054 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0E8A3A18F02E3E00841054 /* Place.m */; };
 		AC0E8A3D18F053F500841054 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC0E8A3C18F053F500841054 /* CoreLocation.framework */; };
 		AC0E8A4018F08ECD00841054 /* QuestionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0E8A3F18F08ECD00841054 /* QuestionTableViewCell.m */; };
@@ -98,6 +100,10 @@
 		4BBC339A18EFCE3D009E2DFE /* SelectLocationAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationAQViewController.m; sourceTree = "<group>"; };
 		4BD90E1A18F06EEC00DC43BA /* QuestionAnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionAnswerViewController.h; sourceTree = "<group>"; };
 		4BD90E1B18F06EEC00DC43BA /* QuestionAnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionAnswerViewController.m; sourceTree = "<group>"; };
+		4BE6ABAF18F9C670000ECAD8 /* FeedQuestionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedQuestionTableViewCell.h; sourceTree = "<group>"; };
+		4BE6ABB018F9C670000ECAD8 /* FeedQuestionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedQuestionTableViewCell.m; sourceTree = "<group>"; };
+		4BE6ABB218F9CED3000ECAD8 /* FeedQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedQuestionViewController.h; sourceTree = "<group>"; };
+		4BE6ABB318F9CED3000ECAD8 /* FeedQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedQuestionViewController.m; sourceTree = "<group>"; };
 		AC0E8A3918F02E3E00841054 /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
 		AC0E8A3A18F02E3E00841054 /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 		AC0E8A3C18F053F500841054 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -212,11 +218,15 @@
 				AC10C50518EFD27F006F48BC /* MainTabBarController.h */,
 				AC10C50618EFD27F006F48BC /* MainTabBarController.m */,
 				4BBC337418EF8B91009E2DFE /* Main.storyboard */,
+				4BE6ABAF18F9C670000ECAD8 /* FeedQuestionTableViewCell.h */,
+				4BE6ABB018F9C670000ECAD8 /* FeedQuestionTableViewCell.m */,
 				4B27E4B318F0862C00B7849E /* ProfileViewController.h */,
 				4B27E4B418F0862C00B7849E /* ProfileViewController.m */,
 				4BBC337718EF8B91009E2DFE /* LoginViewController.h */,
 				4B44F06618EFF88900005EA8 /* LoginViewController.m */,
 				4BBC339918EFCE3D009E2DFE /* SelectLocationAQViewController.h */,
+				4BE6ABB218F9CED3000ECAD8 /* FeedQuestionViewController.h */,
+				4BE6ABB318F9CED3000ECAD8 /* FeedQuestionViewController.m */,
 				4BBC339A18EFCE3D009E2DFE /* SelectLocationAQViewController.m */,
 				ACB4BF8018F01C4700845426 /* AddQuestionAQTableViewController.h */,
 				ACB4BF8118F01C4700845426 /* AddQuestionAQTableViewController.m */,
@@ -423,6 +433,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC0E8A4118F0948100841054 /* LoginViewController.m in Sources */,
+				4BE6ABB418F9CED3000ECAD8 /* FeedQuestionViewController.m in Sources */,
+				4BE6ABB118F9C670000ECAD8 /* FeedQuestionTableViewCell.m in Sources */,
 				ACB4BF8218F01C4700845426 /* AddQuestionAQTableViewController.m in Sources */,
 				ACB4BF7918EFF42900845426 /* SRWebSocket.m in Sources */,
 				ACB4BF7718EFF42900845426 /* base64.c in Sources */,

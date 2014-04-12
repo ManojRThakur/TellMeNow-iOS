@@ -39,7 +39,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="383" y="-885"/>
+            <point key="canvasLocation" x="-185" y="-556"/>
         </scene>
         <!--View Controller - Profile-->
         <scene sceneID="YeE-xQ-vD3">
@@ -58,26 +58,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F5G-lc-we1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="917" y="-198"/>
-        </scene>
-        <!--View Controller - Feed-->
-        <scene sceneID="ijH-jM-nyQ">
-            <objects>
-                <viewController id="nvY-aZ-qTB" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ztU-06-ADH"/>
-                        <viewControllerLayoutGuide type="bottom" id="viJ-29-NF7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="64Y-Kt-pYF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Feed" id="P7A-NJ-E38"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IlS-u5-8AK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-137" y="-198"/>
+            <point key="canvasLocation" x="2717" y="898"/>
         </scene>
         <!--Navigation Controller - Ask-->
         <scene sceneID="SAt-ui-jPQ">
@@ -93,7 +74,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="65s-Gx-Tey" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="279" y="1044"/>
+            <point key="canvasLocation" x="1125" y="760"/>
         </scene>
         <!--Select LocationAQ View Controller - Choose Location-->
         <scene sceneID="7UF-y5-8A9">
@@ -157,7 +138,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="917" y="1137"/>
+            <point key="canvasLocation" x="1547" y="760"/>
         </scene>
         <!--Add QuestionAQ Table View Controller - Ask Question-->
         <scene sceneID="5nR-0F-P7k">
@@ -258,7 +239,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6MK-57-0Qc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1377" y="1137"/>
+            <point key="canvasLocation" x="1979" y="749"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="FWU-GQ-sgr">
@@ -272,8 +253,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="modal" identifier="showLoginViewSegue" animates="NO" id="vgj-Ja-TV1"/>
-                        <segue destination="nvY-aZ-qTB" kind="relationship" relationship="viewControllers" id="tJN-s1-qZO"/>
-                        <segue destination="h8n-NS-H8W" kind="relationship" relationship="viewControllers" id="ukv-fu-EAc"/>
+                        <segue destination="iu8-gv-a8z" kind="relationship" relationship="viewControllers" id="tJN-s1-qZO"/>
+                        <segue destination="yDW-Ya-ggu" kind="relationship" relationship="viewControllers" id="ukv-fu-EAc"/>
                         <segue destination="dN1-9s-l6C" kind="relationship" relationship="viewControllers" id="LZM-mv-H2R"/>
                         <segue destination="E6B-oi-dLf" kind="relationship" relationship="viewControllers" id="7sW-tF-6Pc"/>
                         <segue destination="56E-e0-U4m" kind="relationship" relationship="viewControllers" id="qnn-Y7-eNr"/>
@@ -281,7 +262,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lu6-Ho-AcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="363" y="83"/>
+            <point key="canvasLocation" x="-205" y="275"/>
         </scene>
         <!--View Controller - Notifications-->
         <scene sceneID="qtJ-kz-qXJ">
@@ -300,9 +281,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xQi-rG-kHo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="917" y="455"/>
+            <point key="canvasLocation" x="1769" y="-45"/>
         </scene>
-        <!--View Controller - Track-->
+        <!--View Controller-->
         <scene sceneID="Ze1-fH-qqD">
             <objects>
                 <viewController id="h8n-NS-H8W" sceneMemberID="viewController">
@@ -315,11 +296,131 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Track" id="QmC-kY-8sX"/>
+                    <navigationItem key="navigationItem" id="mfY-K5-KL1">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="FwU-VA-iyC">
+                            <rect key="frame" x="85" y="7" width="151" height="31"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Questions"/>
+                                <segment title="Answers"/>
+                            </segments>
+                        </segmentedControl>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RCJ-c0-4tu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-137" y="455"/>
+            <point key="canvasLocation" x="677" y="1095"/>
+        </scene>
+        <!--Navigation Controller - Feed-->
+        <scene sceneID="sss-Wz-fnm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iu8-gv-a8z" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Feed" id="P7A-NJ-E38"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pOg-Yu-gup">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EJD-uB-WRm" kind="relationship" relationship="rootViewController" id="2PZ-wN-CiH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pyj-JA-LuF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="491" y="-370"/>
+        </scene>
+        <!--Feed Question View Controller-->
+        <scene sceneID="0pw-Bs-Dob">
+            <objects>
+                <viewController id="EJD-uB-WRm" customClass="FeedQuestionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m6P-vV-1A6"/>
+                        <viewControllerLayoutGuide type="bottom" id="gOy-2b-Jnj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RaW-Di-Aor">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="i30-Mn-R2a">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="XWT-xS-RwV"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="EJD-uB-WRm" id="bTW-Uq-ic4"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="2oB-lO-8cQ">
+                                <rect key="frame" x="0.0" y="108" width="320" height="411"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedQuestionCell" id="8Et-fm-8Dp" customClass="FeedQuestionTableViewCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Et-fm-8Dp" id="wdN-g0-hX2">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="EJD-uB-WRm" id="qvG-kC-S6E"/>
+                                    <outlet property="delegate" destination="EJD-uB-WRm" id="mG0-ge-wGq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="i30-Mn-R2a" firstAttribute="leading" secondItem="RaW-Di-Aor" secondAttribute="leading" id="6pv-A1-ucx"/>
+                            <constraint firstAttribute="trailing" secondItem="i30-Mn-R2a" secondAttribute="trailing" id="8dz-Dd-ehk"/>
+                            <constraint firstItem="gOy-2b-Jnj" firstAttribute="top" secondItem="2oB-lO-8cQ" secondAttribute="bottom" id="QZb-eC-mVU"/>
+                            <constraint firstAttribute="trailing" secondItem="2oB-lO-8cQ" secondAttribute="trailing" id="T61-Br-bYO"/>
+                            <constraint firstItem="2oB-lO-8cQ" firstAttribute="leading" secondItem="RaW-Di-Aor" secondAttribute="leading" id="aES-Qs-RrY"/>
+                            <constraint firstItem="2oB-lO-8cQ" firstAttribute="top" secondItem="i30-Mn-R2a" secondAttribute="bottom" id="dRq-mY-0L8"/>
+                            <constraint firstItem="i30-Mn-R2a" firstAttribute="top" secondItem="m6P-vV-1A6" secondAttribute="bottom" id="ynm-df-2uT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="q6z-28-I3r"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="gt5-wd-N1d" id="IEH-aN-4gU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oAw-LP-HQR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="gt5-wd-N1d">
+                    <connections>
+                        <outlet property="delegate" destination="EJD-uB-WRm" id="riB-Vl-xPl"/>
+                        <outlet property="searchBar" destination="i30-Mn-R2a" id="jYa-Qp-8ir"/>
+                        <outlet property="searchContentsController" destination="EJD-uB-WRm" id="sjD-0h-So0"/>
+                        <outlet property="searchResultsDataSource" destination="EJD-uB-WRm" id="GjK-dl-JH2"/>
+                        <outlet property="searchResultsDelegate" destination="EJD-uB-WRm" id="udV-h4-3tB"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="892" y="-379"/>
+        </scene>
+        <!--Navigation Controller - Track-->
+        <scene sceneID="NLV-G6-skT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yDW-Ya-ggu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Track" id="QmC-kY-8sX"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nba-GN-eeT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="h8n-NS-H8W" kind="relationship" relationship="rootViewController" id="P1k-xz-G9R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GMl-Zx-Whj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="151" y="1095"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
