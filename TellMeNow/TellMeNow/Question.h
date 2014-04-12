@@ -21,10 +21,10 @@
 @property (strong, nonatomic) NSMutableArray *notificationIds;
 @property (strong, nonatomic) NSMutableArray *answerIds;
 
-- (Place *)getPlace;
-- (NSArray *)getComments;
-- (User *)getUser;
+- (Place *)getPlace; //Required
+- (NSArray *)getComments; //Required
+- (User *)getUser; //Required
 - (NSArray *)getNotifications;
-- (NSArray *)getAnswers;
+- (NSArray *)getAnswers; //Required
 
 @end

@@ -15,8 +15,8 @@
 @property (strong, nonatomic) NSString *_id;
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSString *timestamp;
-@property (nonatomic, strong) NSString *userId;
-@property (nonatomic, strong) NSString *questionId;
+@property (nonatomic, strong) NSString *userId; //Required
+@property (nonatomic, strong) NSString *questionId; //Required
 @property (nonatomic, strong) NSMutableArray *notificationIds;
 
 - (User *)getUser;

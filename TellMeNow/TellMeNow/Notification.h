@@ -27,10 +27,10 @@ typedef enum notificationForTypes
 @property (strong, nonatomic) NSString *followUpId;
 @property (strong, nonatomic) NSString *answerId;
 
-- (Question *)getQuestion;
-- (User *)getUser;
-- (Comment *)getComment;
-- (FollowUp *)getFollowUp;
-- (Answer *)getAnswer;
+- (Question *)getQuestion; //Required
+- (User *)getUser; //Required
+- (Comment *)getComment; //Required
+- (FollowUp *)getFollowUp; //Required
+- (Answer *)getAnswer; //Required
 
 @end

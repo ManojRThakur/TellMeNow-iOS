@@ -23,10 +23,10 @@ typedef enum thumbsTypes
 @property (strong, nonatomic) NSString *timestamp;
 @property (strong, nonatomic) NSNumber *reputation;
 @property (nonatomic) Thumbs thumbs;
-@property (strong, nonatomic) NSString *questionId;
-@property (strong, nonatomic) NSString *userId;
+@property (strong, nonatomic) NSString *questionId; //Required
+@property (strong, nonatomic) NSString *userId; //Required
 @property (strong, nonatomic) NSMutableArray *notificationIds;
-@property (strong, nonatomic) NSMutableArray *followUpIds;
+@property (strong, nonatomic) NSMutableArray *followUpIds; //Required
 
 - (Question *)getQuestion;
 - (User *)getUser;
