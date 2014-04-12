@@ -19,8 +19,8 @@
 @property (nonatomic, strong) NSString *questionId; //Required
 @property (nonatomic, strong) NSMutableArray *notificationIds;
 
-- (User *)getUser;
-- (Question *)getQuestion;
-- (NSArray *)getNotifications;
+- (void)getUserWithCallback: (void *(^)(User *))callback;
+- (void)getNotificationsWithCallback: (void *(^)(NSArray *))callback;
+- (void)getQuestionWithCallback: (void *(^)(Question *))callback;
 
 @end

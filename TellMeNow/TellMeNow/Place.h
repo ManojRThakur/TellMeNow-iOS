@@ -14,6 +14,6 @@
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSMutableArray *questionIds;
 
-- (NSArray *)getQuestions;
+- (void)getQuestionsWithCallback: (void *(^)(NSArray *))callback;
 
 @end

@@ -15,16 +15,16 @@
 @property (strong, nonatomic) NSString *_id;
 @property (strong, nonatomic) NSString *text;
 @property (strong, nonatomic) NSString *timestamp;
-@property (strong, nonatomic) NSString *placeId;
-@property (strong, nonatomic) NSMutableArray *commentIds;
-@property (strong, nonatomic) NSString *userId;
+@property (strong, nonatomic) NSString *placeId; //Required
+@property (strong, nonatomic) NSMutableArray *commentIds; //Required
+@property (strong, nonatomic) NSString *userId; //Required
 @property (strong, nonatomic) NSMutableArray *notificationIds;
-@property (strong, nonatomic) NSMutableArray *answerIds;
+@property (strong, nonatomic) NSMutableArray *answerIds; //Required
 
-- (void)getPlaceWithCallback: (void *(^)(Place *))callback; //Required
-- (void)getCommentsWithCallback: (void *(^)(NSArray *))callback; //Required
-- (void)getUserWithCallback: (void *(^)(User *))callback;; //Required
-- (void)getNotificationsWithCallback: (void *(^)(NSArray *))callback;;
-- (void)getAnswersWithCallback: (void *(^)(NSArray *))callback; //Required
+- (void)getPlaceWithCallback: (void *(^)(Place *))callback;
+- (void)getCommentsWithCallback: (void *(^)(NSArray *))callback;
+- (void)getUserWithCallback: (void *(^)(User *))callback;
+- (void)getNotificationsWithCallback: (void *(^)(NSArray *))callback;
+- (void)getAnswersWithCallback: (void *(^)(NSArray *))callback;
 
 @end

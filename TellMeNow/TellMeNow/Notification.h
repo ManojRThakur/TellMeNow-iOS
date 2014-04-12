@@ -8,29 +8,30 @@
 
 #import <Foundation/Foundation.h>
 
-@class Place, Question, Comment, FollowUp, Answer, User;
+@class Question, Comment, FollowUp, Answer, User;
 
 typedef enum notificationForTypes
 {
     QUESTION_NOTIFICATION,
     ANSWER_NOTIFICATION,
-    COMMENT_NOTIFICATION
+    COMMENT_NOTIFICATION,
+    FOLLOWUP_NOTIFICATION
 } NotificationFor;
 
 @interface Notification : NSObject
 
 @property (strong, nonatomic) NSString *_id;
 @property (nonatomic) NotificationFor notificationFor;
-@property (strong, nonatomic) NSString *questionId;
-@property (strong, nonatomic) NSString *userId;
-@property (strong, nonatomic) NSString *commentId;
-@property (strong, nonatomic) NSString *followUpId;
-@property (strong, nonatomic) NSString *answerId;
+@property (strong, nonatomic) NSString *questionId; //Required
+@property (strong, nonatomic) NSString *userId; //Required
+@property (strong, nonatomic) NSString *commentId; //Required
+@property (strong, nonatomic) NSString *followUpId; //Required
+@property (strong, nonatomic) NSString *answerId; //Required
 
-- (Question *)getQuestion; //Required
-- (User *)getUser; //Required
-- (Comment *)getComment; //Required
-- (FollowUp *)getFollowUp; //Required
-- (Answer *)getAnswer; //Required
+- (void)getQuestionWithCallback: (void *(^)(Question *))callback;
+- (void)getUserWithCallback: (void *(^)(User *))callback;
+- (void)getCommentWithCallback: (void *(^)(Comment *))callback;
+- (void)getFollowUpWithCallback: (void *(^)(FollowUp *))callback;
+- (void)getAnswerWithCallback: (void *(^)(Answer *))callback;
 
 @end

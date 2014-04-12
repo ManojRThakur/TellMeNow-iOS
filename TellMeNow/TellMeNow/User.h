@@ -16,14 +16,14 @@
 @property (strong, nonatomic) NSNumber *notificationsSet;
 @property (strong, nonatomic) NSMutableArray *commentIds;
 @property (strong, nonatomic) NSMutableArray *followUpIds;
-@property (strong, nonatomic) NSMutableArray *notificationIds;
+@property (strong, nonatomic) NSMutableArray *notificationIds; //Required
 @property (strong, nonatomic) NSMutableArray *answerIds;
 @property (strong, nonatomic) NSMutableArray *questionIds;
 
-- (NSArray *)getComments;
-- (NSArray *)getFollowUps;
-- (NSArray *)getNotifications;
-- (NSArray *)getAnswers;
-- (NSArray *)getQuestions;
+- (void)getCommentsWithCallback: (void *(^)(NSArray *))callback;
+- (void)getFollowUpsWithCallback: (void *(^)(NSArray *))callback;
+- (void)getNotificationsWithCallback: (void *(^)(NSArray *))callback;
+- (void)getAnswersWithCallback: (void *(^)(NSArray *))callback;
+- (void)getQuestionsWithCallback: (void *(^)(NSArray *))callback;
 
 @end

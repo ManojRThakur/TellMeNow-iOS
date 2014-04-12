@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "SocketIO.h"
+
+@class User;
  
 @interface tellmenowAppDelegate : UIResponder <UIApplicationDelegate, SocketIODelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) SocketIO *socket;
 @property (strong, nonatomic) UIAlertView *connErrorAlertView;
+@property (strong, nonatomic) User *me;
 
 @property (strong, nonatomic) NSMutableDictionary *questionMap;
 @property (strong, nonatomic) NSMutableDictionary *notificationMap;

@@ -28,9 +28,9 @@ typedef enum thumbsTypes
 @property (strong, nonatomic) NSMutableArray *notificationIds;
 @property (strong, nonatomic) NSMutableArray *followUpIds; //Required
 
-- (Question *)getQuestion;
-- (User *)getUser;
-- (NSArray *)getNotifications;
-- (NSArray *)getFollowUps;
+- (void)getQuestionWithCallback: (void *(^)(Question *))callback;
+- (void)getUserWithCallback: (void *(^)(User *))callback;
+- (void)getNotificationsWithCallback: (void *(^)(NSArray *))callback;
+- (void)getFollowUpsWithCallback: (void *(^)(NSArray *))callback;
 
 @end
