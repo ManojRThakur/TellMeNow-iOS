@@ -14,7 +14,7 @@
 {
     [super viewDidLoad];
     
-    [self.loginView setReadPermissions:@[@"basic_info", @"user_status", @"friends_status", @"user_photos", @"friends_photos"]];
+    [self.loginView setReadPermissions:@[@"basic_info", @"user_checkins", @"user_status", @"friends_status", @"user_photos", @"friends_photos"]];
     [self.loginView setDelegate:self];
 }
 
