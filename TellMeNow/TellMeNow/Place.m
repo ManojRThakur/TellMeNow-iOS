@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 House Boelter. All rights reserved.
 //
 
-#import "PlaceModel.h"
+#import "Place.h"
 
-@implementation PlaceModel
+@implementation Place
 
 @end

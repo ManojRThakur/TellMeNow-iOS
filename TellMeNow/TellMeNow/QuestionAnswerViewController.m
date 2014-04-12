@@ -47,16 +47,16 @@
 {
     if ([indexPath indexAtPosition:0] == 0) {
         QuestionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QuestionText"];
-        [cell.questionTextView setText:self.question.questionText];
+        [cell.questionTextView setText:self.question.text];
         [cell.timestampLabel setText:self.question.timestamp];
-        [cell.usernameLabel setText:self.question.username];
+        //[cell.usernameLabel setText:self.question.username];
         return cell;
     }
     else if ([indexPath indexAtPosition:0] == 1) {
         AnswerTableViewCell  *cell = [tableView dequeueReusableCellWithIdentifier:@"AnswerCell"];
         Answer *answer = [self.answers objectAtIndex:indexPath.row];
-        cell.answerTextView.text = answer.answerText;
-        cell.usernameLabel.text = answer.username;
+        cell.answerTextView.text = answer.text;
+        //cell.usernameLabel.text = answer.username;
         cell.timestampLabel.text = answer.timestamp;
         return (UITableViewCell *)cell;
     }

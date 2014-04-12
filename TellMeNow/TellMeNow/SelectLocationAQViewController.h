@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
-#import "PlaceModel.h"
+#import "Place.h"
 
 @interface SelectLocationAQViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) NSMutableArray *suggestedPlaces;
 @property (strong, nonatomic) NSMutableArray *searchPlaceResults;
-@property (strong, nonatomic) PlaceModel *selectedPlace;
+@property (strong, nonatomic) Place *selectedPlace;
 @property (weak, nonatomic) IBOutlet UITableView *suggestedPlacesTableView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 

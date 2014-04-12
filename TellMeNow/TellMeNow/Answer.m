@@ -8,18 +8,6 @@
 
 #import "Answer.h"
 
-@interface Answer()
-
-@end
-
 @implementation Answer
-
--(void) answerTextValue:(NSString *)answer usernameValue:(NSString *)user timeValue:(NSString *)time
-{
-    self.answerText = answer;
-    self.username = user;
-    self.timestamp = time;
-}
-
 
 @end

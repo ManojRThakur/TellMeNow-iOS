@@ -8,11 +8,29 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Answer : NSObject
-@property (strong, nonatomic) NSString *answerText;
-@property (strong, nonatomic) NSString *username;
-@property (strong, nonatomic) NSString *timestamp;
+typedef enum thumbsTypes
+{
+    THUMBS_NONE,
+    THUMBS_UP,
+    THUMBS_DOWN
+} Thumbs;
 
--(void) answerTextValue:(NSString *)answer usernameValue:(NSString *)user timeValue:(NSString *)time;
+@class Question, User;
+
+@interface Answer : NSObject
+@property (strong, nonatomic) NSString *_id;
+@property (strong, nonatomic) NSString *text;
+@property (strong, nonatomic) NSString *timestamp;
+@property (strong, nonatomic) NSNumber *reputation;
+@property (nonatomic) Thumbs thumbs;
+@property (strong, nonatomic) NSString *questionId;
+@property (strong, nonatomic) NSString *userId;
+@property (strong, nonatomic) NSMutableArray *notificationIds;
+@property (strong, nonatomic) NSMutableArray *followUpIds;
+
+- (Question *)getQuestion;
+- (User *)getUser;
+- (NSArray *)getNotifications;
+- (NSArray *)getFollowUps;
 
 @end

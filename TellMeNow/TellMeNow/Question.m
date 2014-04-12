@@ -10,12 +10,4 @@
 
 @implementation Question
 
--(void) questionTextValue:(NSString *)question usernameValue:(NSString *)user timeValue:(NSString *)time placeValue:(NSString *)place
-{
-    self.questionText = question;
-    self.username = user;
-    self.timestamp = time;
-    self.place = place;
-}
-
 @end
