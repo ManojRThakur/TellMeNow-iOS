@@ -10,7 +10,7 @@
 #import "AddQuestionAQTableViewController.h"
 #import "SocketIO.h"
 #import "tellmenowAppDelegate.h"
-#import "PlaceModel.h"
+#import "Place.h"
 
 @interface SelectLocationAQViewController ()
 
@@ -49,7 +49,7 @@
         NSArray *locations = [arg objectForKey:@"response"];
         [self.searchPlaceResults removeAllObjects];
         for (int i = 0; i < locations.count; i++) {
-            PlaceModel *place = [[PlaceModel alloc] init];
+            Place *place = [[Place alloc] init];
             [place setName:[locations[i] objectForKey:@"name"]];
             [place set_id:[locations[i] objectForKey:@"_id"]];
             [self.searchPlaceResults addObject:place];
@@ -76,7 +76,7 @@
         NSArray *locations = [arg objectForKey:@"response"];
         [self.suggestedPlaces removeAllObjects];
         for (int i = 0; i < locations.count; i++) {
-            PlaceModel *place = [[PlaceModel alloc] init];
+            Place *place = [[Place alloc] init];
             [place setName:[locations[i] objectForKey:@"name"]];
             [place set_id:[locations[i] objectForKey:@"_id"]];
             [self.suggestedPlaces addObject:place];

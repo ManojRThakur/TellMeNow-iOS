@@ -14,11 +14,25 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [FBLoginView class];
-    // Override point for customization after application launch.
+    
     self.socket = [[SocketIO alloc] initWithDelegate:self];
-    [self.socket connectToHost:@"10.60.0.18" onPort:3000];
+    [self.socket connectToHost:@"131.179.210.165" onPort:3000];
+    
+    self.questionMap = [NSMutableDictionary dictionary];
+    self.notificationMap = [NSMutableDictionary dictionary];
+    self.placeMap = [NSMutableDictionary dictionary];
+    self.answerMap = [NSMutableDictionary dictionary];
+    self.userMap = [NSMutableDictionary dictionary];
+    self.commentMap = [NSMutableDictionary dictionary];
+    self.followUpMap = [NSMutableDictionary dictionary];
     
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    return wasHandled;
 }
 
 - (void)socketIO:(SocketIO *)socket onError:(NSError *)error
@@ -38,7 +52,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (alertView == self.connErrorAlertView && buttonIndex == 0)
-        [self.socket connectToHost:@"tellmenow.herokuapp.com" onPort:80];
+        [self.socket connectToHost:@"131.179.210.165" onPort:3000];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

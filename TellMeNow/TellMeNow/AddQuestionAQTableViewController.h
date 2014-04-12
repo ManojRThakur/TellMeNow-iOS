@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PlaceModel.h"
+#import "Place.h"
 
 @interface AddQuestionAQTableViewController : UITableViewController <UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableViewCell *locationTableViewCell;
-@property (strong, nonatomic) PlaceModel *place;
+@property (strong, nonatomic) Place *place;
 @property (weak, nonatomic) IBOutlet UITextView *questionTextView;
 @end

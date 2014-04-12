@@ -1,30 +1,24 @@
 //
-//  AddQuestionAQTableViewController.m
+//  QuestionAnswerViewController.m
 //  TellMeNow
 //
-//  Created by Gautham Badhrinathan on 4/5/14.
+//  Created by Raghav on 4/5/14.
 //  Copyright (c) 2014 House Boelter. All rights reserved.
 //
 
-#import "AddQuestionAQTableViewController.h"
-#import "SocketIO.h"
-#import "tellmenowAppDelegate.h"
+#import "QuestionAnswerViewController.h"
+#import "Answer.h"
+#import "AnswerTableViewCell.h"
+#import "Question.h"
+#import "QuestionTableViewCell.h"
 
-@implementation AddQuestionAQTableViewController
+@implementation QuestionAnswerViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.locationTableViewCell.textLabel setText:self.place.name];
+    self.answers = [[NSMutableArray alloc] initWithCapacity:10];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -33,52 +27,43 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return 2;
 }
 
-- (void)textViewDidBeginEditing:(UITextView *)textView
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
-}
-
-- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if ([indexPath indexAtPosition:0] == 2)
-        return YES;
+    if (section == 1)
+        return [self.answers count];
     else
-        return NO;
+        return 1;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if ([indexPath indexAtPosition:0] == 2) {
-        SocketIO *socket = [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] socket];
-        [socket sendEvent:@"/question/post" withData:[NSDictionary dictionaryWithObjectsAndKeys: self.place._id, @"place", self.questionTextView.text, @"text",  nil] andAcknowledge:^(id arg) {
-            if ([arg objectForKey:@"error"] != [NSNull null]) {
-                NSLog(@"%@", arg);
-                UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Could not post your question." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                [errorAlert show];
-            }
-            else
-                [self.navigationController popToRootViewControllerAnimated:YES];
-                //[self performSegueWithIdentifier:@"showQASegue" sender:self];
-        }];
-    }
-}
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    if ([indexPath indexAtPosition:0] == 0) {
+        QuestionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QuestionText"];
+        [cell.questionTextView setText:self.question.text];
+        [cell.timestampLabel setText:self.question.timestamp];
+        //[cell.usernameLabel setText:self.question.username];
+        return cell;
+    }
+    else if ([indexPath indexAtPosition:0] == 1) {
+        AnswerTableViewCell  *cell = [tableView dequeueReusableCellWithIdentifier:@"AnswerCell"];
+        Answer *answer = [self.answers objectAtIndex:indexPath.row];
+        cell.answerTextView.text = answer.text;
+        //cell.usernameLabel.text = answer.username;
+        cell.timestampLabel.text = answer.timestamp;
+        return (UITableViewCell *)cell;
+    }
+    else
+        return nil;
     
-    // Configure the cell...
-    
-    return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.

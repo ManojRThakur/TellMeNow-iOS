@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PlaceModel : NSObject
+@interface Place : NSObject
 
-@property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *_id;
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSMutableArray *questionIds;
+
+- (NSArray *)getQuestions;
 
 @end
