@@ -41,24 +41,90 @@
             </objects>
             <point key="canvasLocation" x="383" y="-885"/>
         </scene>
-        <!--View Controller - Profile-->
-        <scene sceneID="YeE-xQ-vD3">
+        <!--Navigation Controller - Item-->
+        <scene sceneID="x3C-ku-fAP">
             <objects>
-                <viewController id="56E-e0-U4m" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="tia-6F-8K6"/>
-                        <viewControllerLayoutGuide type="bottom" id="vlT-d4-LtI"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4p3-EL-Y7A">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="vU8-rl-fIO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="F5G-lc-we1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="ZoE-c4-sHA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="FdU-Qx-Dub"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MP6-dJ-JvI">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="nd1-Ro-22H" kind="relationship" relationship="rootViewController" id="KvD-CU-pHO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rWo-PR-Lcd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="437" y="-172"/>
+            <point key="canvasLocation" x="817" y="-416"/>
+        </scene>
+        <!--Table View Controller - User Profile-->
+        <scene sceneID="C8Y-ax-Xog">
+            <objects>
+                <tableViewController id="nd1-Ro-22H" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fqU-PG-H9O">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection headerTitle="User Name" id="CAY-Hw-aiG">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="3P0-DR-Sb1">
+                                        <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3P0-DR-Sb1" id="vKy-T5-Y1T">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Reputation Points" id="KPo-e1-IGH">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Gnd-9h-qBB">
+                                        <rect key="frame" x="0.0" y="152" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gnd-9h-qBB" id="Jh2-1c-zaZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Your Questions" id="dc0-01-Frp">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userQuestions" id="Z6h-5H-HVu">
+                                        <rect key="frame" x="0.0" y="218" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z6h-5H-HVu" id="zAo-Ce-K1Y">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="" id="Dyk-tZ-nn7">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="5ma-WJ-csf">
+                                        <rect key="frame" x="0.0" y="262" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5ma-WJ-csf" id="7kv-hi-9mT">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="nd1-Ro-22H" id="nze-1t-Pm7"/>
+                            <outlet property="delegate" destination="nd1-Ro-22H" id="FRO-50-TJD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="User Profile" id="VJz-Nh-94P"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ebS-LG-e4L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1322" y="-381"/>
         </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="Zrf-6o-8rp">
@@ -400,13 +466,13 @@
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="modal" identifier="showLoginViewSegue" animates="NO" id="vgj-Ja-TV1"/>
                         <segue destination="dN1-9s-l6C" kind="relationship" relationship="viewControllers" id="LZM-mv-H2R"/>
-                        <segue destination="56E-e0-U4m" kind="relationship" relationship="viewControllers" id="qnn-Y7-eNr"/>
                         <segue destination="7Uv-5M-Q1W" kind="relationship" relationship="viewControllers" id="1du-Jg-YTI"/>
+                        <segue destination="ZoE-c4-sHA" kind="relationship" relationship="viewControllers" id="P8W-4z-XEh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lu6-Ho-AcI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-73" y="-55"/>
+            <point key="canvasLocation" x="-551" y="-221"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

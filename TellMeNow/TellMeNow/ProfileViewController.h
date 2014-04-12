@@ -10,4 +10,5 @@
 
 @interface ProfileViewController : UIViewController
 
+@property (strong, nonatomic) NSMutableArray *
 @end
