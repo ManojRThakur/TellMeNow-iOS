@@ -11,24 +11,9 @@
 #import "QuestionAnswerViewController.h"
 
 @interface NotificationsTableViewController ()
-@property (strong, nonatomic) Notification *notification;
-@property (strong, nonatomic) NSMutableArray *listOfNotifications;
 @end
 
 @implementation NotificationsTableViewController
-
--(NSMutableArray *)listOfNotifications
-{
-    if (!_listOfNotifications) _listOfNotifications = [[NSMutableArray alloc] init];
-    return _listOfNotifications;
-    
-}
-
--(Notification *)notification
-{
-    if (!_notification) _notification = [[Notification alloc] init];
-    return _notification;
-}
 
 - (void)viewDidLoad
 {

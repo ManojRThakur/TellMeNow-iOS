@@ -20,6 +20,7 @@
 		4B65D7BF18F9FC6C00A0B377 /* NotifAnswerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B65D7BE18F9FC6C00A0B377 /* NotifAnswerTableViewCell.m */; };
 		4B65D7C218F9FC7D00A0B377 /* NotifCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B65D7C118F9FC7D00A0B377 /* NotifCommentTableViewCell.m */; };
 		4B65D7C418F9FDFD00A0B377 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B65D7C318F9FDFD00A0B377 /* Main.storyboard */; };
+		4B65D7C718F9FED900A0B377 /* NotifFollowupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B65D7C618F9FED900A0B377 /* NotifFollowupTableViewCell.m */; };
 		4BBC336318EF8B91009E2DFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC336218EF8B91009E2DFE /* Foundation.framework */; };
 		4BBC336518EF8B91009E2DFE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC336418EF8B91009E2DFE /* CoreGraphics.framework */; };
 		4BBC336718EF8B91009E2DFE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC336618EF8B91009E2DFE /* UIKit.framework */; };
@@ -34,7 +35,6 @@
 		4BBC338E18EF8B92009E2DFE /* TellMeNowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBC338D18EF8B92009E2DFE /* TellMeNowTests.m */; };
 		4BBC339818EF9169009E2DFE /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC339718EF9169009E2DFE /* FacebookSDK.framework */; };
 		4BBC339B18EFCE3D009E2DFE /* SelectLocationAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBC339A18EFCE3D009E2DFE /* SelectLocationAQViewController.m */; };
-		4BD90E1C18F06EEC00DC43BA /* QuestionAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BD90E1B18F06EEC00DC43BA /* QuestionAnswerViewController.m */; };
 		4BE6ABB118F9C670000ECAD8 /* FeedQuestionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6ABB018F9C670000ECAD8 /* FeedQuestionTableViewCell.m */; };
 		4BE6ABB418F9CED3000ECAD8 /* FeedQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6ABB318F9CED3000ECAD8 /* FeedQuestionViewController.m */; };
 		AC0E8A3B18F02E3E00841054 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0E8A3A18F02E3E00841054 /* Place.m */; };
@@ -96,6 +96,8 @@
 		4B65D7C018F9FC7D00A0B377 /* NotifCommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotifCommentTableViewCell.h; sourceTree = "<group>"; };
 		4B65D7C118F9FC7D00A0B377 /* NotifCommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotifCommentTableViewCell.m; sourceTree = "<group>"; };
 		4B65D7C318F9FDFD00A0B377 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4B65D7C518F9FED900A0B377 /* NotifFollowupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotifFollowupTableViewCell.h; sourceTree = "<group>"; };
+		4B65D7C618F9FED900A0B377 /* NotifFollowupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotifFollowupTableViewCell.m; sourceTree = "<group>"; };
 		4BBC335F18EF8B91009E2DFE /* TellMeNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TellMeNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BBC336218EF8B91009E2DFE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4BBC336418EF8B91009E2DFE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -116,8 +118,6 @@
 		4BBC339718EF9169009E2DFE /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		4BBC339918EFCE3D009E2DFE /* SelectLocationAQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationAQViewController.h; sourceTree = "<group>"; };
 		4BBC339A18EFCE3D009E2DFE /* SelectLocationAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationAQViewController.m; sourceTree = "<group>"; };
-		4BD90E1A18F06EEC00DC43BA /* QuestionAnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionAnswerViewController.h; sourceTree = "<group>"; };
-		4BD90E1B18F06EEC00DC43BA /* QuestionAnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionAnswerViewController.m; sourceTree = "<group>"; };
 		4BE6ABAF18F9C670000ECAD8 /* FeedQuestionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedQuestionTableViewCell.h; sourceTree = "<group>"; };
 		4BE6ABB018F9C670000ECAD8 /* FeedQuestionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedQuestionTableViewCell.m; sourceTree = "<group>"; };
 		4BE6ABB218F9CED3000ECAD8 /* FeedQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedQuestionViewController.h; sourceTree = "<group>"; };
@@ -192,6 +192,8 @@
 		4B65D7B918F9FB5F00A0B377 /* Table View Cells */ = {
 			isa = PBXGroup;
 			children = (
+				4B65D7C518F9FED900A0B377 /* NotifFollowupTableViewCell.h */,
+				4B65D7C618F9FED900A0B377 /* NotifFollowupTableViewCell.m */,
 				4B65D7BD18F9FC6C00A0B377 /* NotifAnswerTableViewCell.h */,
 				4B65D7BE18F9FC6C00A0B377 /* NotifAnswerTableViewCell.m */,
 				4B65D7C018F9FC7D00A0B377 /* NotifCommentTableViewCell.h */,
@@ -250,8 +252,6 @@
 				4B65D7C318F9FDFD00A0B377 /* Main.storyboard */,
 				4B237E3118F059DF003E2805 /* NotificationsTableViewController.h */,
 				4B237E3218F059DF003E2805 /* NotificationsTableViewController.m */,
-				4BD90E1A18F06EEC00DC43BA /* QuestionAnswerViewController.h */,
-				4BD90E1B18F06EEC00DC43BA /* QuestionAnswerViewController.m */,
 				AC0E8A3818F02E0E00841054 /* Models */,
 				AC10C50518EFD27F006F48BC /* MainTabBarController.h */,
 				AC10C50618EFD27F006F48BC /* MainTabBarController.m */,
@@ -262,9 +262,9 @@
 				4B27E4B418F0862C00B7849E /* ProfileViewController.m */,
 				4BBC337718EF8B91009E2DFE /* LoginViewController.h */,
 				4B44F06618EFF88900005EA8 /* LoginViewController.m */,
-				4BBC339918EFCE3D009E2DFE /* SelectLocationAQViewController.h */,
 				4BE6ABB218F9CED3000ECAD8 /* FeedQuestionViewController.h */,
 				4BE6ABB318F9CED3000ECAD8 /* FeedQuestionViewController.m */,
+				4BBC339918EFCE3D009E2DFE /* SelectLocationAQViewController.h */,
 				4BBC339A18EFCE3D009E2DFE /* SelectLocationAQViewController.m */,
 				ACB4BF8018F01C4700845426 /* AddQuestionAQTableViewController.h */,
 				ACB4BF8118F01C4700845426 /* AddQuestionAQTableViewController.m */,
@@ -486,12 +486,12 @@
 				4BBC337318EF8B91009E2DFE /* tellmenowAppDelegate.m in Sources */,
 				AC836BB118F96D2500CE90AF /* User.m in Sources */,
 				AC0E8A3B18F02E3E00841054 /* Place.m in Sources */,
+				4B65D7C718F9FED900A0B377 /* NotifFollowupTableViewCell.m in Sources */,
 				4B27E4AF18F07D4C00B7849E /* AnswerTableViewCell.m in Sources */,
 				4B65D7B818F9F9CE00A0B377 /* TrackAnswerTableViewCell.m in Sources */,
 				4B237E3318F059DF003E2805 /* NotificationsTableViewController.m in Sources */,
 				4B27E4AC18F071F100B7849E /* Answer.m in Sources */,
 				AC836BB418F9762B00CE90AF /* Comment.m in Sources */,
-				4BD90E1C18F06EEC00DC43BA /* QuestionAnswerViewController.m in Sources */,
 				4BBC336F18EF8B91009E2DFE /* main.m in Sources */,
 				ACB4BF5B18EFF2BD00845426 /* SocketIOPacket.m in Sources */,
 				AC10C50718EFD27F006F48BC /* MainTabBarController.m in Sources */,

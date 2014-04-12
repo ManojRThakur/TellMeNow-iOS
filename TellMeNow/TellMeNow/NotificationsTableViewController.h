@@ -11,4 +11,5 @@
 
 @interface NotificationsTableViewController : UITableViewController
 @property (strong, nonatomic) Question *selectedQuestion;
+@property (strong, )
 @end
