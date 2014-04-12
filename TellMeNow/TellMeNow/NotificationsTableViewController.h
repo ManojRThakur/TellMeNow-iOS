@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Question.h"
+#import "User.h"
 
 @interface NotificationsTableViewController : UITableViewController
-@property (strong, nonatomic) Question *selectedQuestion;
-@property (strong, )
+
+@property (strong, nonatomic) User *user;
+
 @end

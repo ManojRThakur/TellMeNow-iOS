@@ -8,9 +8,9 @@
 
 #import "NotificationsTableViewController.h"
 #import "Notification.h"
-#import "QuestionAnswerViewController.h"
 
 @interface NotificationsTableViewController ()
+@property (strong, nonatomic) NSArray *notifications;
 @end
 
 @implementation NotificationsTableViewController
@@ -18,6 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.notifications = self.user.getNotifications;
 /*    NSString *time = @"04/05/14";
     NSString *question = @"Is it cold there?";
     NSString *user = @"gotemb";
@@ -43,13 +44,30 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.listOfNotifications count];
+    return [self.user.getNotifications count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *simpleTableIdentifier = @"NotifCell";
+    static NSString *simpleTableIdentifier;
+    NSInteger idx = indexPath.row;
+    switch ([[self.notifications objectAtIndex:idx] notificationFor]) {
+        case QUESTION_NOTIFICATION:
+            simpleTableIdentifier = @"notifQuestionCell";
+            break;
+        case ANSWER_NOTIFICATION:
+            simpleTableIdentifier = @"notifAnswerCell";
+            break;
+        case COMMENT_NOTIFICATION:
+            simpleTableIdentifier = @"notifCommentCell";
+            break;
+        case FOLLOWUP_NOTIFICATION:
+            simpleTableIdentifier = @"notifFollowupCell";
+            break;
+        default:
+            break;
+    }
  
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
  
@@ -59,7 +77,7 @@
     }
  
     NSString *display = nil;
-    display = [self.listOfNotifications objectAtIndex:indexPath.row];
+//    display = [[[self.notifications objectAtIndex:idx] getQuestion] text];
  
     cell.textLabel.text = display;
  
