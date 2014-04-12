@@ -14,7 +14,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [FBLoginView class];
-    // Override point for customization after application launch.
+    
     self.socket = [[SocketIO alloc] initWithDelegate:self];
     [self.socket connectToHost:@"131.179.210.165" onPort:3000];
     
