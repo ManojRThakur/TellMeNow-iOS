@@ -33,24 +33,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSString *time = @"04/05/14";
+/*    NSString *time = @"04/05/14";
     NSString *question = @"Is it cold there?";
     NSString *user = @"gotemb";
     NSString *place = @"Santa Monica";
-    
-    [self.selectedQuestion questionTextValue:(NSString *)question usernameValue:(NSString *)user timeValue:(NSString *)time placeValue:(NSString *)place];
+*/
+//    [self.selectedQuestion questionTextValue:(NSString *)question usernameValue:(NSString *)user timeValue:(NSString *)time placeValue:(NSString *)place];
     
     BOOL placeFlag = true, userFlag = true;
     if (placeFlag) {
-        [self.notification timeStampValue:time questionTextValue:question answererValue:user];
-        NSString *answerNotif = self.notification.getAnswerNotification;
-        [self.listOfNotifications addObject:answerNotif];
+//        [self.notification timeStampValue:time questionTextValue:question answererValue:user];
+//        NSString *answerNotif = self.notification.getAnswerNotification;
+//        [self.listOfNotifications addObject:answerNotif];
     }
     
     if (userFlag) {
-        [self.notification timeStampValue:time questionTextValue:question locationValue:place];
-        NSString *locationNotif = self.notification.getLocationNotification;
-        [self.listOfNotifications addObject:locationNotif];
+//        [self.notification timeStampValue:time questionTextValue:question locationValue:place];
+//        NSString *locationNotif = self.notification.getLocationNotification;
+//        [self.listOfNotifications addObject:locationNotif];
     }
 }
 

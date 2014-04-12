@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class Place, Question, Comment, FollowUp, Answer;
+@class Place, Question, Comment, FollowUp, Answer, User;
 
 typedef enum notificationForTypes
 {
