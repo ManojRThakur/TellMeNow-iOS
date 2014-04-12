@@ -18,6 +18,14 @@
     self.socket = [[SocketIO alloc] initWithDelegate:self];
     [self.socket connectToHost:@"131.179.210.165" onPort:3000];
     
+    self.questionMap = [NSMutableDictionary dictionary];
+    self.notificationMap = [NSMutableDictionary dictionary];
+    self.placeMap = [NSMutableDictionary dictionary];
+    self.answerMap = [NSMutableDictionary dictionary];
+    self.userMap = [NSMutableDictionary dictionary];
+    self.commentMap = [NSMutableDictionary dictionary];
+    self.followUpMap = [NSMutableDictionary dictionary];
+    
     return YES;
 }
 

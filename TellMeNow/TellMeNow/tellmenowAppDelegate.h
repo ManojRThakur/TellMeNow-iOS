@@ -15,4 +15,12 @@
 @property (strong, nonatomic) SocketIO *socket;
 @property (strong, nonatomic) UIAlertView *connErrorAlertView;
 
+@property (strong, nonatomic) NSMutableDictionary *questionMap;
+@property (strong, nonatomic) NSMutableDictionary *notificationMap;
+@property (strong, nonatomic) NSMutableDictionary *placeMap;
+@property (strong, nonatomic) NSMutableDictionary *answerMap;
+@property (strong, nonatomic) NSMutableDictionary *userMap;
+@property (strong, nonatomic) NSMutableDictionary *commentMap;
+@property (strong, nonatomic) NSMutableDictionary *followUpMap;
+
 @end
