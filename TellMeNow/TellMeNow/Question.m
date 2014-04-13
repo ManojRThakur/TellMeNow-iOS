@@ -9,6 +9,7 @@
 #import "Question.h"
 #import "tellmenowAppDelegate.h"
 #import "Comment.h"
+#import "Place.h"
 #import "SocketIO.h"
 
 @implementation Question
@@ -40,17 +41,52 @@
     } else {
         [socket sendEvent:@"/comments/get" withData:fetchIds andAcknowledge:^(NSDictionary *argsData) {
             for (NSDictionary *commentDict in [argsData objectForKey:@"response"]) {
-                Comment *obj = [Comment alloc];
-                [obj set_id:[commentDict objectForKey:@"_id"]];
-                [obj setText:[commentDict objectForKey:@"text"]];
-                [obj setTimestamp:[commentDict objectForKey:@"timestamp"]];
-                [obj setUserId:[commentDict objectForKey:@"userId"]];
-                [obj setQuestionId:[commentDict objectForKey:@"questionId"]];
+                Comment *obj = [Comment commentFromDict:commentDict];
                 [commentMap setObject:obj forKey:obj._id];
             }
             callback(getRet());
         }];
     }
+}
+
+- (void)getPlaceWithCallback: (void *(^)(Place *))callback
+{
+    SocketIO *socket = [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] socket];
+    NSMutableDictionary *placeMap = [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] placeMap];
+    
+    if ([placeMap objectForKey:self.placeId]) {
+        callback([placeMap objectForKey:self.placeId]);
+    } else {
+        [socket sendEvent:@"/places/get" withData:@[self.placeId] andAcknowledge:^(NSDictionary *argsData) {
+            Place *obj = [Place placeFromDict:[argsData objectForKey:@"response"][0]];
+            [placeMap setObject:obj forKey:obj._id];
+        }];
+    }
+}
+
+- (Place *)getPlace
+{
+    NSMutableDictionary *placeMap = [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] placeMap];
+    
+    if ([placeMap objectForKey:self.placeId]) {
+        return [placeMap objectForKey:self.placeId];
+    } else {
+        return nil;
+    }
+}
+
+
++ (Question *)questionFromDict: (NSDictionary *)args
+{
+    Question *question = [Question alloc];
+    [question set_id:[args objectForKey:@"_id"]];
+    [question setText:[args objectForKey:@"name"]];
+    [question setTimestamp:[args objectForKey:@"timestamp"]];
+    [question setPlaceId:[args objectForKey:@"placeId"]];
+    [question setCommentIds:[NSMutableArray arrayWithArray:[args objectForKey:@"commentIds"]]];
+    [question setUserId:[args objectForKey:@"userId"]];
+    [question setAnswerIds:[NSMutableArray arrayWithArray:[args objectForKey:@"answerIds"]]];
+    return question;
 }
 
 @end

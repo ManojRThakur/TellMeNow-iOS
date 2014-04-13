@@ -27,4 +27,8 @@
 - (void)getNotificationsWithCallback: (void *(^)(NSArray *))callback;
 - (void)getAnswersWithCallback: (void *(^)(NSArray *))callback;
 
+- (Place *)getPlace;
+
++ (Question *)questionFromDict: (NSDictionary *)args;
+
 @end

@@ -18,4 +18,7 @@
 @property (strong, nonatomic) Question *selectedQuestion;
 @property (strong, nonatomic) Place *selectedPlace;
 @property (strong, nonatomic) CLLocationManager *locationManager;
+
+- (void)userDidLoad;
+
 @end

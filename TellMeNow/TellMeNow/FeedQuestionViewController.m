@@ -8,12 +8,14 @@
 
 #import "FeedQuestionViewController.h"
 #import "FeedQuestionTableViewCell.h"
-
-@interface FeedQuestionViewController ()
-
-@end
+#import "SocketIO.h"
+#import "tellmenowAppDelegate.h"
+#import "Place.h"
 
 @implementation FeedQuestionViewController
+{
+    bool userLoaded;
+}
 
 - (void)viewDidLoad
 {
@@ -24,6 +26,7 @@
     self.locationManager = [[CLLocationManager alloc] init];
     [self.locationManager setDelegate:self];
     [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+    userLoaded = false;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -36,7 +39,8 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [self.locationManager startUpdatingLocation];
+    if (userLoaded)
+        [self.locationManager startUpdatingLocation];
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,6 +80,44 @@
     
     cell.textLabel.text = display;
     return cell;
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"didFailWithError: %@", error);
+    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Failed to get your location." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [errorAlert show];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    SocketIO *socket = [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] socket];
+    NSMutableDictionary *questionsMap = [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] questionMap];
+    NSMutableDictionary *placesMap = [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] placeMap];
+    [socket sendEvent:@"/questions/nearby" withData:[NSDictionary dictionaryWithObjectsAndKeys:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithDouble:newLocation.coordinate.latitude], @"lat", [NSNumber numberWithDouble:newLocation.coordinate.longitude], @"lng", nil], @"geoLocation", nil] andAcknowledge:^(id arg) {
+        [self.locationManager stopUpdatingLocation];
+        NSArray *questions = [arg objectForKey:@"response"];
+        [self.suggestedQuestions removeAllObjects];
+        for (NSDictionary *dict in questions) {
+            Question *question = [Question questionFromDict:dict];
+            [questionsMap setObject:question forKey:question._id];
+            [self.suggestedQuestions addObject:question];
+        }
+        [socket sendEvent:@"/places/get" withData:[self.suggestedQuestions valueForKey:@"placeId"] andAcknowledge:^(id argsData) {
+            NSArray *places = [argsData objectForKey:@"response"];
+            for (NSDictionary *dict in places) {
+                Place *place = [Place placeFromDict:dict];
+                [placesMap setObject:place forKey:place._id];
+            }
+            //[self.suggestedQuestionsTableView reloadData];
+        }];
+    }];
+}
+
+- (void)userDidLoad
+{
+    userLoaded = true;
+    [self.locationManager startUpdatingLocation];
 }
 
 /*

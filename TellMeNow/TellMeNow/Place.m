@@ -10,4 +10,12 @@
 
 @implementation Place
 
++ (Place *)placeFromDict: (NSDictionary *)args
+{
+    Place *obj = [Place alloc];
+    [obj set_id:[args objectForKey:@"_id"]];
+    [obj setName:[args objectForKey:@"name"]];
+    return obj;
+}
+
 @end

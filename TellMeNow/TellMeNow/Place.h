@@ -16,4 +16,6 @@
 
 - (void)getQuestionsWithCallback: (void *(^)(NSArray *))callback;
 
++ (Place *)placeFromDict: (NSDictionary *)args;
+
 @end

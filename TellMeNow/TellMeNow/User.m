@@ -18,6 +18,8 @@
     [user setReputation:[args objectForKey:@"reputation"]];
     [user setNotificationsSet:[args objectForKey:@"notificationsSet"]];
     [user setNotificationIds:[NSMutableArray arrayWithArray:[args objectForKey:@"notificationIds"]]];
+    [user setQuestionIds:[NSMutableArray arrayWithArray:[args objectForKey:@"questionIds"]]];
+    [user setAnswerIds:[NSMutableArray arrayWithArray:[args objectForKey:@"answerIds"]]];
     return user;
 }
 

@@ -17,8 +17,8 @@
 @property (strong, nonatomic) NSMutableArray *commentIds;
 @property (strong, nonatomic) NSMutableArray *followUpIds;
 @property (strong, nonatomic) NSMutableArray *notificationIds; //Required
-@property (strong, nonatomic) NSMutableArray *answerIds;
-@property (strong, nonatomic) NSMutableArray *questionIds;
+@property (strong, nonatomic) NSMutableArray *answerIds; //Required
+@property (strong, nonatomic) NSMutableArray *questionIds; //Required
 
 - (void)getCommentsWithCallback: (void *(^)(NSArray *))callback;
 - (void)getFollowUpsWithCallback: (void *(^)(NSArray *))callback;
