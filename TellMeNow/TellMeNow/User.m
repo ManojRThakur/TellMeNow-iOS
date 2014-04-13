@@ -10,4 +10,15 @@
 
 @implementation User
 
++ (User *)userFromDict:(NSDictionary *)args
+{
+    User *user = [User alloc];
+    [user set_id:[args objectForKey:@"_id"]];
+    [user setName:[args objectForKey:@"name"]];
+    [user setReputation:[args objectForKey:@"reputation"]];
+    [user setNotificationsSet:[args objectForKey:@"notificationsSet"]];
+    [user setNotificationIds:[NSMutableArray arrayWithArray:[args objectForKey:@"notificationIds"]]];
+    return user;
+}
+
 @end

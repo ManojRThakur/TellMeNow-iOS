@@ -26,4 +26,6 @@
 - (void)getAnswersWithCallback: (void *(^)(NSArray *))callback;
 - (void)getQuestionsWithCallback: (void *(^)(NSArray *))callback;
 
++ (User *)userFromDict: (NSDictionary *)args;
+
 @end

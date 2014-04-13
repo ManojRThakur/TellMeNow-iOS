@@ -11,6 +11,7 @@
 #import "LoginViewController.h"
 #import "SocketIO.h"
 #import "tellmenowAppDelegate.h"
+#import "User.h"
 
 @implementation MainTabBarController
 
@@ -34,10 +35,25 @@
     if (![[FBSession activeSession] accessTokenData]) {
         [self performSegueWithIdentifier:@"showLoginViewSegue" sender:self];
     } else {
+        UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        [self.view addSubview:activityIndicator];
         SocketIO *socket = [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] socket];
-        [socket sendEvent:@"/user/login" withData:[NSDictionary dictionaryWithObjectsAndKeys:[[[FBSession activeSession] accessTokenData] accessToken], @"token", nil] andAcknowledge:^(id arg) {
-            if ([arg objectForKey:@"error"] != [NSNull null])
+        [socket sendEvent:@"/user/login" withData:[NSDictionary dictionaryWithObjectsAndKeys:[[[FBSession activeSession] accessTokenData] accessToken], @"token", nil] andAcknowledge:^(NSDictionary *arg) {
+            if ([arg objectForKey:@"error"] != [NSNull null]) {
+                [activityIndicator removeFromSuperview];
                 NSLog(@"%@", arg);
+            } else {
+                [socket sendEvent:@"/user/find" withData:[[arg objectForKey:@"response"] _id] andAcknowledge:^(NSDictionary *arg) {
+                    [activityIndicator removeFromSuperview];
+                    if ([arg objectForKey:@"error"] != [NSNull null]) {
+                        NSLog(@"%@", arg);
+                    } else {
+                        User *me = [User userFromDict:arg];
+                        [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] setMe:me];
+                        [[(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] userMap] setObject:me forKey:me._id];
+                    }
+                }];
+            }
         }];
     }
 }
