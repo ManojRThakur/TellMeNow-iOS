@@ -8,6 +8,7 @@
 
 #import "FeedQuestionViewController.h"
 #import "FeedQuestionTableViewCell.h"
+#import "QuestionPageTableViewController.h"
 
 @interface FeedQuestionViewController ()
 
@@ -51,26 +52,35 @@
         cell = [[FeedQuestionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    NSString *display = nil;
+    Question *display = nil;
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         display = [self.searchedQuestions objectAtIndex:indexPath.row];
     } else {
         display = [self.suggestedQuestions objectAtIndex:indexPath.row];
     }
     
-    cell.textLabel.text = display;
+    cell.questionText.text = display.text;
+    cell.questionDate.text = display.timestamp;
+//FIGURE OUT!!    cell.questionLocation.text = display.
     return cell;
 }
 
-/*
-#pragma mark - Navigation
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView == self.searchDisplayController.searchResultsTableView)
+        [self setSelectedQuestion:[self.searchedQuestions objectAtIndex:indexPath.row]];
+    else
+        [self setSelectedQuestion:[self.suggestedQuestions objectAtIndex:indexPath.row]];
+    [self performSegueWithIdentifier:@"FeedToQuestion" sender:self];
+}
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqual: @"FeedToQuestion"]) {
+        QuestionPageTableViewController *destinationVC = segue.destinationViewController;
+        [destinationVC setQuestion:self.selectedQuestion];
+    }
 }
-*/
 
 @end

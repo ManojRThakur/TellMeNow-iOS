@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Question.h"
 
 @interface QuestionPageTableViewController : UITableViewController
+
+@property (weak, nonatomic) IBOutlet UILabel *questionTextLabel;
+@property (weak, nonatomic) IBOutlet UILabel *questionUsername;
+@property (weak, nonatomic) IBOutlet UILabel *questionDate;
 
 @end

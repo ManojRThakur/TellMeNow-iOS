@@ -62,8 +62,10 @@
                 UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Could not post your question." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [errorAlert show];
             }
-            else
+            else {
                 [self.navigationController popToRootViewControllerAnimated:YES];
+                [(UITabBarController *)self.navigationController.view.superview setSelectedIndex:1];
+            }
                 //[self performSegueWithIdentifier:@"showQASegue" sender:self];
         }];
     }

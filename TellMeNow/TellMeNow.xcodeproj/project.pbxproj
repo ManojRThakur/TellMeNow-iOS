@@ -12,6 +12,8 @@
 		4B27E4AC18F071F100B7849E /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B27E4AB18F071F100B7849E /* Answer.m */; };
 		4B27E4AF18F07D4C00B7849E /* AnswerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B27E4AE18F07D4C00B7849E /* AnswerTableViewCell.m */; };
 		4B27E4B218F0805200B7849E /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B27E4B118F0805200B7849E /* Question.m */; };
+		4B63FF9A18FA322C006124D6 /* QuestionPageHeadingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B63FF9918FA322C006124D6 /* QuestionPageHeadingTableViewCell.m */; };
+		4B63FF9D18FA337F006124D6 /* QuestionPageCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B63FF9C18FA337F006124D6 /* QuestionPageCommentTableViewCell.m */; };
 		4B65D7B218F9F8A400A0B377 /* TrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B65D7B118F9F8A400A0B377 /* TrackViewController.m */; };
 		4B65D7B518F9F9B700A0B377 /* TrackQuestionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B65D7B418F9F9B700A0B377 /* TrackQuestionTableViewCell.m */; };
 		4B65D7B818F9F9CE00A0B377 /* TrackAnswerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B65D7B718F9F9CE00A0B377 /* TrackAnswerTableViewCell.m */; };
@@ -84,6 +86,10 @@
 		4B27E4B018F0805200B7849E /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
 		4B27E4B118F0805200B7849E /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 		4B44F06618EFF88900005EA8 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		4B63FF9818FA322C006124D6 /* QuestionPageHeadingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionPageHeadingTableViewCell.h; sourceTree = "<group>"; };
+		4B63FF9918FA322C006124D6 /* QuestionPageHeadingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionPageHeadingTableViewCell.m; sourceTree = "<group>"; };
+		4B63FF9B18FA337F006124D6 /* QuestionPageCommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionPageCommentTableViewCell.h; sourceTree = "<group>"; };
+		4B63FF9C18FA337F006124D6 /* QuestionPageCommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionPageCommentTableViewCell.m; sourceTree = "<group>"; };
 		4B65D7B018F9F8A400A0B377 /* TrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackViewController.h; sourceTree = "<group>"; };
 		4B65D7B118F9F8A400A0B377 /* TrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackViewController.m; sourceTree = "<group>"; };
 		4B65D7B318F9F9B700A0B377 /* TrackQuestionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackQuestionTableViewCell.h; sourceTree = "<group>"; };
@@ -201,6 +207,10 @@
 		4B65D7B918F9FB5F00A0B377 /* Table View Cells */ = {
 			isa = PBXGroup;
 			children = (
+				4B63FF9818FA322C006124D6 /* QuestionPageHeadingTableViewCell.h */,
+				4B63FF9B18FA337F006124D6 /* QuestionPageCommentTableViewCell.h */,
+				4B63FF9C18FA337F006124D6 /* QuestionPageCommentTableViewCell.m */,
+				4B63FF9918FA322C006124D6 /* QuestionPageHeadingTableViewCell.m */,
 				4B65D7C518F9FED900A0B377 /* NotifFollowupTableViewCell.h */,
 				4B65D7C618F9FED900A0B377 /* NotifFollowupTableViewCell.m */,
 				4B65D7BD18F9FC6C00A0B377 /* NotifAnswerTableViewCell.h */,
@@ -490,7 +500,9 @@
 				4BE6ABB418F9CED3000ECAD8 /* FeedQuestionViewController.m in Sources */,
 				4B65D7D318FA1D3900A0B377 /* ProfileTableViewController.m in Sources */,
 				4BE6ABB118F9C670000ECAD8 /* FeedQuestionTableViewCell.m in Sources */,
+				4B63FF9A18FA322C006124D6 /* QuestionPageHeadingTableViewCell.m in Sources */,
 				ACB4BF8218F01C4700845426 /* AddQuestionAQTableViewController.m in Sources */,
+				4B63FF9D18FA337F006124D6 /* QuestionPageCommentTableViewCell.m in Sources */,
 				ACB4BF7918EFF42900845426 /* SRWebSocket.m in Sources */,
 				4B65D7B518F9F9B700A0B377 /* TrackQuestionTableViewCell.m in Sources */,
 				4B65D7BC18F9FC5700A0B377 /* NotifQuestionsTableViewCell.m in Sources */,
