@@ -19,7 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.notifications = self.user.getNotifications;
+    // self.notifications = self.user.getNotifications;
 /*    NSString *time = @"04/05/14";
     NSString *question = @"Is it cold there?";
     NSString *user = @"gotemb";
@@ -45,7 +45,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.user.getNotifications count];
+    return 0;
+    //return [self.user.getNotifications count];
 }
 
 
@@ -95,8 +96,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqual: @"QuestionAnswers"]) {
-        QuestionAnswerViewController *destinationVC = segue.destinationViewController;
-        [destinationVC setQuestion:self.selectedQuestion];
+        //QuestionAnswerViewController *destinationVC = segue.destinationViewController;
+        //[destinationVC setQuestion:self.selectedQuestion];
     }
 }
 

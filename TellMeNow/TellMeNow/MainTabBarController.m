@@ -38,17 +38,17 @@
         UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
         [self.view addSubview:activityIndicator];
         SocketIO *socket = [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] socket];
-        [socket sendEvent:@"/user/login" withData:[NSDictionary dictionaryWithObjectsAndKeys:[[[FBSession activeSession] accessTokenData] accessToken], @"token", nil] andAcknowledge:^(NSDictionary *arg) {
+        [socket sendEvent:@"/login" withData:[NSDictionary dictionaryWithObjectsAndKeys:[[[FBSession activeSession] accessTokenData] accessToken], @"token", nil] andAcknowledge:^(NSDictionary *arg) {
             if ([arg objectForKey:@"error"] != [NSNull null]) {
-                [activityIndicator removeFromSuperview];
+                //[activityIndicator removeFromSuperview];
                 NSLog(@"%@", arg);
             } else {
-                [socket sendEvent:@"/user/find" withData:[[arg objectForKey:@"response"] _id] andAcknowledge:^(NSDictionary *arg) {
-                    [activityIndicator removeFromSuperview];
+                [socket sendEvent:@"/users/get" withData:@[[[arg objectForKey:@"response"] objectForKey:@"_id"]] andAcknowledge:^(NSDictionary *arg) {
+                    //[activityIndicator removeFromSuperview];
                     if ([arg objectForKey:@"error"] != [NSNull null]) {
                         NSLog(@"%@", arg);
                     } else {
-                        User *me = [User userFromDict:arg];
+                        User *me = [User userFromDict:[arg objectForKey:@"response"][0]];
                         [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] setMe:me];
                         [[(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] userMap] setObject:me forKey:me._id];
                     }

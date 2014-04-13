@@ -19,8 +19,24 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.suggestedQuestions = [NSMutableArray arrayWithArray:@[@"Facebook", @"Yahoo", @"Google", @"Microsoft", @"Ebay", @"Amazon", @"Dropbox", @"Uber", @"Heroku", @"Twitter", @"Apple", @"Box", @"Youtube", @"Snapchat", @"Cisco", @"LinkedIn", @"Hulu", @"Netflix"]];
-    self.searchedQuestions = [NSMutableArray arrayWithArray:@[@"Facebook", @"Yahoo", @"Google", @"Microsoft", @"Ebay", @"Amazon", @"Dropbox", @"Uber", @"Heroku", @"Twitter", @"Apple", @"Box", @"Youtube", @"Snapchat", @"Cisco", @"LinkedIn", @"Hulu", @"Netflix"]];
+    self.suggestedQuestions = [[NSMutableArray alloc] initWithCapacity:10];
+    self.searchedPlaces = [[NSMutableArray alloc] initWithCapacity:10];
+    self.locationManager = [[CLLocationManager alloc] init];
+    [self.locationManager setDelegate:self];
+    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    if ([self.searchDisplayController.searchResultsTableView indexPathForSelectedRow])
+        [self.searchDisplayController.searchResultsTableView deselectRowAtIndexPath:[self.searchDisplayController.searchResultsTableView indexPathForSelectedRow] animated:animated];
+    //if ([self.suggestedQuestionsTableView indexPathForSelectedRow])
+    //    [self.suggestedQuestionsTableView deselectRowAtIndexPath:[self.suggestedPlacesTableView indexPathForSelectedRow] animated:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self.locationManager startUpdatingLocation];
 }
 
 - (void)didReceiveMemoryWarning
@@ -33,7 +49,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (tableView == self.searchDisplayController.searchResultsTableView) {
-        return [self.searchedQuestions count];
+        return [self.searchedPlaces count];
         
     } else {
         return [self.suggestedQuestions count];
@@ -53,7 +69,7 @@
     
     NSString *display = nil;
     if (tableView == self.searchDisplayController.searchResultsTableView) {
-        display = [self.searchedQuestions objectAtIndex:indexPath.row];
+        display = [self.searchedPlaces objectAtIndex:indexPath.row];
     } else {
         display = [self.suggestedQuestions objectAtIndex:indexPath.row];
     }

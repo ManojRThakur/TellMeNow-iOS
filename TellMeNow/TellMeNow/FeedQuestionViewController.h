@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Question.h"
 #import <CoreLocation/CoreLocation.h>
+
+@class Question, Place;
 
 @interface FeedQuestionViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) NSMutableArray *suggestedQuestions;
-@property (strong, nonatomic) NSMutableArray *searchedQuestions;
+@property (strong, nonatomic) NSMutableArray *searchedPlaces;
 @property (strong, nonatomic) Question *selectedQuestion;
+@property (strong, nonatomic) Place *selectedPlace;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @end
