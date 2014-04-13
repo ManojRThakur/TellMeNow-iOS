@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface NotifFollowupTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *followupAnswer;
+@property (weak, nonatomic) IBOutlet UILabel *followupTime;
+@property (weak, nonatomic) IBOutlet UILabel *followupLabel;
 
 @end

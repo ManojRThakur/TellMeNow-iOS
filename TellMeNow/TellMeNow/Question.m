@@ -57,7 +57,7 @@
     if ([placeMap objectForKey:self.placeId]) {
         callback([placeMap objectForKey:self.placeId]);
     } else {
-        [socket sendEvent:@"/places/get" withData:@[self.placeId] andAcknowledge:^(NSDictionary *argsData) {
+        [socket sendEvent:@"/location/get" withData:@[self.placeId] andAcknowledge:^(NSDictionary *argsData) {
             Place *obj = [Place placeFromDict:[argsData objectForKey:@"response"][0]];
             [placeMap setObject:obj forKey:obj._id];
         }];
@@ -80,12 +80,12 @@
 {
     Question *question = [Question alloc];
     [question set_id:[args objectForKey:@"_id"]];
-    [question setText:[args objectForKey:@"name"]];
+    [question setText:[args objectForKey:@"text"]];
     [question setTimestamp:[args objectForKey:@"timestamp"]];
-    [question setPlaceId:[args objectForKey:@"placeId"]];
-    [question setCommentIds:[NSMutableArray arrayWithArray:[args objectForKey:@"commentIds"]]];
-    [question setUserId:[args objectForKey:@"userId"]];
-    [question setAnswerIds:[NSMutableArray arrayWithArray:[args objectForKey:@"answerIds"]]];
+    [question setPlaceId:[args objectForKey:@"place"]];
+    [question setCommentIds:[NSMutableArray arrayWithArray:[args objectForKey:@"comments"]]];
+    [question setUserId:[args objectForKey:@"user"]];
+    [question setAnswerIds:[NSMutableArray arrayWithArray:[args objectForKey:@"answers"]]];
     return question;
 }
 

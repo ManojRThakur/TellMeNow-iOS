@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface NotifCommentTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *commentQuestion;
+@property (weak, nonatomic) IBOutlet UILabel *commentTime;
 
+@property (weak, nonatomic) IBOutlet UILabel *commentLabel;
 @end

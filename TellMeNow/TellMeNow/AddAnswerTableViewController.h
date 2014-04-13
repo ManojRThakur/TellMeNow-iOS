@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Question.h"
 
 @interface AddAnswerTableViewController : UITableViewController
-
+@property (strong, nonatomic) Question *question;
 @end

@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface NotifAnswerTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *answerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *answerQuestion;
+@property (weak, nonatomic) IBOutlet UILabel *answerTime;
 
 @end

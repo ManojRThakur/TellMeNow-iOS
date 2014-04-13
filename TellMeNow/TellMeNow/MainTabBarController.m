@@ -12,6 +12,7 @@
 #import "SocketIO.h"
 #import "tellmenowAppDelegate.h"
 #import "User.h"
+#import "FeedQuestionViewController.h"
 
 @implementation MainTabBarController
 
@@ -51,6 +52,7 @@
                         User *me = [User userFromDict:[arg objectForKey:@"response"][0]];
                         [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] setMe:me];
                         [[(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] userMap] setObject:me forKey:me._id];
+                        [[self.viewControllers[0] childViewControllers][0] userDidLoad];
                     }
                 }];
             }

@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Question.h"
+#import "Answer.h"
 
 @interface QuestionPageTableViewController : UITableViewController
 
+@property (strong, nonatomic) Question *question;
+@property (strong, nonatomic) NSArray *comments;
+@property (strong, nonatomic) NSArray *answers;
+@property (strong, nonatomic) Answer *selectedAnswer;
 @end

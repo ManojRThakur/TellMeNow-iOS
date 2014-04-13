@@ -10,6 +10,8 @@
 #import "Question.h"
 
 @interface FeedQuestionTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *questionDate;
+@property (weak, nonatomic) IBOutlet UILabel *questionLocation;
 
-@property (strong, nonatomic) Question *question;
+@property (weak, nonatomic) IBOutlet UILabel *questionText;
 @end
