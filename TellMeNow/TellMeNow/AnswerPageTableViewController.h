@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Answer.h"
 
 @interface AnswerPageTableViewController : UITableViewController
 
 @property (strong, nonatomic) Answer *answer;
+@property (strong, nonatomic) NSArray *followups;
 @end
