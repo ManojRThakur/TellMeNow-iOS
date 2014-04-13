@@ -20,6 +20,10 @@
 		4B65D7C218F9FC7D00A0B377 /* NotifCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B65D7C118F9FC7D00A0B377 /* NotifCommentTableViewCell.m */; };
 		4B65D7C418F9FDFD00A0B377 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B65D7C318F9FDFD00A0B377 /* Main.storyboard */; };
 		4B65D7C718F9FED900A0B377 /* NotifFollowupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B65D7C618F9FED900A0B377 /* NotifFollowupTableViewCell.m */; };
+		4B65D7CA18FA1A9D00A0B377 /* QuestionPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B65D7C918FA1A9D00A0B377 /* QuestionPageTableViewController.m */; };
+		4B65D7CD18FA1BBC00A0B377 /* AddAnswerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B65D7CC18FA1BBC00A0B377 /* AddAnswerTableViewController.m */; };
+		4B65D7D318FA1D3900A0B377 /* ProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B65D7D218FA1D3900A0B377 /* ProfileTableViewController.m */; };
+		4B65D7D618FA1EC700A0B377 /* AnswerPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B65D7D518FA1EC700A0B377 /* AnswerPageTableViewController.m */; };
 		4BBC336318EF8B91009E2DFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC336218EF8B91009E2DFE /* Foundation.framework */; };
 		4BBC336518EF8B91009E2DFE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC336418EF8B91009E2DFE /* CoreGraphics.framework */; };
 		4BBC336718EF8B91009E2DFE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC336618EF8B91009E2DFE /* UIKit.framework */; };
@@ -95,6 +99,14 @@
 		4B65D7C318F9FDFD00A0B377 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4B65D7C518F9FED900A0B377 /* NotifFollowupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotifFollowupTableViewCell.h; sourceTree = "<group>"; };
 		4B65D7C618F9FED900A0B377 /* NotifFollowupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotifFollowupTableViewCell.m; sourceTree = "<group>"; };
+		4B65D7C818FA1A9D00A0B377 /* QuestionPageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionPageTableViewController.h; sourceTree = "<group>"; };
+		4B65D7C918FA1A9D00A0B377 /* QuestionPageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionPageTableViewController.m; sourceTree = "<group>"; };
+		4B65D7CB18FA1BBC00A0B377 /* AddAnswerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAnswerTableViewController.h; sourceTree = "<group>"; };
+		4B65D7CC18FA1BBC00A0B377 /* AddAnswerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAnswerTableViewController.m; sourceTree = "<group>"; };
+		4B65D7D118FA1D3900A0B377 /* ProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewController.h; sourceTree = "<group>"; };
+		4B65D7D218FA1D3900A0B377 /* ProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewController.m; sourceTree = "<group>"; };
+		4B65D7D418FA1EC700A0B377 /* AnswerPageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerPageTableViewController.h; sourceTree = "<group>"; };
+		4B65D7D518FA1EC700A0B377 /* AnswerPageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerPageTableViewController.m; sourceTree = "<group>"; };
 		4BBC335F18EF8B91009E2DFE /* TellMeNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TellMeNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BBC336218EF8B91009E2DFE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4BBC336418EF8B91009E2DFE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -246,7 +258,13 @@
 		4BBC336818EF8B91009E2DFE /* TellMeNow */ = {
 			isa = PBXGroup;
 			children = (
+				4B65D7D118FA1D3900A0B377 /* ProfileTableViewController.h */,
+				4B65D7D218FA1D3900A0B377 /* ProfileTableViewController.m */,
 				4B65D7C318F9FDFD00A0B377 /* Main.storyboard */,
+				4B65D7D418FA1EC700A0B377 /* AnswerPageTableViewController.h */,
+				4B65D7D518FA1EC700A0B377 /* AnswerPageTableViewController.m */,
+				4B65D7C818FA1A9D00A0B377 /* QuestionPageTableViewController.h */,
+				4B65D7C918FA1A9D00A0B377 /* QuestionPageTableViewController.m */,
 				4B237E3118F059DF003E2805 /* NotificationsTableViewController.h */,
 				4B237E3218F059DF003E2805 /* NotificationsTableViewController.m */,
 				AC0E8A3818F02E0E00841054 /* Models */,
@@ -257,6 +275,8 @@
 				4B65D7B118F9F8A400A0B377 /* TrackViewController.m */,
 				4BBC337718EF8B91009E2DFE /* LoginViewController.h */,
 				4B44F06618EFF88900005EA8 /* LoginViewController.m */,
+				4B65D7CB18FA1BBC00A0B377 /* AddAnswerTableViewController.h */,
+				4B65D7CC18FA1BBC00A0B377 /* AddAnswerTableViewController.m */,
 				4BE6ABB218F9CED3000ECAD8 /* FeedQuestionViewController.h */,
 				4BE6ABB318F9CED3000ECAD8 /* FeedQuestionViewController.m */,
 				4BBC339918EFCE3D009E2DFE /* SelectLocationAQViewController.h */,
@@ -466,7 +486,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC0E8A4118F0948100841054 /* LoginViewController.m in Sources */,
+				4B65D7CD18FA1BBC00A0B377 /* AddAnswerTableViewController.m in Sources */,
 				4BE6ABB418F9CED3000ECAD8 /* FeedQuestionViewController.m in Sources */,
+				4B65D7D318FA1D3900A0B377 /* ProfileTableViewController.m in Sources */,
 				4BE6ABB118F9C670000ECAD8 /* FeedQuestionTableViewCell.m in Sources */,
 				ACB4BF8218F01C4700845426 /* AddQuestionAQTableViewController.m in Sources */,
 				ACB4BF7918EFF42900845426 /* SRWebSocket.m in Sources */,
@@ -482,6 +504,7 @@
 				AC0E8A3B18F02E3E00841054 /* Place.m in Sources */,
 				4B65D7C718F9FED900A0B377 /* NotifFollowupTableViewCell.m in Sources */,
 				4B27E4AF18F07D4C00B7849E /* AnswerTableViewCell.m in Sources */,
+				4B65D7D618FA1EC700A0B377 /* AnswerPageTableViewController.m in Sources */,
 				4B65D7B818F9F9CE00A0B377 /* TrackAnswerTableViewCell.m in Sources */,
 				4B237E3318F059DF003E2805 /* NotificationsTableViewController.m in Sources */,
 				4B27E4AC18F071F100B7849E /* Answer.m in Sources */,
@@ -495,6 +518,7 @@
 				ACB4BF7818EFF42900845426 /* NSData+SRB64Additions.m in Sources */,
 				4B237E2D18F04F9F003E2805 /* Notification.m in Sources */,
 				4B27E4B218F0805200B7849E /* Question.m in Sources */,
+				4B65D7CA18FA1A9D00A0B377 /* QuestionPageTableViewController.m in Sources */,
 				ACB4BF5A18EFF2BD00845426 /* SocketIOJSONSerialization.m in Sources */,
 				4B65D7B218F9F8A400A0B377 /* TrackViewController.m in Sources */,
 				ACB4BF5D18EFF2BD00845426 /* SocketIOTransportXHR.m in Sources */,
