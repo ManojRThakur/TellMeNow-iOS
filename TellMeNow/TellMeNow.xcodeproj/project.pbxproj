@@ -12,7 +12,6 @@
 		4B27E4AC18F071F100B7849E /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B27E4AB18F071F100B7849E /* Answer.m */; };
 		4B27E4AF18F07D4C00B7849E /* AnswerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B27E4AE18F07D4C00B7849E /* AnswerTableViewCell.m */; };
 		4B27E4B218F0805200B7849E /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B27E4B118F0805200B7849E /* Question.m */; };
-		4B27E4B518F0862C00B7849E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B27E4B418F0862C00B7849E /* ProfileViewController.m */; };
 		4B65D7B218F9F8A400A0B377 /* TrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B65D7B118F9F8A400A0B377 /* TrackViewController.m */; };
 		4B65D7B518F9F9B700A0B377 /* TrackQuestionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B65D7B418F9F9B700A0B377 /* TrackQuestionTableViewCell.m */; };
 		4B65D7B818F9F9CE00A0B377 /* TrackAnswerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B65D7B718F9F9CE00A0B377 /* TrackAnswerTableViewCell.m */; };
@@ -80,8 +79,6 @@
 		4B27E4AE18F07D4C00B7849E /* AnswerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerTableViewCell.m; sourceTree = "<group>"; };
 		4B27E4B018F0805200B7849E /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
 		4B27E4B118F0805200B7849E /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
-		4B27E4B318F0862C00B7849E /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
-		4B27E4B418F0862C00B7849E /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		4B44F06618EFF88900005EA8 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		4B65D7B018F9F8A400A0B377 /* TrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackViewController.h; sourceTree = "<group>"; };
 		4B65D7B118F9F8A400A0B377 /* TrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackViewController.m; sourceTree = "<group>"; };
@@ -258,8 +255,6 @@
 				4B65D7B918F9FB5F00A0B377 /* Table View Cells */,
 				4B65D7B018F9F8A400A0B377 /* TrackViewController.h */,
 				4B65D7B118F9F8A400A0B377 /* TrackViewController.m */,
-				4B27E4B318F0862C00B7849E /* ProfileViewController.h */,
-				4B27E4B418F0862C00B7849E /* ProfileViewController.m */,
 				4BBC337718EF8B91009E2DFE /* LoginViewController.h */,
 				4B44F06618EFF88900005EA8 /* LoginViewController.m */,
 				4BE6ABB218F9CED3000ECAD8 /* FeedQuestionViewController.h */,
@@ -482,7 +477,6 @@
 				4B65D7BF18F9FC6C00A0B377 /* NotifAnswerTableViewCell.m in Sources */,
 				AC836BB718F9763B00CE90AF /* FollowUp.m in Sources */,
 				4BBC339B18EFCE3D009E2DFE /* SelectLocationAQViewController.m in Sources */,
-				4B27E4B518F0862C00B7849E /* ProfileViewController.m in Sources */,
 				4BBC337318EF8B91009E2DFE /* tellmenowAppDelegate.m in Sources */,
 				AC836BB118F96D2500CE90AF /* User.m in Sources */,
 				AC0E8A3B18F02E3E00841054 /* Place.m in Sources */,
