@@ -8,6 +8,7 @@
 
 #import "NotificationsTableViewController.h"
 #import "Notification.h"
+#import "Question.h"
 
 @interface NotificationsTableViewController ()
 @property (strong, nonatomic) NSArray *notifications;
@@ -77,7 +78,6 @@
     }
  
     NSString *display = nil;
-//    display = [[[self.notifications objectAtIndex:idx] getQuestion] text];
  
     cell.textLabel.text = display;
  
