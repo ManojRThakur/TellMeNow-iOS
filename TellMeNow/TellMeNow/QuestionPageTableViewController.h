@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Question.h"
+#import "Answer.h"
 
 @interface QuestionPageTableViewController : UITableViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *questionTextLabel;
-@property (weak, nonatomic) IBOutlet UILabel *questionUsername;
-@property (weak, nonatomic) IBOutlet UILabel *questionDate;
-
+@property (strong, nonatomic) Question *question;
+@property (strong, nonatomic) NSArray *comments;
+@property (strong, nonatomic) NSArray *answers;
+@property (strong, nonatomic) Answer *selectedAnswer;
 @end

@@ -1,5 +1,5 @@
 //
-//  AnswerPageTableViewController.h
+//  QuestionPageAnswersTableViewCell.h
 //  TellMeNow
 //
 //  Created by Raghav on 4/12/14.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AnswerPageTableViewController : UITableViewController
+@interface QuestionPageAnswersTableViewCell : UITableViewCell
 
-@property (strong, nonatomic) Answer *answer;
 @end

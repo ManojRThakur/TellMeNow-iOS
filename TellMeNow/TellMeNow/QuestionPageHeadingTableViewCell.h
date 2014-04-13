@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface QuestionPageHeadingTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *questionTextLabel;
+@property (weak, nonatomic) IBOutlet UILabel *questionDate;
+@property (weak, nonatomic) IBOutlet UILabel *questionUsername;
 
 @end

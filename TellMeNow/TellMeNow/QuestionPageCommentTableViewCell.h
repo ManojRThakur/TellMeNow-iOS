@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface QuestionPageCommentTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *commentUsername;
+@property (weak, nonatomic) IBOutlet UILabel *commentText;
 
 @end

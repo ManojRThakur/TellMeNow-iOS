@@ -7,6 +7,12 @@
 //
 
 #import "QuestionPageTableViewController.h"
+#import "QuestionPageHeadingTableViewCell.h"
+#import "QuestionPageCommentTableViewCell.h"
+#import "QuestionPageAnswersTableViewCell.h"
+#import "AnswerPageTableViewController.h"
+#import "AddAnswerTableViewController.h"
+
 
 @interface QuestionPageTableViewController ()
 
@@ -14,18 +20,12 @@
 
 @implementation QuestionPageTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+//FIX THIS!!    [self.question getCommentsWithCallback:self.comments];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -34,84 +34,93 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 5;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return 3 + [self.answers count] + [self.comments count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString *simpleTableIdentifier;
+    UITableViewCell *cell = nil;
     
-    // Configure the cell...
+    NSInteger idx = indexPath.row;
+    if (idx == 0) {
+        simpleTableIdentifier = @"questionTextLabel";
+        cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier forIndexPath:indexPath];
+        
+        // Configure the cell...
+        if (cell == nil) {
+            cell = [[QuestionPageHeadingTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        }
+        
+        //HELP SETTING LABELS!!!
+    }
+    else if (idx >= 1 && idx <= [self.comments count]) {
+        simpleTableIdentifier = @"questionComment";
+        cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier forIndexPath:indexPath];
+        
+        // Configure the cell...
+        if (cell == nil) {
+            cell = [[QuestionPageCommentTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        }
+
+    } else if (idx == [self.comments count] + 1) {
+        simpleTableIdentifier = @"addCommentButton";
+        cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier forIndexPath:indexPath];
+        
+        // Configure the cell...
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        }
+    } else if (idx > [self.comments count] + 1 && idx < [self.comments count] + [self.answers count] + 1) {
+        simpleTableIdentifier = @"answerText";
+        cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier forIndexPath:indexPath];
+        
+        // Configure the cell...
+        if (cell == nil) {
+            cell = [[QuestionPageAnswersTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        }
+    } else {
+        simpleTableIdentifier = @"addAnswer";
+        cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier forIndexPath:indexPath];
+        
+        // Configure the cell...
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        }
+    }
     
+   
+
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    if (indexPath.row > [self.comments count] + 1 && indexPath.row < [self.comments count] + [self.answers count] + 1) {
+        [self setSelectedAnswer:[self.answers objectAtIndex:indexPath.row]];
+        [self performSegueWithIdentifier:@"answerPage" sender:self];
+    }
+    if (indexPath.row == [self.comments count] + [self.answers count] + 2) {
+        [self performSegueWithIdentifier:@"addAnswer" sender:self];
+    }
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqual: @"answerPage"]) {
+        AnswerPageTableViewController *destinationVC = segue.destinationViewController;
+        [destinationVC setAnswer:self.selectedAnswer];
+    }
+    
+    if ([segue.identifier isEqual: @"addAnswer"]) {
+        AddAnswerTableViewController *destinationVC = segue.destinationViewController;
+        [destinationVC setQuestion:self.question];
+    }
+    
 }
-*/
 
 @end

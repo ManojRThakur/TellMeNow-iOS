@@ -40,6 +40,7 @@
 		4BBC338E18EF8B92009E2DFE /* TellMeNowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBC338D18EF8B92009E2DFE /* TellMeNowTests.m */; };
 		4BBC339818EF9169009E2DFE /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BBC339718EF9169009E2DFE /* FacebookSDK.framework */; };
 		4BBC339B18EFCE3D009E2DFE /* SelectLocationAQViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BBC339A18EFCE3D009E2DFE /* SelectLocationAQViewController.m */; };
+		4BCAD0B718FA3F8300A4B2B0 /* QuestionPageAnswersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BCAD0B618FA3F8300A4B2B0 /* QuestionPageAnswersTableViewCell.m */; };
 		4BE6ABB118F9C670000ECAD8 /* FeedQuestionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6ABB018F9C670000ECAD8 /* FeedQuestionTableViewCell.m */; };
 		4BE6ABB418F9CED3000ECAD8 /* FeedQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6ABB318F9CED3000ECAD8 /* FeedQuestionViewController.m */; };
 		AC0E8A3B18F02E3E00841054 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0E8A3A18F02E3E00841054 /* Place.m */; };
@@ -133,6 +134,8 @@
 		4BBC339718EF9169009E2DFE /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		4BBC339918EFCE3D009E2DFE /* SelectLocationAQViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectLocationAQViewController.h; sourceTree = "<group>"; };
 		4BBC339A18EFCE3D009E2DFE /* SelectLocationAQViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectLocationAQViewController.m; sourceTree = "<group>"; };
+		4BCAD0B518FA3F8300A4B2B0 /* QuestionPageAnswersTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionPageAnswersTableViewCell.h; sourceTree = "<group>"; };
+		4BCAD0B618FA3F8300A4B2B0 /* QuestionPageAnswersTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionPageAnswersTableViewCell.m; sourceTree = "<group>"; };
 		4BE6ABAF18F9C670000ECAD8 /* FeedQuestionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedQuestionTableViewCell.h; sourceTree = "<group>"; };
 		4BE6ABB018F9C670000ECAD8 /* FeedQuestionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedQuestionTableViewCell.m; sourceTree = "<group>"; };
 		4BE6ABB218F9CED3000ECAD8 /* FeedQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedQuestionViewController.h; sourceTree = "<group>"; };
@@ -207,6 +210,8 @@
 		4B65D7B918F9FB5F00A0B377 /* Table View Cells */ = {
 			isa = PBXGroup;
 			children = (
+				4BCAD0B518FA3F8300A4B2B0 /* QuestionPageAnswersTableViewCell.h */,
+				4BCAD0B618FA3F8300A4B2B0 /* QuestionPageAnswersTableViewCell.m */,
 				4B63FF9818FA322C006124D6 /* QuestionPageHeadingTableViewCell.h */,
 				4B63FF9B18FA337F006124D6 /* QuestionPageCommentTableViewCell.h */,
 				4B63FF9C18FA337F006124D6 /* QuestionPageCommentTableViewCell.m */,
@@ -519,6 +524,7 @@
 				4B65D7D618FA1EC700A0B377 /* AnswerPageTableViewController.m in Sources */,
 				4B65D7B818F9F9CE00A0B377 /* TrackAnswerTableViewCell.m in Sources */,
 				4B237E3318F059DF003E2805 /* NotificationsTableViewController.m in Sources */,
+				4BCAD0B718FA3F8300A4B2B0 /* QuestionPageAnswersTableViewCell.m in Sources */,
 				4B27E4AC18F071F100B7849E /* Answer.m in Sources */,
 				AC836BB418F9762B00CE90AF /* Comment.m in Sources */,
 				4BBC336F18EF8B91009E2DFE /* main.m in Sources */,
