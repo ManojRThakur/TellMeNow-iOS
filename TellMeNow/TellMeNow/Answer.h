@@ -33,4 +33,6 @@ typedef enum thumbsTypes
 - (void)getNotificationsWithCallback: (void *(^)(NSArray *))callback;
 - (void)getFollowUpsWithCallback: (void *(^)(NSArray *))callback;
 
++ (Answer *)answerFromDict: (NSDictionary *)args;
+
 @end

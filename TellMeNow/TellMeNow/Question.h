@@ -28,6 +28,9 @@
 - (void)getAnswersWithCallback: (void *(^)(NSArray *))callback;
 
 - (Place *)getPlace;
+- (User *)getUser;
+- (NSArray *)getAnswers;
+- (NSArray *)getComments;
 
 + (Question *)questionFromDict: (NSDictionary *)args;
 

@@ -53,6 +53,7 @@
 		AC836BB118F96D2500CE90AF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = AC836BB018F96D2500CE90AF /* User.m */; };
 		AC836BB418F9762B00CE90AF /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = AC836BB318F9762B00CE90AF /* Comment.m */; };
 		AC836BB718F9763B00CE90AF /* FollowUp.m in Sources */ = {isa = PBXBuildFile; fileRef = AC836BB618F9763B00CE90AF /* FollowUp.m */; };
+		AC836BBA18FA8D4700CE90AF /* QuestionsInLocationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC836BB918FA8D4700CE90AF /* QuestionsInLocationTableViewController.m */; };
 		ACB4BF5918EFF2BD00845426 /* SocketIO.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB4BF4F18EFF2BD00845426 /* SocketIO.m */; };
 		ACB4BF5A18EFF2BD00845426 /* SocketIOJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB4BF5118EFF2BD00845426 /* SocketIOJSONSerialization.m */; };
 		ACB4BF5B18EFF2BD00845426 /* SocketIOPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB4BF5318EFF2BD00845426 /* SocketIOPacket.m */; };
@@ -159,6 +160,8 @@
 		AC836BB318F9762B00CE90AF /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
 		AC836BB518F9763B00CE90AF /* FollowUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowUp.h; sourceTree = "<group>"; };
 		AC836BB618F9763B00CE90AF /* FollowUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowUp.m; sourceTree = "<group>"; };
+		AC836BB818FA8D4700CE90AF /* QuestionsInLocationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsInLocationTableViewController.h; sourceTree = "<group>"; };
+		AC836BB918FA8D4700CE90AF /* QuestionsInLocationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsInLocationTableViewController.m; sourceTree = "<group>"; };
 		ACB4BF4E18EFF2BD00845426 /* SocketIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SocketIO.h; path = "../../socket.IO-objc/SocketIO.h"; sourceTree = "<group>"; };
 		ACB4BF4F18EFF2BD00845426 /* SocketIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SocketIO.m; path = "../../socket.IO-objc/SocketIO.m"; sourceTree = "<group>"; };
 		ACB4BF5018EFF2BD00845426 /* SocketIOJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SocketIOJSONSerialization.h; path = "../../socket.IO-objc/SocketIOJSONSerialization.h"; sourceTree = "<group>"; };
@@ -304,6 +307,8 @@
 				4B65D7CC18FA1BBC00A0B377 /* AddAnswerTableViewController.m */,
 				4BE6ABB218F9CED3000ECAD8 /* FeedQuestionViewController.h */,
 				4BE6ABB318F9CED3000ECAD8 /* FeedQuestionViewController.m */,
+				AC836BB818FA8D4700CE90AF /* QuestionsInLocationTableViewController.h */,
+				AC836BB918FA8D4700CE90AF /* QuestionsInLocationTableViewController.m */,
 				4BBC339918EFCE3D009E2DFE /* SelectLocationAQViewController.h */,
 				4BBC339A18EFCE3D009E2DFE /* SelectLocationAQViewController.m */,
 				ACB4BF8018F01C4700845426 /* AddQuestionAQTableViewController.h */,
@@ -510,6 +515,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC836BBA18FA8D4700CE90AF /* QuestionsInLocationTableViewController.m in Sources */,
 				AC0E8A4118F0948100841054 /* LoginViewController.m in Sources */,
 				4B65D7CD18FA1BBC00A0B377 /* AddAnswerTableViewController.m in Sources */,
 				4BE6ABB418F9CED3000ECAD8 /* FeedQuestionViewController.m in Sources */,

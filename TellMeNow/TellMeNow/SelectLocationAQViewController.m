@@ -41,7 +41,7 @@
         [self.suggestedPlacesTableView deselectRowAtIndexPath:[self.suggestedPlacesTableView indexPathForSelectedRow] animated:animated];
 }
 
--(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
     SocketIO *socket = [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] socket];
     [socket sendEvent:@"/location/query" withData:[NSDictionary dictionaryWithObjectsAndKeys:searchString, @"query", nil] andAcknowledge:^(id arg) {

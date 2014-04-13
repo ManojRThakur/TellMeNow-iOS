@@ -11,7 +11,7 @@
 
 @class Question, Place;
 
-@interface FeedQuestionViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate>
+@interface FeedQuestionViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, UISearchDisplayDelegate>
 
 @property (strong, nonatomic) NSMutableArray *suggestedQuestions;
 @property (strong, nonatomic) NSMutableArray *searchedPlaces;

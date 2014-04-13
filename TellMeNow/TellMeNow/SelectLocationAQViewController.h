@@ -10,7 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "Place.h"
 
-@interface SelectLocationAQViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate>
+@interface SelectLocationAQViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, UISearchDisplayDelegate>
 
 @property (strong, nonatomic) NSMutableArray *suggestedPlaces;
 @property (strong, nonatomic) NSMutableArray *searchPlaceResults;

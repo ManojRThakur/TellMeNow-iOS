@@ -23,6 +23,8 @@
 - (void)getNotificationsWithCallback: (void *(^)(NSArray *))callback;
 - (void)getQuestionWithCallback: (void *(^)(Question *))callback;
 
+- (User *)getUser;
+
 + (Comment *)commentFromDict: (NSDictionary *)args;
 
 @end

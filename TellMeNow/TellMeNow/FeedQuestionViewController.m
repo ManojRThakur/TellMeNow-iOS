@@ -11,7 +11,9 @@
 #import "SocketIO.h"
 #import "tellmenowAppDelegate.h"
 #import "Place.h"
+#import "Comment.h"
 #import "QuestionPageTableViewController.h"
+#import "QuestionsInLocationTableViewController.h"
 
 @implementation FeedQuestionViewController
 {
@@ -50,6 +52,28 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    SocketIO *socket = [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] socket];
+    NSMutableDictionary *placeMap = [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] placeMap];
+    [socket sendEvent:@"/location/query" withData:[NSDictionary dictionaryWithObjectsAndKeys:searchString, @"query", nil] andAcknowledge:^(id arg) {
+        [self.locationManager stopUpdatingLocation];
+        NSArray *locations = [arg objectForKey:@"response"];
+        [socket sendEvent:@"/places/get" withData:locations andAcknowledge:^(id argsData) {
+            NSArray *locations = [argsData objectForKey:@"response"];
+            [self.searchedPlaces removeAllObjects];
+            for (NSDictionary *dict in locations) {
+                Place *place = [Place placeFromDict:dict];
+                [placeMap setObject:place forKey:place._id];
+                [self.searchedPlaces addObject:place];
+            }
+            [self.searchDisplayController.searchResultsTableView reloadData];
+        }];
+    }];
+    
+    return NO;
+}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -62,27 +86,27 @@
 }
 
 
-- (FeedQuestionTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *simpleTableIdentifier = @"feedQuestionCell";
-    
-    FeedQuestionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    
-    if (cell == nil) {
-        cell = [[FeedQuestionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-    }
-    
-    Question *display = nil;
     if (tableView == self.searchDisplayController.searchResultsTableView) {
-        display = [self.searchedPlaces objectAtIndex:indexPath.row];
+        static NSString *simpleTableIdentifier = @"searchRowCell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        }
+        return cell;
     } else {
-        display = [self.suggestedQuestions objectAtIndex:indexPath.row];
+        static NSString *simpleTableIdentifier = @"feedQuestionCell";
+        FeedQuestionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+        if (cell == nil) {
+            cell = [[FeedQuestionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        }
+        Question *display = [self.suggestedQuestions objectAtIndex:indexPath.row];
+        cell.questionText.text = display.text;
+        cell.questionDate.text = display.timestamp;
+        cell.questionLocation.text = [[display getPlace] name];
+        return cell;
     }
-    
-    cell.questionText.text = display.text;
-    cell.questionDate.text = display.timestamp;
-    cell.questionLocation.text = [[display getPlace] name];
-    return cell;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
@@ -131,19 +155,41 @@
 #pragma mark - Navigation
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (tableView == self.searchDisplayController.searchResultsTableView)
-        [self setSelectedQuestion:[self.searchedPlaces objectAtIndex:indexPath.row]];
-    else
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        [self setSelectedPlace:[self.searchedPlaces objectAtIndex:indexPath.row]];
+        [self performSegueWithIdentifier:@"FeedToSearch" sender:self];
+    } else {
         [self setSelectedQuestion:[self.suggestedQuestions objectAtIndex:indexPath.row]];
-    [self performSegueWithIdentifier:@"FeedToQuestion" sender:self];
+        [self performSegueWithIdentifier:@"FeedToQuestion" sender:self];
+    }
 }
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    SocketIO *socket = [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] socket];
     if ([segue.identifier isEqual: @"FeedToQuestion"]) {
         QuestionPageTableViewController *destinationVC = segue.destinationViewController;
         [destinationVC setQuestion:self.selectedQuestion];
+        [self.selectedQuestion getCommentsWithCallback:^void *(NSArray *_) {
+            [self.selectedQuestion getAnswersWithCallback:^void *(NSArray *_) {
+                [self.selectedQuestion getUserWithCallback:^void *(User *_) {
+                    NSMutableArray *commentUserIds = [NSMutableArray array];
+                    for (Comment *comment in [self.selectedQuestion getComments])
+                        [commentUserIds addObject:comment.userId];
+                    [socket sendEvent:@"/users/get" withData:commentUserIds andAcknowledge:^(id argsData) {
+                        [destinationVC questionDidLoad];
+                    }];
+                    return nil;
+                }];
+                return nil;
+            }];
+            return nil;
+        }];
+        
+    } else if ([segue.identifier isEqual:@"FeedToSearch"]) {
+        QuestionsInLocationTableViewController *destinationVC = segue.destinationViewController;
+        //[destinationVC]
     }
 }
 

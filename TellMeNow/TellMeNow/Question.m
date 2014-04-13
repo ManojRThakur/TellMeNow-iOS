@@ -10,6 +10,8 @@
 #import "tellmenowAppDelegate.h"
 #import "Comment.h"
 #import "Place.h"
+#import "Answer.h"
+#import "User.h"
 #import "SocketIO.h"
 
 @implementation Question
@@ -49,6 +51,41 @@
     }
 }
 
+- (void)getAnswersWithCallback: (void *(^)(NSArray *))callback
+{
+    NSMutableArray *retIds = [NSMutableArray arrayWithArray:self.answerIds];
+    NSMutableDictionary *answerMap = [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] answerMap];
+    SocketIO *socket = [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] socket];
+    
+    for (NSString *answerId in [[answerMap allValues] filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(Answer *evaluatedObject, NSDictionary *bindings) {
+        return [evaluatedObject.questionId isEqualToString:self._id];
+    }]])
+        if (![retIds containsObject:answerId])
+            [retIds addObject:answerId];
+    NSArray *fetchIds = [retIds filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(NSString *evaluatedObject, NSDictionary *bindings) {
+        return ![[answerMap allKeys] containsObject:evaluatedObject];
+    }]];
+    
+    NSArray *(^getRet)(void) = ^NSArray *(void) {
+        NSMutableArray *ret = [NSMutableArray array];
+        for (NSString *answerId in retIds)
+            [ret addObject:[answerMap objectForKey:answerId]];
+        return ret;
+    };
+    
+    if ([fetchIds count] == 0) {
+        callback(getRet());
+    } else {
+        [socket sendEvent:@"/answers/get" withData:fetchIds andAcknowledge:^(NSDictionary *argsData) {
+            for (NSDictionary *answerDict in [argsData objectForKey:@"response"]) {
+                Answer *obj = [Answer answerFromDict:answerDict];
+                [answerMap setObject:obj forKey:obj._id];
+            }
+            callback(getRet());
+        }];
+    }
+}
+
 - (void)getPlaceWithCallback: (void *(^)(Place *))callback
 {
     SocketIO *socket = [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] socket];
@@ -60,6 +97,23 @@
         [socket sendEvent:@"/location/get" withData:@[self.placeId] andAcknowledge:^(NSDictionary *argsData) {
             Place *obj = [Place placeFromDict:[argsData objectForKey:@"response"][0]];
             [placeMap setObject:obj forKey:obj._id];
+            callback(obj);
+        }];
+    }
+}
+
+- (void)getUserWithCallback: (void *(^)(User *))callback
+{
+    SocketIO *socket = [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] socket];
+    NSMutableDictionary *userMap = [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] userMap];
+    
+    if ([userMap objectForKey:self.userId]) {
+        callback([userMap objectForKey:self.userId]);
+    } else {
+        [socket sendEvent:@"/users/get" withData:@[self.userId] andAcknowledge:^(NSDictionary *argsData) {
+            User *obj = [User userFromDict:[argsData objectForKey:@"response"][0]];
+            [userMap setObject:obj forKey:obj._id];
+            callback(obj);
         }];
     }
 }
@@ -73,6 +127,39 @@
     } else {
         return nil;
     }
+}
+
+- (User *)getUser
+{
+    NSMutableDictionary *userMap = [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] userMap];
+    
+    if ([userMap objectForKey:self.userId]) {
+        return [userMap objectForKey:self.userId];
+    } else {
+        return nil;
+    }
+}
+
+- (NSArray *)getComments
+{
+    NSMutableDictionary *commentMap = [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] commentMap];
+    
+    NSMutableArray *ret = [NSMutableArray array];
+    for (NSString *commentId in self.commentIds)
+        if ([commentMap objectForKey:commentId])
+            [ret addObject:[commentMap objectForKey:commentId]];
+    return ret;
+}
+
+- (NSArray *)getAnswers
+{
+    NSMutableDictionary *answerMap = [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] answerMap];
+    
+    NSMutableArray *ret = [NSMutableArray array];
+    for (NSString *ans in self.answerIds)
+        if ([answerMap objectForKey:ans])
+            [ret addObject:[answerMap objectForKey:ans]];
+    return ret;
 }
 
 

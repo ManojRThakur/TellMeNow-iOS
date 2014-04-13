@@ -16,7 +16,7 @@
     [FBLoginView class];
     
     self.socket = [[SocketIO alloc] initWithDelegate:self];
-    [self.socket connectToHost:@"131.179.210.165" onPort:3001];
+    [self.socket connectToHost:@"131.179.210.165" onPort:3001]; //131.179.210.40
     
     self.questionMap = [NSMutableDictionary dictionary];
     self.notificationMap = [NSMutableDictionary dictionary];
@@ -52,7 +52,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (alertView == self.connErrorAlertView && buttonIndex == 0)
-        [self.socket connectToHost:@"131.179.210.165" onPort:3000];
+        [self.socket connectToHost:@"131.179.210.165" onPort:3001];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

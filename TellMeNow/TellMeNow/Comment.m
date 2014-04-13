@@ -7,6 +7,7 @@
 //
 
 #import "Comment.h"
+#import "tellmenowAppDelegate.h"
 
 @implementation Comment
 
@@ -16,9 +17,20 @@
     [obj set_id:[args objectForKey:@"_id"]];
     [obj setText:[args objectForKey:@"text"]];
     [obj setTimestamp:[args objectForKey:@"timestamp"]];
-    [obj setUserId:[args objectForKey:@"userId"]];
-    [obj setQuestionId:[args objectForKey:@"questionId"]];
+    [obj setUserId:[args objectForKey:@"user"]];
+    [obj setQuestionId:[args objectForKey:@"question"]];
     return obj;
+}
+
+- (User *)getUser
+{
+    NSMutableDictionary *userMap = [(tellmenowAppDelegate *)[[UIApplication sharedApplication] delegate] userMap];
+    
+    if ([userMap objectForKey:self.userId]) {
+        return [userMap objectForKey:self.userId];
+    } else {
+        return nil;
+    }
 }
 
 @end
