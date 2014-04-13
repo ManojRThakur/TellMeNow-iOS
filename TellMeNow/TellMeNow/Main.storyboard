@@ -387,7 +387,7 @@
             </objects>
             <point key="canvasLocation" x="491" y="-370"/>
         </scene>
-        <!--Feed Question View Controller-->
+        <!--Feed Question View Controller - Feed-->
         <scene sceneID="0pw-Bs-Dob">
             <objects>
                 <viewController id="EJD-uB-WRm" customClass="FeedQuestionViewController" sceneMemberID="viewController">
@@ -467,9 +467,10 @@
                             <constraint firstItem="i30-Mn-R2a" firstAttribute="top" secondItem="m6P-vV-1A6" secondAttribute="bottom" id="ynm-df-2uT"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="q6z-28-I3r"/>
+                    <navigationItem key="navigationItem" title="Feed" id="q6z-28-I3r"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="gt5-wd-N1d" id="IEH-aN-4gU"/>
+                        <outlet property="suggestedQuestionsTableView" destination="2oB-lO-8cQ" id="ZKt-XQ-X66"/>
                         <segue destination="BS1-nJ-708" kind="push" identifier="FeedToQuestion" id="Kz8-po-DkL"/>
                     </connections>
                 </viewController>
@@ -524,7 +525,7 @@
             </objects>
             <point key="canvasLocation" x="1377" y="-45"/>
         </scene>
-        <!--Question Page Table View Controller-->
+        <!--Question Page Table View Controller - Question-->
         <scene sceneID="eZh-97-JNJ">
             <objects>
                 <tableViewController id="BS1-nJ-708" customClass="QuestionPageTableViewController" sceneMemberID="viewController">
@@ -683,7 +684,7 @@
                             <outlet property="delegate" destination="BS1-nJ-708" id="uuS-7V-qDx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="aCO-T6-Udr"/>
+                    <navigationItem key="navigationItem" title="Question" id="aCO-T6-Udr"/>
                     <connections>
                         <outlet property="questionDate" destination="aO4-yd-nd5" id="WBR-ua-HAL"/>
                         <outlet property="questionTextLabel" destination="byX-Xa-e4J" id="q76-0m-TeI"/>
@@ -694,7 +695,7 @@
             </objects>
             <point key="canvasLocation" x="2312" y="-405"/>
         </scene>
-        <!--Answer Page Table View Controller-->
+        <!--Answer Page Table View Controller - Answer-->
         <scene sceneID="ww1-n7-bf4">
             <objects>
                 <tableViewController id="4iy-Wt-t8A" customClass="AnswerPageTableViewController" sceneMemberID="viewController">
@@ -792,13 +793,13 @@
                             <outlet property="delegate" destination="4iy-Wt-t8A" id="NV9-Sx-cE4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="usj-A2-3nO"/>
+                    <navigationItem key="navigationItem" title="Answer" id="usj-A2-3nO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vh7-iP-TsT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3696" y="-449"/>
         </scene>
-        <!--Notifications Table View Controller-->
+        <!--Notifications Table View Controller - Notifications-->
         <scene sceneID="mVR-ag-b0T">
             <objects>
                 <tableViewController id="Ygt-yu-Wsu" customClass="NotificationsTableViewController" sceneMemberID="viewController">
@@ -807,40 +808,149 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notifAnswerCell" id="Nto-Xi-e8h" customClass="NotifAnswerTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="notifQuestionCell" id="WLm-ZM-Qpe" customClass="NotifQuestionsTableViewCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nto-Xi-e8h" id="6jb-Zf-t5w">
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WLm-ZM-Qpe" id="cqw-7N-MG8">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notifQuestionCell" id="BF9-qJ-Ab5" customClass="NotifQuestionsTableViewCell">
-                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BF9-qJ-Ab5" id="bjQ-9U-wAI">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You have been asked a question." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21c-IY-idn">
+                                            <rect key="frame" x="20" y="0.0" width="280" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5C1-x1-BjY">
+                                            <rect key="frame" x="20" y="22" width="81" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="mm/dd/yy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ZD-oS-thT">
+                                            <rect key="frame" x="236" y="22" width="64" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="BS1-nJ-708" kind="push" identifier="NotificationToQuestion" id="iFo-WL-Lub"/>
+                                    <outlet property="headingLabel" destination="21c-IY-idn" id="3eD-Om-2Xk"/>
+                                    <outlet property="questionDate" destination="2ZD-oS-thT" id="U9z-QL-XmI"/>
+                                    <outlet property="questionLocation" destination="5C1-x1-BjY" id="pWO-C0-o2T"/>
+                                    <outlet property="questionText" destination="21c-IY-idn" id="dZ8-bY-dlS"/>
+                                    <outlet property="questionTime" destination="2ZD-oS-thT" id="pAj-O7-VRh"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notifCommentCell" id="2XB-yr-ael" customClass="NotifCommentTableViewCell">
-                                <rect key="frame" x="0.0" y="174" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2XB-yr-ael" id="SO4-RX-amT">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="notifAnswerCell" id="YSc-xv-T7L" customClass="NotifAnswerTableViewCell">
+                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YSc-xv-T7L" id="mgv-s7-RK2">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your question has been answered." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="938-5u-uOX">
+                                            <rect key="frame" x="20" y="0.0" width="280" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hm-UB-gfq">
+                                            <rect key="frame" x="20" y="22" width="153" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="mm/dd/yy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4N-Tl-y56">
+                                            <rect key="frame" x="236" y="22" width="64" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="answerLabel" destination="938-5u-uOX" id="a9B-fd-Dpd"/>
+                                    <outlet property="answerQuestion" destination="8hm-UB-gfq" id="50A-JS-4eD"/>
+                                    <outlet property="answerTime" destination="b4N-Tl-y56" id="Eb1-BM-dtk"/>
+                                    <outlet property="questionLocation" destination="8hm-UB-gfq" id="mWH-xt-0hw"/>
+                                    <outlet property="questionText" destination="938-5u-uOX" id="yyf-b7-Olh"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notifFollowupCell" id="Uxz-ke-93C" customClass="Notif">
-                                <rect key="frame" x="0.0" y="218" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uxz-ke-93C" id="fli-ek-fwm">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="notifCommentCell" id="gRA-nQ-wm9" customClass="NotifCommentTableViewCell">
+                                <rect key="frame" x="0.0" y="174" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gRA-nQ-wm9" id="VoG-dh-meo">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="There was a comment on your question." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qev-0n-C7p">
+                                            <rect key="frame" x="20" y="0.0" width="280" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWR-ek-Kbb">
+                                            <rect key="frame" x="20" y="22" width="153" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="mm/dd/yy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CkM-3y-ycn">
+                                            <rect key="frame" x="236" y="22" width="64" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="commentLabel" destination="qev-0n-C7p" id="5mg-4l-5bI"/>
+                                    <outlet property="commentQuestion" destination="gWR-ek-Kbb" id="aH6-H3-UDQ"/>
+                                    <outlet property="commentTime" destination="CkM-3y-ycn" id="p8j-Y5-ehx"/>
+                                    <outlet property="questionLocation" destination="gWR-ek-Kbb" id="h3i-4w-7mr"/>
+                                    <outlet property="questionText" destination="qev-0n-C7p" id="rnu-PM-1l1"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="notifCommentCell" id="KdV-F3-1tX" customClass="NotifFollowupTableViewCell">
+                                <rect key="frame" x="0.0" y="218" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KdV-F3-1tX" id="eYI-FT-jYN">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="There was a followup on your answer." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKB-Hk-1xA">
+                                            <rect key="frame" x="20" y="0.0" width="280" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Answer : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXY-I8-Jv3">
+                                            <rect key="frame" x="20" y="22" width="168" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="mm/dd/yy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6u-aA-coO">
+                                            <rect key="frame" x="236" y="22" width="64" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="followupAnswer" destination="ZXY-I8-Jv3" id="vgf-KT-Gco"/>
+                                    <outlet property="followupLabel" destination="eKB-Hk-1xA" id="EIV-Lt-XXl"/>
+                                    <outlet property="followupTime" destination="X6u-aA-coO" id="861-eU-nLN"/>
+                                    <outlet property="questionLocation" destination="ZXY-I8-Jv3" id="aXh-zy-vcD"/>
+                                    <outlet property="questionText" destination="eKB-Hk-1xA" id="00b-91-UBO"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -848,7 +958,7 @@
                             <outlet property="delegate" destination="Ygt-yu-Wsu" id="DF7-kI-U1P"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="z9x-HS-w7b"/>
+                    <navigationItem key="navigationItem" title="Notifications" id="z9x-HS-w7b"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gVn-Ld-23y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

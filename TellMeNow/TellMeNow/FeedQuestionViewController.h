@@ -15,5 +15,7 @@
 @property (strong, nonatomic) NSMutableArray *suggestedQuestions;
 @property (strong, nonatomic) NSMutableArray *searchedQuestions;
 @property (strong, nonatomic) Question *selectedQuestion;
+@property (weak, nonatomic) IBOutlet UITableView *suggestedQuestionsTableView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @end
+å
