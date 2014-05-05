@@ -13,15 +13,15 @@
 
 @interface TellMeNowAPI : NSObject <SocketIODelegate, UIAlertViewDelegate>
 
-- (void)loginWithAccessToken:(NSString *)accessToken andCallback:(void *(^)(NSString *))callback;
+- (NSString *)loginWithAccessToken:(NSString *)accessToken;
 
-- (void)usersForIds:(NSArray *)userIds andCallback:(void *(^)(NSArray *))callback;
+- (NSArray *)usersForIds:(NSArray *)userIds;
 
-- (void)questionsForIds:(NSArray *)questionIds andCallback:(void *(^)(NSArray *))callback;
+- (NSArray *)questionsForIds:(NSArray *)questionIds;
 
-- (void)answersForIds:(NSArray *)answerIds andCallback:(void *(^)(NSArray *))callback;
+- (NSArray *)answersForIds:(NSArray *)answerIds;
 
-- (void)questionsNearby:(CLLocation *)location andCallback:(void *(^)(NSArray *))callback;
+- (NSArray *)questionsNearby:(CLLocation *)location;
 
 @property (strong, nonatomic) SocketIO *socket;
 @property (strong, nonatomic) UIAlertView *connErrorAlertView;

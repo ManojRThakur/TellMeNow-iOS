@@ -31,16 +31,26 @@
         [self.socket connectToHost:@"131.179.210.165" onPort:3001];
 }
 
-- (void)loginWithAccessToken:(NSString *)accessToken andCallback:(void *(^)(NSString *))callback
+- (NSString *)loginWithAccessToken:(NSString *)accessToken
 {
+    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+    NSMutableString *ret = [NSMutableString string];
     [self.socket sendEvent:@"/login" withData:[NSDictionary dictionaryWithObjectsAndKeys:[[[FBSession activeSession] accessTokenData] accessToken], @"token", nil] andAcknowledge:^(NSDictionary *arg) {
         if ([arg objectForKey:@"error"] != [NSNull null]) {
-            callback(nil);
             NSLog(@"%@", arg);
         } else {
-            callback([[arg objectForKey:@"response"] objectForKey:@"_id"]);
+            [ret appendString:[[arg objectForKey:@"response"] objectForKey:@"_id"]];
         }
+        dispatch_semaphore_signal(sema);
     }];
+    while (dispatch_semaphore_wait(sema, DISPATCH_TIME_NOW)) {
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:10]];
+    }
+    if ([ret isEqualToString:@""]) {
+        return nil;
+    } else {
+        return ret;
+    }
 }
 
 - (void)usersForIds:(NSArray *)userIds andCallback:(void *(^)(NSArray *))callback
