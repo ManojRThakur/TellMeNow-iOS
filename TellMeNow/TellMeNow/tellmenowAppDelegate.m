@@ -7,6 +7,7 @@
 //
 
 #import "tellmenowAppDelegate.h"
+#import "Data/Store.h"
 #import <FacebookSDK/FacebookSDK.h>
 
 @implementation tellmenowAppDelegate
@@ -25,6 +26,8 @@
     self.userMap = [NSMutableDictionary dictionary];
     self.commentMap = [NSMutableDictionary dictionary];
     self.followUpMap = [NSMutableDictionary dictionary];
+    
+    [NSPersistentStoreCoordinator registerStoreClass:[Store class] forStoreType:@"Store"];
     
     return YES;
 }

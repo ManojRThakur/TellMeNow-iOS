@@ -66,6 +66,10 @@
 		ACB4BF7D18EFF50F00845426 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACB4BF7C18EFF50F00845426 /* CFNetwork.framework */; };
 		ACB4BF7F18EFF52200845426 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACB4BF7E18EFF52200845426 /* Security.framework */; };
 		ACB4BF8218F01C4700845426 /* AddQuestionAQTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB4BF8118F01C4700845426 /* AddQuestionAQTableViewController.m */; };
+		ACFE87F7191720C3009A8399 /* DataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFE87F6191720C3009A8399 /* DataHelper.m */; };
+		ACFE87FA191723E0009A8399 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ACFE87F8191723E0009A8399 /* Model.xcdatamodeld */; };
+		ACFE87FD19172D0D009A8399 /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFE87FC19172D0D009A8399 /* Store.m */; };
+		ACFE8800191743CF009A8399 /* TellMeNowAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFE87FF191743CF009A8399 /* TellMeNowAPI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,6 +189,13 @@
 		ACB4BF7E18EFF52200845426 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		ACB4BF8018F01C4700845426 /* AddQuestionAQTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddQuestionAQTableViewController.h; sourceTree = "<group>"; };
 		ACB4BF8118F01C4700845426 /* AddQuestionAQTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddQuestionAQTableViewController.m; sourceTree = "<group>"; };
+		ACFE87F5191720C3009A8399 /* DataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataHelper.h; path = Data/DataHelper.h; sourceTree = "<group>"; };
+		ACFE87F6191720C3009A8399 /* DataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataHelper.m; path = Data/DataHelper.m; sourceTree = "<group>"; };
+		ACFE87F9191723E0009A8399 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		ACFE87FB19172D0D009A8399 /* Store.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Store.h; path = Data/Store.h; sourceTree = "<group>"; };
+		ACFE87FC19172D0D009A8399 /* Store.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Store.m; path = Data/Store.m; sourceTree = "<group>"; };
+		ACFE87FE191743CF009A8399 /* TellMeNowAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TellMeNowAPI.h; path = Data/TellMeNowAPI.h; sourceTree = "<group>"; };
+		ACFE87FF191743CF009A8399 /* TellMeNowAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TellMeNowAPI.m; path = Data/TellMeNowAPI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +297,7 @@
 		4BBC336818EF8B91009E2DFE /* TellMeNow */ = {
 			isa = PBXGroup;
 			children = (
+				ACFE87F419172046009A8399 /* Data */,
 				4B65D7D118FA1D3900A0B377 /* ProfileTableViewController.h */,
 				4B65D7D218FA1D3900A0B377 /* ProfileTableViewController.m */,
 				4B65D7C318F9FDFD00A0B377 /* Main.storyboard */,
@@ -417,6 +429,20 @@
 			name = SocketRocket;
 			sourceTree = "<group>";
 		};
+		ACFE87F419172046009A8399 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				ACFE87F5191720C3009A8399 /* DataHelper.h */,
+				ACFE87F6191720C3009A8399 /* DataHelper.m */,
+				ACFE87F8191723E0009A8399 /* Model.xcdatamodeld */,
+				ACFE87FB19172D0D009A8399 /* Store.h */,
+				ACFE87FC19172D0D009A8399 /* Store.m */,
+				ACFE87FE191743CF009A8399 /* TellMeNowAPI.h */,
+				ACFE87FF191743CF009A8399 /* TellMeNowAPI.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -524,15 +550,18 @@
 				4B63FF9A18FA322C006124D6 /* QuestionPageHeadingTableViewCell.m in Sources */,
 				ACB4BF8218F01C4700845426 /* AddQuestionAQTableViewController.m in Sources */,
 				4B63FF9D18FA337F006124D6 /* QuestionPageCommentTableViewCell.m in Sources */,
+				ACFE87F7191720C3009A8399 /* DataHelper.m in Sources */,
 				ACB4BF7918EFF42900845426 /* SRWebSocket.m in Sources */,
 				4B65D7B518F9F9B700A0B377 /* TrackQuestionTableViewCell.m in Sources */,
 				4BCAD0BD18FA45DF00A4B2B0 /* AnswerPageFollowupTableViewCell.m in Sources */,
+				ACFE8800191743CF009A8399 /* TellMeNowAPI.m in Sources */,
 				4B65D7BC18F9FC5700A0B377 /* NotifQuestionsTableViewCell.m in Sources */,
 				ACB4BF7718EFF42900845426 /* base64.c in Sources */,
 				AC0E8A4018F08ECD00841054 /* QuestionTableViewCell.m in Sources */,
 				4B65D7BF18F9FC6C00A0B377 /* NotifAnswerTableViewCell.m in Sources */,
 				AC836BB718F9763B00CE90AF /* FollowUp.m in Sources */,
 				4BBC339B18EFCE3D009E2DFE /* SelectLocationAQViewController.m in Sources */,
+				ACFE87FD19172D0D009A8399 /* Store.m in Sources */,
 				4BBC337318EF8B91009E2DFE /* tellmenowAppDelegate.m in Sources */,
 				AC836BB118F96D2500CE90AF /* User.m in Sources */,
 				AC0E8A3B18F02E3E00841054 /* Place.m in Sources */,
@@ -546,6 +575,7 @@
 				AC836BB418F9762B00CE90AF /* Comment.m in Sources */,
 				4BBC336F18EF8B91009E2DFE /* main.m in Sources */,
 				ACB4BF5B18EFF2BD00845426 /* SocketIOPacket.m in Sources */,
+				ACFE87FA191723E0009A8399 /* Model.xcdatamodeld in Sources */,
 				AC10C50718EFD27F006F48BC /* MainTabBarController.m in Sources */,
 				ACB4BF5C18EFF2BD00845426 /* SocketIOTransportWebsocket.m in Sources */,
 				4B65D7C218F9FC7D00A0B377 /* NotifCommentTableViewCell.m in Sources */,
@@ -776,6 +806,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ACFE87F8191723E0009A8399 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ACFE87F9191723E0009A8399 /* Model.xcdatamodel */,
+			);
+			currentVersion = ACFE87F9191723E0009A8399 /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = Data/Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4BBC335718EF8B91009E2DFE /* Project object */;
 }

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class Place;
+
 @interface QuestionsInLocationTableViewController : UITableViewController
 
 @property (strong, nonatomic) Place *place;
