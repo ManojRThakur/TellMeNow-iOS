@@ -11,6 +11,15 @@
 
 @implementation TellMeNowAPI
 
++ (TellMeNowAPI *)sharedAPI
+{
+    static TellMeNowAPI *sharedAPI = nil;
+    if (sharedAPI == nil) {
+        sharedAPI = [[TellMeNowAPI alloc] init];
+    }
+    return sharedAPI;
+}
+
 - (void)socketIO:(SocketIO *)socket onError:(NSError *)error
 {
     NSLog(@"Error: %@", error);
@@ -53,52 +62,88 @@
     }
 }
 
-- (void)usersForIds:(NSArray *)userIds andCallback:(void *(^)(NSArray *))callback
+- (NSArray *)usersForIds:(NSArray *)userIds
 {
+    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+    NSMutableArray *ret = [NSMutableArray array];
     [self.socket sendEvent:@"/users/get" withData:userIds andAcknowledge:^(NSDictionary *arg) {
         if ([arg objectForKey:@"error"] != [NSNull null]) {
-            callback(nil);
             NSLog(@"%@", arg);
         } else {
-            callback([arg objectForKey:@"response"]);
+            [ret addObjectsFromArray:[arg objectForKey:@"response"]];
         }
     }];
+    while (dispatch_semaphore_wait(sema, DISPATCH_TIME_NOW)) {
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:10]];
+    }
+    if ([ret count] == 0) {
+        return nil;
+    } else {
+        return ret;
+    }
 }
 
-- (void)questionsForIds:(NSArray *)questionIds andCallback:(void *(^)(NSArray *))callback
+- (NSArray *)questionsForIds:(NSArray *)questionIds
 {
+    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+    NSMutableArray *ret = [NSMutableArray array];
     [self.socket sendEvent:@"/questions/get" withData:questionIds andAcknowledge:^(NSDictionary *arg) {
         if ([arg objectForKey:@"error"] != [NSNull null]) {
-            callback(nil);
             NSLog(@"%@", arg);
         } else {
-            callback([arg objectForKey:@"response"]);
+            [ret addObjectsFromArray:[arg objectForKey:@"response"]];
         }
     }];
+    while (dispatch_semaphore_wait(sema, DISPATCH_TIME_NOW)) {
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:10]];
+    }
+    if ([ret count] == 0) {
+        return nil;
+    } else {
+        return ret;
+    }
 }
 
-- (void)answersForIds:(NSArray *)answerIds andCallback:(void *(^)(NSArray *))callback
+- (NSArray *)answersForIds:(NSArray *)answerIds
 {
+    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+    NSMutableArray *ret = [NSMutableArray array];
     [self.socket sendEvent:@"/answers/get" withData:answerIds andAcknowledge:^(NSDictionary *arg) {
         if ([arg objectForKey:@"error"] != [NSNull null]) {
-            callback(nil);
             NSLog(@"%@", arg);
         } else {
-            callback([arg objectForKey:@"response"]);
+            [ret addObjectsFromArray:[arg objectForKey:@"response"]];
         }
     }];
+    while (dispatch_semaphore_wait(sema, DISPATCH_TIME_NOW)) {
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:10]];
+    }
+    if ([ret count] == 0) {
+        return nil;
+    } else {
+        return ret;
+    }
 }
 
-- (void)questionsNearby:(CLLocation *)location andCallback:(void *(^)(NSArray *))callback
+- (NSArray *)questionsNearby:(CLLocation *)location
 {
+    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+    NSMutableArray *ret = [NSMutableArray array];
     [self.socket sendEvent:@"/questions/nearby" withData:[NSDictionary dictionaryWithObjectsAndKeys:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithDouble:location.coordinate.latitude], @"lat", [NSNumber numberWithDouble:location.coordinate.longitude], @"lng", nil], @"geoLocation", nil] andAcknowledge:^(NSDictionary *arg) {
         if ([arg objectForKey:@"error"] != [NSNull null]) {
-            callback(nil);
             NSLog(@"%@", arg);
         } else {
-            callback([arg objectForKey:@"response"]);
+            [ret addObjectsFromArray:[arg objectForKey:@"response"]];
         }
     }];
+    while (dispatch_semaphore_wait(sema, DISPATCH_TIME_NOW)) {
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:10]];
+    }
+    if ([ret count] == 0) {
+        return nil;
+    } else {
+        return ret;
+    }
 }
 
 @end

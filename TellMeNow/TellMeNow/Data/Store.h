@@ -8,6 +8,8 @@
 
 #import <CoreData/CoreData.h>
 
-@interface Store : NSIncrementalStore
+@interface Store : NSIncrementalStore {
+    NSMutableDictionary *cache;
+}
 
 @end

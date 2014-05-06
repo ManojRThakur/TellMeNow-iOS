@@ -13,6 +13,8 @@
 
 @interface TellMeNowAPI : NSObject <SocketIODelegate, UIAlertViewDelegate>
 
++ (TellMeNowAPI *)sharedAPI;
+
 - (NSString *)loginWithAccessToken:(NSString *)accessToken;
 
 - (NSArray *)usersForIds:(NSArray *)userIds;
