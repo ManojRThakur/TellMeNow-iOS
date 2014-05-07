@@ -74,17 +74,6 @@
                 NSLog(@"Could not understand predicate.");
                 return nil;
             }
-            NSArray *moIdsToFetch = [moIds filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
-                return [cache objectForKey:evaluatedObject] == nil;
-            }]];
-            NSMutableArray *bsonIds = [NSMutableArray array];
-            for (NSManagedObjectID *moId in moIdsToFetch) {
-                [bsonIds addObject:[self referenceObjectForObjectID:moId]];
-            }
-            NSArray *dicts = [[TellMeNowAPI sharedAPI] usersForIds:bsonIds];
-            for (int i = 0; i < dicts.count; i++) {
-                [cache setObject:dicts[i] forKey:moIdsToFetch[i]];
-            }
             NSMutableArray *mObjects = [NSMutableArray array];
             for (NSManagedObjectID *moId in moIds) {
                 [mObjects addObject:[context objectWithID:moId]];
@@ -99,6 +88,10 @@
 - (NSIncrementalStoreNode *)newValuesForObjectWithID:(NSManagedObjectID *)objectID withContext:(NSManagedObjectContext *)context error:(NSError *__autoreleasing *)error
 {
     NSDictionary *cached = [cache objectForKey:objectID];
+    if (cached == nil) {
+        cached = [[TellMeNowAPI sharedAPI] usersForIds:@[[self referenceObjectForObjectID:objectID]]][0];
+        [cache setObject:cached forKey:objectID];
+    }
     NSDictionary *attributes;
     if ([[[objectID entity] name] isEqualToString:@"User"]) {
         attributes = @{@"name": [cached objectForKey:@"name"],
@@ -108,22 +101,48 @@
     return [[NSIncrementalStoreNode alloc] initWithObjectID:objectID withValues:attributes version:1];
 }
 
+- (NSManagedObjectID *)objectIdForEntity:(NSEntityDescription *)entity andBsonId:(NSString *)bsonId
+{
+    static NSMutableDictionary *idCache = nil;
+    if (idCache == nil) {
+        idCache = [NSMutableDictionary dictionary];
+    }
+    NSManagedObjectID *moId = nil;
+    moId = [idCache objectForKey:bsonId];
+    if (moId == nil) {
+        moId = [self newObjectIDForEntity:entity referenceObject:bsonId];
+        [idCache setObject:moId forKey:bsonId];
+    }
+    return moId;
+}
+
 - (id)newValueForRelationship:(NSRelationshipDescription *)relationship forObjectWithID:(NSManagedObjectID *)objectID withContext:(NSManagedObjectContext *)context error:(NSError *__autoreleasing *)error
 {
+    if ([cache objectForKey:objectID] == nil) {
+        return nil;
+    }
+    NSArray *bsonIds = nil;
     if ([[[relationship entity] name] isEqualToString:@"User"]) {
         if ([relationship.name isEqualToString:@"answers"]) {
-            // ...
+            bsonIds = [[cache objectForKey:objectID] objectForKey:@"answers"];
         } else if ([relationship.name isEqualToString:@"comments"]) {
-            // ...
+            bsonIds = [[cache objectForKey:objectID] objectForKey:@"comments"];
         } else if ([relationship.name isEqualToString:@"followUps"]) {
-            // ...
+            bsonIds = [[cache objectForKey:objectID] objectForKey:@"followUps"];
         } else if ([relationship.name isEqualToString:@"notifications"]) {
-            // ...
+            bsonIds = [[cache objectForKey:objectID] objectForKey:@"notifications"];
         } else if ([relationship.name isEqualToString:@"questions"]) {
-            // ...
+            bsonIds = [[cache objectForKey:objectID] objectForKey:@"questions"];
         }
     }
-    return nil; // NIL
+    if (bsonIds == nil) {
+        bsonIds = [NSArray array];
+    }
+    NSMutableArray *moIds = [NSMutableArray array];
+    for (NSString *bsonId in bsonIds) {
+        [moIds addObject:[self objectIdForEntity:[relationship destinationEntity] andBsonId:bsonId]];
+    }
+    return moIds;
 }
 
 @end
