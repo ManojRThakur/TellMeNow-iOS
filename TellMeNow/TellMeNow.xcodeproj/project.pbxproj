@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC08C21D19430C87000BC84A /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC08C21219430C87000BC84A /* Model.framework */; };
 		AC08C22719430C87000BC84A /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC08C21219430C87000BC84A /* Model.framework */; };
 		AC08C23219430CC7000BC84A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC16730B1942E25600CD81A4 /* Model.swift */; };
 		AC08C23419430D5B000BC84A /* Agent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC08C1EB19430B2C000BC84A /* Agent.framework */; };
@@ -16,17 +15,11 @@
 		AC3A28221942CD4400E5D96B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A28211942CD4400E5D96B /* SecondViewController.swift */; };
 		AC3A28251942CD4400E5D96B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC3A28231942CD4400E5D96B /* Main.storyboard */; };
 		AC3A28271942CD4400E5D96B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC3A28261942CD4400E5D96B /* Images.xcassets */; };
-		AC3A28331942CD4400E5D96B /* TellMeNowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A28321942CD4400E5D96B /* TellMeNowTests.swift */; };
+		ACB96642194313A800157319 /* Model.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACB96640194313A800157319 /* Model.plist */; };
+		ACB96643194313A800157319 /* TellMeNow.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACB96641194313A800157319 /* TellMeNow.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AC08C21E19430C87000BC84A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AC3A28101942CD4400E5D96B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AC08C21119430C87000BC84A;
-			remoteInfo = Model;
-		};
 		AC08C22519430C87000BC84A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AC3A28101942CD4400E5D96B /* Project object */;
@@ -40,20 +33,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = AC08C21119430C87000BC84A;
 			remoteInfo = Model;
-		};
-		AC3A282D1942CD4400E5D96B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AC3A28101942CD4400E5D96B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AC3A28171942CD4400E5D96B;
-			remoteInfo = TellMeNow;
-		};
-		AC3A28401942D1A700E5D96B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AC3A28101942CD4400E5D96B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AC3A28171942CD4400E5D96B;
-			remoteInfo = TellMeNow;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -73,19 +52,16 @@
 /* Begin PBXFileReference section */
 		AC08C1EB19430B2C000BC84A /* Agent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Agent.framework; path = TellMeNow/Agent.framework; sourceTree = "<group>"; };
 		AC08C21219430C87000BC84A /* Model.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Model.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC08C21C19430C87000BC84A /* ModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC16730A1942E25600CD81A4 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
 		AC16730B1942E25600CD81A4 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		AC3A28181942CD4400E5D96B /* TellMeNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TellMeNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC3A281C1942CD4400E5D96B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC3A281D1942CD4400E5D96B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC3A281F1942CD4400E5D96B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		AC3A28211942CD4400E5D96B /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		AC3A28241942CD4400E5D96B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC3A28261942CD4400E5D96B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		AC3A282C1942CD4400E5D96B /* TellMeNowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TellMeNowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC3A28311942CD4400E5D96B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AC3A28321942CD4400E5D96B /* TellMeNowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellMeNowTests.swift; sourceTree = "<group>"; };
+		ACB96640194313A800157319 /* Model.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Model.plist; sourceTree = "<group>"; };
+		ACB96641194313A800157319 /* TellMeNow.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TellMeNow.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,26 +73,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC08C21919430C87000BC84A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AC08C21D19430C87000BC84A /* Model.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		AC3A28151942CD4400E5D96B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				AC08C22719430C87000BC84A /* Model.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AC3A28291942CD4400E5D96B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				AC3A281A1942CD4400E5D96B /* TellMeNow */,
-				AC3A282F1942CD4400E5D96B /* TellMeNowTests */,
 				AC3A28191942CD4400E5D96B /* Products */,
 				AC08C1ED19430B79000BC84A /* Frameworks */,
 			);
@@ -145,9 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				AC3A28181942CD4400E5D96B /* TellMeNow.app */,
-				AC3A282C1942CD4400E5D96B /* TellMeNowTests.xctest */,
 				AC08C21219430C87000BC84A /* Model.framework */,
-				AC08C21C19430C87000BC84A /* ModelTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,24 +128,8 @@
 		AC3A281B1942CD4400E5D96B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AC3A281C1942CD4400E5D96B /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		AC3A282F1942CD4400E5D96B /* TellMeNowTests */ = {
-			isa = PBXGroup;
-			children = (
-				AC3A28321942CD4400E5D96B /* TellMeNowTests.swift */,
-				AC3A28301942CD4400E5D96B /* Supporting Files */,
-			);
-			path = TellMeNowTests;
-			sourceTree = "<group>";
-		};
-		AC3A28301942CD4400E5D96B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				AC3A28311942CD4400E5D96B /* Info.plist */,
+				ACB96640194313A800157319 /* Model.plist */,
+				ACB96641194313A800157319 /* TellMeNow.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -223,24 +165,6 @@
 			productReference = AC08C21219430C87000BC84A /* Model.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		AC08C21B19430C87000BC84A /* ModelTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AC08C22F19430C87000BC84A /* Build configuration list for PBXNativeTarget "ModelTests" */;
-			buildPhases = (
-				AC08C21819430C87000BC84A /* Sources */,
-				AC08C21919430C87000BC84A /* Frameworks */,
-				AC08C21A19430C87000BC84A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AC08C21F19430C87000BC84A /* PBXTargetDependency */,
-			);
-			name = ModelTests;
-			productName = ModelTests;
-			productReference = AC08C21C19430C87000BC84A /* ModelTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		AC3A28171942CD4400E5D96B /* TellMeNow */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AC3A28361942CD4400E5D96B /* Build configuration list for PBXNativeTarget "TellMeNow" */;
@@ -261,25 +185,6 @@
 			productReference = AC3A28181942CD4400E5D96B /* TellMeNow.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AC3A282B1942CD4400E5D96B /* TellMeNowTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AC3A28391942CD4400E5D96B /* Build configuration list for PBXNativeTarget "TellMeNowTests" */;
-			buildPhases = (
-				AC3A28281942CD4400E5D96B /* Sources */,
-				AC3A28291942CD4400E5D96B /* Frameworks */,
-				AC3A282A1942CD4400E5D96B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AC3A282E1942CD4400E5D96B /* PBXTargetDependency */,
-				AC3A28411942D1A700E5D96B /* PBXTargetDependency */,
-			);
-			name = TellMeNowTests;
-			productName = TellMeNowTests;
-			productReference = AC3A282C1942CD4400E5D96B /* TellMeNowTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -292,16 +197,8 @@
 					AC08C21119430C87000BC84A = {
 						CreatedOnToolsVersion = 6.0;
 					};
-					AC08C21B19430C87000BC84A = {
-						CreatedOnToolsVersion = 6.0;
-						TestTargetID = AC08C21119430C87000BC84A;
-					};
 					AC3A28171942CD4400E5D96B = {
 						CreatedOnToolsVersion = 6.0;
-					};
-					AC3A282B1942CD4400E5D96B = {
-						CreatedOnToolsVersion = 6.0;
-						TestTargetID = AC3A28171942CD4400E5D96B;
 					};
 				};
 			};
@@ -319,9 +216,7 @@
 			projectRoot = "";
 			targets = (
 				AC3A28171942CD4400E5D96B /* TellMeNow */,
-				AC3A282B1942CD4400E5D96B /* TellMeNowTests */,
 				AC08C21119430C87000BC84A /* Model */,
-				AC08C21B19430C87000BC84A /* ModelTests */,
 			);
 		};
 /* End PBXProject section */
@@ -334,26 +229,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC08C21A19430C87000BC84A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		AC3A28161942CD4400E5D96B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACB96643194313A800157319 /* TellMeNow.plist in Resources */,
+				ACB96642194313A800157319 /* Model.plist in Resources */,
 				AC3A28251942CD4400E5D96B /* Main.storyboard in Resources */,
 				AC3A28271942CD4400E5D96B /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AC3A282A1942CD4400E5D96B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,13 +251,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC08C21819430C87000BC84A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		AC3A28141942CD4400E5D96B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -385,22 +261,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AC3A28281942CD4400E5D96B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AC3A28331942CD4400E5D96B /* TellMeNowTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		AC08C21F19430C87000BC84A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AC08C21119430C87000BC84A /* Model */;
-			targetProxy = AC08C21E19430C87000BC84A /* PBXContainerItemProxy */;
-		};
 		AC08C22619430C87000BC84A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AC08C21119430C87000BC84A /* Model */;
@@ -410,16 +273,6 @@
 			isa = PBXTargetDependency;
 			target = AC08C21119430C87000BC84A /* Model */;
 			targetProxy = AC08C22919430C87000BC84A /* PBXContainerItemProxy */;
-		};
-		AC3A282E1942CD4400E5D96B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AC3A28171942CD4400E5D96B /* TellMeNow */;
-			targetProxy = AC3A282D1942CD4400E5D96B /* PBXContainerItemProxy */;
-		};
-		AC3A28411942D1A700E5D96B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AC3A28171942CD4400E5D96B /* TellMeNow */;
-			targetProxy = AC3A28401942D1A700E5D96B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -451,7 +304,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = Model/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TellMeNow/Model.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
@@ -475,7 +328,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/TellMeNow",
 				);
-				INFOPLIST_FILE = Model/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TellMeNow/Model.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
@@ -484,38 +337,6 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		AC08C23019430C87000BC84A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ModelTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				METAL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		AC08C23119430C87000BC84A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ModelTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				METAL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -605,7 +426,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/TellMeNow",
 				);
-				INFOPLIST_FILE = TellMeNow/Info.plist;
+				INFOPLIST_FILE = TellMeNow/TellMeNow.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -620,45 +441,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/TellMeNow",
 				);
-				INFOPLIST_FILE = TellMeNow/Info.plist;
+				INFOPLIST_FILE = TellMeNow/TellMeNow.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		AC3A283A1942CD4400E5D96B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TellMeNow.app/TellMeNow";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = TellMeNowTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				METAL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-			};
-			name = Debug;
-		};
-		AC3A283B1942CD4400E5D96B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TellMeNow.app/TellMeNow";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = TellMeNowTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				METAL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
 		};
@@ -672,14 +457,7 @@
 				AC08C22D19430C87000BC84A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		AC08C22F19430C87000BC84A /* Build configuration list for PBXNativeTarget "ModelTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AC08C23019430C87000BC84A /* Debug */,
-				AC08C23119430C87000BC84A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AC3A28131942CD4400E5D96B /* Build configuration list for PBXProject "TellMeNow" */ = {
 			isa = XCConfigurationList;
@@ -695,15 +473,6 @@
 			buildConfigurations = (
 				AC3A28371942CD4400E5D96B /* Debug */,
 				AC3A28381942CD4400E5D96B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AC3A28391942CD4400E5D96B /* Build configuration list for PBXNativeTarget "TellMeNowTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AC3A283A1942CD4400E5D96B /* Debug */,
-				AC3A283B1942CD4400E5D96B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
