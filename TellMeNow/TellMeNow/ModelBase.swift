@@ -36,7 +36,7 @@ class ModelBase {
                 payload["accessToken"] = accessToken
             }
             
-            Agent.get("\(apiPath)/\(modelPath)").send(payload).end { callback($2 as AnyDict) }
+            Agent.get("\(apiPath)/\(modelPath)").send(payload).end { callback($0.1 as AnyDict) }
         } else {
             callback([:])
         }
@@ -51,7 +51,7 @@ class ModelBase {
             payload["accessToken"] = accessToken
         }
         Agent.put("\(apiPath)/\(modelPath)").send(payload).end {
-            if let oid = ($2 as? AnyDict)?["oid"] as? ObjectId {
+            if let oid = ($0.1 as? AnyDict)?["oid"] as? ObjectId {
                 self.oid = oid
                 modelsCache[oid] = self
             }
