@@ -14,6 +14,11 @@
 		AC15EE23194825B1008EF111 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC15EE22194825B1008EF111 /* Agent.swift */; };
 		AC15EE2619482619008EF111 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC15EE2519482619008EF111 /* Info.plist */; };
 		AC15EE27194826F1008EF111 /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC08C21219430C87000BC84A /* Model.framework */; };
+		AC28CC76194927CE005C1B0C /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC28CC74194927A9005C1B0C /* CommentModel.swift */; };
+		AC28CC7819492899005C1B0C /* FollowUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC28CC7719492899005C1B0C /* FollowUpModel.swift */; };
+		AC28CC7A19492B49005C1B0C /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC28CC7919492B49005C1B0C /* PlaceModel.swift */; };
+		AC28CC7C19494440005C1B0C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC28CC7B19494440005C1B0C /* UserModel.swift */; };
+		AC28CC7E194AA2F5005C1B0C /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC28CC7D194AA2F5005C1B0C /* ActivityModel.swift */; };
 		AC3A281E1942CD4400E5D96B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A281D1942CD4400E5D96B /* AppDelegate.swift */; };
 		AC3A28201942CD4400E5D96B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A281F1942CD4400E5D96B /* FirstViewController.swift */; };
 		AC3A28221942CD4400E5D96B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3A28211942CD4400E5D96B /* SecondViewController.swift */; };
@@ -84,6 +89,11 @@
 		AC15EE2519482619008EF111 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../agent/Agent/Info.plist; sourceTree = "<group>"; };
 		AC16730A1942E25600CD81A4 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
 		AC16730B1942E25600CD81A4 /* ModelBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModelBase.swift; path = TellMeNow/ModelBase.swift; sourceTree = "<group>"; };
+		AC28CC74194927A9005C1B0C /* CommentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentModel.swift; path = TellMeNow/CommentModel.swift; sourceTree = "<group>"; };
+		AC28CC7719492899005C1B0C /* FollowUpModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FollowUpModel.swift; path = TellMeNow/FollowUpModel.swift; sourceTree = "<group>"; };
+		AC28CC7919492B49005C1B0C /* PlaceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceModel.swift; path = TellMeNow/PlaceModel.swift; sourceTree = "<group>"; };
+		AC28CC7B19494440005C1B0C /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserModel.swift; path = TellMeNow/UserModel.swift; sourceTree = "<group>"; };
+		AC28CC7D194AA2F5005C1B0C /* ActivityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
 		AC3A28181942CD4400E5D96B /* TellMeNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TellMeNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC3A281D1942CD4400E5D96B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC3A281F1942CD4400E5D96B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +137,11 @@
 				AC16730B1942E25600CD81A4 /* ModelBase.swift */,
 				AC12C17B19482AB80023B2D4 /* AnswerModel.swift */,
 				AC12C17E194831AF0023B2D4 /* QuestionModel.swift */,
+				AC28CC74194927A9005C1B0C /* CommentModel.swift */,
+				AC28CC7719492899005C1B0C /* FollowUpModel.swift */,
+				AC28CC7919492B49005C1B0C /* PlaceModel.swift */,
+				AC28CC7B19494440005C1B0C /* UserModel.swift */,
+				AC28CC7D194AA2F5005C1B0C /* ActivityModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -337,6 +352,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC12C180194831B30023B2D4 /* QuestionModel.swift in Sources */,
+				AC28CC7C19494440005C1B0C /* UserModel.swift in Sources */,
+				AC28CC7A19492B49005C1B0C /* PlaceModel.swift in Sources */,
+				AC28CC76194927CE005C1B0C /* CommentModel.swift in Sources */,
+				AC28CC7E194AA2F5005C1B0C /* ActivityModel.swift in Sources */,
+				AC28CC7819492899005C1B0C /* FollowUpModel.swift in Sources */,
 				AC12C17D19482AEB0023B2D4 /* AnswerModel.swift in Sources */,
 				ACD667E21944691200850D84 /* ModelBase.swift in Sources */,
 			);

@@ -58,6 +58,14 @@ class ModelBase {
             callback()
         }
     }
+    
+    class func createModel(oid: ObjectId?, modelPath: String) {
+        if let oid = oid {
+            if !modelsCache[oid] {
+                modelsCache[oid] = ModelBase(oid: oid, modelPath: modelPath)
+            }
+        }
+    }
 }
 
 var modelsCache = Dictionary<String, ModelBase>()

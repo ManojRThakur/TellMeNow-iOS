@@ -19,7 +19,31 @@ class QuestionModel: ModelBase, ModelProtocol {
     
     var answers: AnswerModel[]? {
     get {
-        return answerOids ? answerOids?.map({ modelsCache[$0] as AnswerModel }) : nil
+        return answerOids?.map({ modelsCache[$0] as AnswerModel })
+    }
+    }
+    
+    var comments: CommentModel[]? {
+    get {
+        return commentOids?.map({ modelsCache[$0] as CommentModel })
+    }
+    }
+    
+    var activities: ActivityModel[]? {
+    get {
+        return activityOids?.map({ modelsCache[$0] as ActivityModel })
+    }
+    }
+    
+    var place: PlaceModel? {
+    get {
+        return placeOid ? modelsCache[placeOid!] as? PlaceModel : nil
+    }
+    }
+    
+    var user: UserModel? {
+    get {
+        return userOid ? modelsCache[userOid!] as? UserModel : nil
     }
     }
     
@@ -60,36 +84,29 @@ class QuestionModel: ModelBase, ModelProtocol {
                         self.answerOids = value as? ObjectId[]
                         if let answerOids = self.answerOids {
                             for answerOid in answerOids {
-                                if (!modelsCache[answerOid]) {
-                                    modelsCache[answerOid] = ModelBase(oid: answerOid, modelPath: "answer")
-                                }
+                                ModelBase.createModel(answerOid, modelPath: "answer")
                             }
-                            
                         }
                     case "comments":
                         self.commentOids = value as? ObjectId[]
                         if let commentOids = self.commentOids {
                             for commentOid in commentOids {
-                                if (!modelsCache[commentOid]) {
-                                    modelsCache[commentOid] = ModelBase(oid: commentOid, modelPath: "comment")
-                                }
+                                ModelBase.createModel(commentOid, modelPath: "comment")
                             }
-                            
                         }
                     case "activities":
                         self.activityOids = value as? ObjectId[]
                         if let activityOids = self.activityOids {
                             for activityOid in activityOids {
-                                if (!modelsCache[activityOid]) {
-                                    modelsCache[activityOid] = ModelBase(oid: activityOid, modelPath: "activity")
-                                }
+                                ModelBase.createModel(activityOid, modelPath: "activity")
                             }
-                            
                         }
                     case "place":
                         self.placeOid = value as? ObjectId
+                        ModelBase.createModel(self.placeOid, modelPath: "place")
                     case "user":
                         self.userOid = value as? ObjectId
+                        ModelBase.createModel(self.userOid, modelPath: "user")
                     default:
                         ()
                     }
